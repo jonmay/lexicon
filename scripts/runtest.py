@@ -52,6 +52,7 @@ def main():
   parser.add_argument("--toklcfile", "-t", nargs='?', type=argparse.FileType('r'), default=sys.stdin, help="toklc english file")
   parser.add_argument("--patternfile", "-p", nargs='?', type=argparse.FileType('r'), default=sys.stdin, help="pattern file")
   parser.add_argument("--sample", "-s", type=int, default=20, help="number of samples to catch")
+  parser.add_argument("--threshhold", "-d", type=float, default=5.0, help="minimum score for patterns")
   parser.add_argument("--applyprog", default=os.path.join(scriptdir, 'applymatches.py'), help='apply matches program')
   parser.add_argument("--sampleprog", default=os.path.join(scriptdir, 'sample.py'), help='sample program')
   parser.add_argument("--maskngram", default=os.path.join(scriptdir, 'maskngram.py'), help='maskngram file')
@@ -89,8 +90,8 @@ def main():
     tmpfile.write("%s\t%s" % (l.strip(), t))
   tmpfile.close()
 
-  shchain(["%s -i %s -t 5.0 --no-passthrough --scoremode" % (args.applyprog, tmpfile.name),], input=patternfile, output=changefile)
-  shchain(["%s -i %s -t 5.0 --no-mods" % (args.applyprog, tmpfile.name),], input=patternfile, output=samefile)
+  shchain(["%s -i %s -t %f --no-passthrough --scoremode" % (args.applyprog, tmpfile.name, args.threshhold),], input=patternfile, output=changefile)
+  shchain(["%s -i %s -t %f --no-mods" % (args.applyprog, tmpfile.name, args.threshhold),], input=patternfile, output=samefile)
   changefile.close()
   samefile.close()
   changefile = prepfile(changefile.name, 'r')

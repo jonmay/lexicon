@@ -24,6 +24,8 @@ writer = codecs.getwriter('utf8')
 
 
 def prepfile(fh, code):
+  if type(fh) is str:
+    fh = open(fh, code)
   ret = gzip.open(fh.name, code if code.endswith("t") else code+"t") if fh.name.endswith(".gz") else fh
   if sys.version_info[0] == 2:
     if code.startswith('r'):
@@ -83,42 +85,49 @@ def main():
   outfile = prepfile(args.outfile, 'w')
 
   cmdchain = [args.tolower, # lowercase
+              "sort",
+              "uniq",
               args.ngramcount+" -order %d -write%d - -text -" % (args.ngrams, args.ngrams), # count ngrams
               args.maskngram+" -m %s" % (' '.join(map(str, args.masks))),  # mask out words
               "sort", # sort
               args.uniqcount] # counter-aware uniq
-  print("about to collect from domainfile")
   shchain(cmdchain, input=domainfile, output=domaintmpfile)
-  print("done collecting")
   domaintmpfile.close()
   if args.basetext:
     if args.basengramfile is None:
       _, basengramfilename = tempfile.mkstemp(dir=workdir, text=True)
-      basengramfile = prepfile(open(basengramfilename, 'w'), 'w')
+      basengramfile = prepfile(basengramfilename, 'w')
     else:
       basengramfile = prepfile(args.basengramfile, 'w')
       basengramfilename = basengramfile.name
     shchain(cmdchain, input=basefile, output=basengramfile)
-    basefile = prepfile(open(basengramfilename, 'r'), 'r')
-  print("about to join")
+    basefile = prepfile(basengramfilename, 'r')
   prochain = ["join -t'\t' %s %s" % (domaintmpfile.name, basefile.name), # common patterns
   #            "awk -F'\t' '{printf(\"%s\t%f\n\", $1,$2/$3)}'",
   #            "sort -t'\t' -k2nr",
   ]
   # doing it in an in-python step
   _, tfdftmpfile = tempfile.mkstemp(dir=workdir, text=True)
-  tfdftmpfile = prepfile(open(tfdftmpfile, 'w'), 'w')
+  tfdftmpfile = prepfile(tfdftmpfile, 'w')
   shchain(prochain, output=tfdftmpfile)
   tfdftmpfile.close()
-  print("done join")
-  tfdftmpfile = prepfile(open(tfdftmpfile.name, 'r'), 'r')
+  
+  tfdftmpfile = prepfile(tfdftmpfile.name, 'r')
   res = []
-  print("About to tfidf and sort")
   for line in tfdftmpfile:
     toks = line.strip().split('\t')
     res.append((toks[0], float(toks[1])/float(toks[2])))
+  # ngrams not seen in base
+  _, oovchainfile = tempfile.mkstemp(dir=workdir, text=True)
+  oovchainfile = prepfile(oovchainfile, 'w')
+  shchain(["join -t'\t' -v 1 %s %s" % (domaintmpfile.name, basefile.name),], output=oovchainfile)
+  oovchainfile.close()
+  oovchainfile = prepfile(oovchainfile.name, 'r')
+  for line in oovchainfile:
+    line = line.strip().split('\t')
+    res.append((line[0], float(line[1])))
   for thek, thev in sorted(res, key=lambda tup: (tup[1], tup[0]), reverse=True):
     outfile.write("%s\t%f\n" % (thek, thev))
-  print("done")
+
 if __name__ == '__main__':
   main()
