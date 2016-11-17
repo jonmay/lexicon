@@ -82,6 +82,8 @@ def main():
     # write out the masked fields
     fields = line.strip().split('\t')
     toks = fields[args.field].split()
+    if len(toks) < 3:
+      continue
     for maskkind in args.masks:
       if len(toks) > maskkind:
         for mask in combinations(range(len(toks)), maskkind):
@@ -92,7 +94,7 @@ def main():
             tc = compress(tc)
           fc = fields[:args.field]+[' '.join(tc),]+fields[args.field+1:]
           outfile.write('\t'.join(fc)+"\n")
-    outfile.write(line)
+    #outfile.write(line)
 
 if __name__ == '__main__':
   main()

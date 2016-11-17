@@ -87,7 +87,7 @@ def main():
   cmdchain = [args.tolower, # lowercase
               "sort",
               "uniq",
-              args.ngramcount+" -order %d -write%d - -text -" % (args.ngrams, args.ngrams), # count ngrams
+              args.ngramcount+" -order %d -write - -text -" % args.ngrams, # count ngrams
               args.maskngram+" -m %s" % (' '.join(map(str, args.masks))),  # mask out words
               "sort", # sort
               args.uniqcount] # counter-aware uniq
