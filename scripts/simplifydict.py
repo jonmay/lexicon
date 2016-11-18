@@ -71,16 +71,17 @@ class Definition:
   def keep(self, state):
     """ move the word to the current definition """
     self.defs[-1].append(self.queue.pop(0)[0])
-  moves["K"] = keep
+  moves["K"] = ("keep", "keep the word")
   def delete(self, state):
     """ ignore the word """
     self.queue.pop(0)
-  moves["D"] = delete
+  moves["D"] = ("delete", "delete the word")
   def split(self, state):
     """ start a new definition """
     self.defs.append([])
     self.queue.pop(0)
-  moves["S"] = split
+  moves["S"] = ("split", "delete this word and start a new definition (i.e. split)")
+  # TODO: fix this -- it's broken!
   def transfer(self, state):
     """ insert results from another defintion """
     stub = self.defs.pop()
@@ -88,9 +89,9 @@ class Definition:
     state.process(word)
     for res in state.get(word).defs:
       self.defs.append(stub+res)
-  moves["T"] = transfer
+  moves["T"] = ("transfer", "transfer in definitions of the referred word")
 
-  def __init__(self)
+  def __init__(self):
     self.state = Definition.PRE
     self.queue = []
     self.defs = [[]]
@@ -98,9 +99,9 @@ class Definition:
   def merge(self, text, instruction):
     if self.state is not Definition.PRE:
       raise Exception("Can only merge in PRE state")
-    for tw, iw in zip(split(text), split(instruction)):
-      self.queue.append((tw, moves[iw]))
-
+    for tw, iw in zip(text.split(), instruction.split()):
+      self.queue.append((tw, getattr(self, Definition.moves[iw][0])))
+    self.queue.append((None, self.split))
   def process(self, state):
     """ consume instructions """
     if self.state==Definition.POST:
@@ -108,8 +109,6 @@ class Definition:
     self.state = Definition.MID
     while len(self.queue) > 0:
       self.queue[0][1](state)
-    # unravel
-    self.defs = [item for sublist in self.defs for item in sublist]:
     self.state = Definition.POST
 
 
@@ -122,12 +121,12 @@ class State:
     self.entries = dd(Definition)
     for tline, iline in izip(textfile, instructionfile):
       tline = tline.strip().split('\t')
-      self.entries[tline[0]].merge((tline[1], iline.strip()))
+      self.entries[tline[0]].merge(tline[1], iline.strip())
   def get(self, word):
     self.process(word)
     return self.entries.get(word)
   def process(self, word=None):
-    words = [self.entries.keys()] if word is None else [word,]
+    words = self.entries.keys() if word is None else [word,]
     for w in words:
       self.entries.get(w).process(self)
 
@@ -166,8 +165,8 @@ def main():
   dictstate = State(dictfile, instfile)
   dictstate.process()
   for sword in dictstate.entries.keys():
-    for definition in dictstate.get(sword):
-      outfile.write("%s\t\%s\n" % (sword, ' '.join(definition)))
+    for definition in filter(lambda x: len(x) > 0, dictstate.get(sword).defs):
+      outfile.write("%s\t%s\n" % (sword, ' '.join(definition)))
 
 if __name__ == '__main__':
   main()
