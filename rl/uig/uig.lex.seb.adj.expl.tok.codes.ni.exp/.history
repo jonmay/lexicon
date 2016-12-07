@@ -1,0 +1,130 @@
+2016-12-05.11-46-22.Jonathan-Mays-MacBook-Pro-2.local #sample.py -s 1000 -i ../uig.lex.seb.adj.expl.tok.codes.ni -o dev -
+2016-12-05.11-46-36.Jonathan-Mays-MacBook-Pro-2.local seq 10 | sample.py -s 3 -o foo -r /dev/stdout | head -2
+2016-12-05.11-46-41.Jonathan-Mays-MacBook-Pro-2.local cat foo
+2016-12-05.11-46-42.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-12-05.11-47-03.Jonathan-Mays-MacBook-Pro-2.local sample.py -s 1000 -i ../uig.lex.seb.adj.expl.tok.codes.ni -o dev -r /dev/stdout | sample.py -s 500 -o test -r train
+2016-12-05.11-47-07.Jonathan-Mays-MacBook-Pro-2.local wc -l dev test train
+2016-12-05.11-47-15.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-56-55.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.11-56-57.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.11-57-12.Jonathan-Mays-MacBook-Pro-2.local chmod a+x ../../../scripts/makevocab.py
+2016-12-05.11-57-24.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i train -o vocab
+2016-12-05.11-57-55.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i train -o vocab
+2016-12-05.11-58-05.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i train -o vocab
+2016-12-05.11-58-07.Jonathan-Mays-MacBook-Pro-2.local wc vocab
+2016-12-05.11-58-17.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i train -s 500 -o vocab
+2016-12-05.11-58-32.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i train -s 500 -o vocab
+2016-12-05.11-58-34.Jonathan-Mays-MacBook-Pro-2.local wc vocab
+2016-12-05.11-58-38.Jonathan-Mays-MacBook-Pro-2.local less vocab
+2016-12-05.11-58-45.Jonathan-Mays-MacBook-Pro-2.local less train
+2016-12-05.11-58-54.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i <(cut -f1 train) -s 500 -o vocab
+2016-12-05.11-59-07.Jonathan-Mays-MacBook-Pro-2.local less vocab
+2016-12-05.12-49-12.Jonathan-Mays-MacBook-Pro-2.local less vocab
+2016-12-05.12-49-20.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i <(cut -f1 train) -o vocab
+2016-12-05.12-50-06.Jonathan-Mays-MacBook-Pro-2.local less vocab 
+2016-12-05.12-52-06.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.12-52-51.Jonathan-Mays-MacBook-Pro-2.local chmod a+x ../../../scripts/applyvocab.py
+2016-12-05.12-53-11.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/applyvocab.py -v vocab -i <(cut -f1 train) -o train.text
+2016-12-05.12-53-31.Jonathan-Mays-MacBook-Pro-2.local less train.text
+2016-12-05.12-53-33.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.12-53-50.Jonathan-Mays-MacBook-Pro-2.local for i in dev test; do ../../../scripts/applyvocab.py -v vocab -i <(cut -f1 $i) -o $i.text; done
+2016-12-05.12-54-00.Jonathan-Mays-MacBook-Pro-2.local less dev.text
+2016-12-05.13-24-22.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-12-05.13-24-51.Jonathan-Mays-MacBook-Pro-2.local sftp guestuser@elisa.isi.edu
+2016-12-05.13-24-54.Jonathan-Mays-MacBook-Pro-2.local sftp guestuser@elisa.isi.edu
+2016-12-05.13-41-25.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-12-05.13-41-28.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.13-41-57.Jonathan-Mays-MacBook-Pro-2.local mkdir most_freq
+2016-12-05.13-53-46.Jonathan-Mays-MacBook-Pro-2.local less ../uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.13-54-42.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.13-54-56.Jonathan-Mays-MacBook-Pro-2.local sample.py -s 1000 -i ../uig.lex.seb.adj.expl.tok.codes.ni -o dev -r /dev/stdout | sample.py -s 500 -o test -r train
+2016-12-05.13-55-00.Jonathan-Mays-MacBook-Pro-2.local less train
+2016-12-05.13-55-19.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/makevocab.py -i <(cut -f2 train) -o vocab
+2016-12-05.13-55-24.Jonathan-Mays-MacBook-Pro-2.local less vocab
+2016-12-05.13-55-50.Jonathan-Mays-MacBook-Pro-2.local for i in train dev test; do ../../../scripts/applyvocab.py -v vocab -i <(cut -f2 $i) -o $i.text; done
+2016-12-05.13-56-06.Jonathan-Mays-MacBook-Pro-2.local head -1 train
+2016-12-05.13-56-24.Jonathan-Mays-MacBook-Pro-2.local head -1 train | cut -f1
+2016-12-05.13-56-26.Jonathan-Mays-MacBook-Pro-2.local head -1 train | cut -f2
+2016-12-05.13-57-19.Jonathan-Mays-MacBook-Pro-2.local for i in train dev test; do cut -f1-2 $i > $i.dict.orig; done
+2016-12-05.13-57-24.Jonathan-Mays-MacBook-Pro-2.local head -3 train.dict.orig
+2016-12-05.13-57-46.Jonathan-Mays-MacBook-Pro-2.local for i in train dev test; do cut -f4 $i > $i.labels; done
+2016-12-05.13-57-50.Jonathan-Mays-MacBook-Pro-2.local head -3 train.labels
+2016-12-05.13-58-02.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-05.13-58-49.Jonathan-Mays-MacBook-Pro-2.local for i in train dev test; do ../../../scripts/simplifydict.py -d $i.dict.orig -i $i.labels -o $i.dict.final; done
+2016-12-05.13-59-00.Jonathan-Mays-MacBook-Pro-2.local less train.dict.final
+2016-12-05.13-59-03.Jonathan-Mays-MacBook-Pro-2.local wc train.dict.final
+2016-12-05.13-59-07.Jonathan-Mays-MacBook-Pro-2.local wc train.dict.orig
+2016-12-05.15-35-06.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-12-05.16-15-11.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.17-06-45.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.17-07-10.Jonathan-Mays-MacBook-Pro-2.local less train.text
+2016-12-05.17-07-14.Jonathan-Mays-MacBook-Pro-2.local less train.labels
+2016-12-05.17-07-26.Jonathan-Mays-MacBook-Pro-2.local scp *.text hpc:projects/tensorflow/tagger
+2016-12-05.17-07-33.Jonathan-Mays-MacBook-Pro-2.local scp *.labels hpc:projects/tensorflow/tagger
+2016-12-06.15-45-44.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-06.15-45-45.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-45-47.Jonathan-Mays-MacBook-Pro-2.local wc train.text
+2016-12-06.15-46-08.Jonathan-Mays-MacBook-Pro-2.local less train.dict.orig
+2016-12-06.15-46-13.Jonathan-Mays-MacBook-Pro-2.local wc train.dict.orig
+2016-12-06.15-46-16.Jonathan-Mays-MacBook-Pro-2.local wc train.dict.final
+2016-12-06.15-46-22.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-06.15-47-39.Jonathan-Mays-MacBook-Pro-2.local less ../uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-06.15-47-59.Jonathan-Mays-MacBook-Pro-2.local cp ../uig.lex.seb.adj.expl.tok.codes.ni all.dict.orig
+2016-12-06.15-48-26.Jonathan-Mays-MacBook-Pro-2.local #../../../scripts/simplifydict.py -d all.dict.orig
+2016-12-06.15-48-31.Jonathan-Mays-MacBook-Pro-2.local less all.dict.orig
+2016-12-06.15-48-36.Jonathan-Mays-MacBook-Pro-2.local rm all.dict.orig
+2016-12-06.15-48-45.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-48-53.Jonathan-Mays-MacBook-Pro-2.local cp ../uig.lex.seb.adj.expl.tok.codes.ni all
+2016-12-06.15-48-59.Jonathan-Mays-MacBook-Pro-2.local cut -f1-2 all > all.dict.orig
+2016-12-06.15-49-03.Jonathan-Mays-MacBook-Pro-2.local cut -f4 all > all.labels
+2016-12-06.15-49-07.Jonathan-Mays-MacBook-Pro-2.local less all.dict.orig
+2016-12-06.15-49-29.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/simplifydict.py -d all.dict.orig -i all.labels -o all.dict.final
+2016-12-06.15-49-32.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.final
+2016-12-06.15-49-57.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-06.15-50-45.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d all.dict.final -c ../uig.dev | tee all.final.devscore
+2016-12-06.15-51-01.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d all.dict.orig -c ../uig.dev | tee all.orig.devscore
+2016-12-06.15-51-41.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc -c ../uig.dev
+2016-12-06.15-51-53.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc -c ../uig.dev
+2016-12-06.15-54-02.Jonathan-Mays-MacBook-Pro-2.local less ../uig.dev
+2016-12-06.15-54-08.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.dev
+2016-12-06.15-55-56.Jonathan-Mays-MacBook-Pro-2.local less ../additional/lexicon/lexicon
+2016-12-06.15-56-01.Jonathan-Mays-MacBook-Pro-2.local cut -f1 ../additional/lexicon/lexicon | head
+2016-12-06.15-56-04.Jonathan-Mays-MacBook-Pro-2.local cut -f2 ../additional/lexicon/lexicon | head
+2016-12-06.15-56-07.Jonathan-Mays-MacBook-Pro-2.local cut -f3 ../additional/lexicon/lexicon | head
+2016-12-06.15-56-11.Jonathan-Mays-MacBook-Pro-2.local ;s
+2016-12-06.15-56-12.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-56-23.Jonathan-Mays-MacBook-Pro-2.local less all
+2016-12-06.17-14-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-14-11.Jonathan-Mays-MacBook-Pro-2.local cat all.orig.devscore 
+2016-12-06.17-14-25.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc -c ../uig.dev
+2016-12-06.17-14-37.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc -c ../uig.dev
+2016-12-06.17-15-07.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig
+2016-12-06.17-15-14.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.lex.lc
+2016-12-06.17-15-26.Jonathan-Mays-MacBook-Pro-2.local head all.dict.orig
+2016-12-06.17-15-30.Jonathan-Mays-MacBook-Pro-2.local head ../uig.lex.lc
+2016-12-06.17-16-14.Jonathan-Mays-MacBook-Pro-2.local less ../uig.dev
+2016-12-06.17-17-28.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc.tok -c ../uig.dev
+2016-12-06.17-18-59.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc.tok -c ../uig.dev
+2016-12-06.17-19-07.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc.tok -c ../uig.dev
+2016-12-06.17-52-08.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc -c ../uig.dev
+2016-12-06.17-52-14.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-52-25.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d all.dict.orig -c ../uig.dev
+2016-12-06.17-52-35.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d all.dict.orig -c <(head ../uig.dev)
+2016-12-06.17-52-45.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc -c <(head ../uig.dev)
+2016-12-06.17-52-51.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d all.dict.orig -c <(head ../uig.dev) --persent
+2016-12-07.08-25-37.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-07.09-55-25.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.09-55-32.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.09-55-53.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc -c ../uig.dev
+2016-12-07.09-56-02.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc.tok -c ../uig.dev
+2016-12-07.09-56-51.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc.tok -c ../uig.dev
+2016-12-07.09-57-22.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.lc -c ../uig.dev
+2016-12-07.09-57-31.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoredict.py -d ../uig.lex.seb.norm.lc -c ../uig.dev
+2016-12-07.09-57-50.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-07.10-04-12.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-05-34.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-18-45.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-18-49.Jonathan-Mays-MacBook-Pro-2.local less all
+2016-12-07.11-07-10.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.11-07-12.Jonathan-Mays-MacBook-Pro-2.local git add .hist
+2016-12-07.11-07-14.Jonathan-Mays-MacBook-Pro-2.local git add .history 

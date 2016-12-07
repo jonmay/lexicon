@@ -1,0 +1,127 @@
+9/16/16
+attempt to learn hearst patterns from english side of lexicons
+
+* use srilm to get ngrams and counts
+* write a script that masks out all but m words in ngrams and expand counts
+* calculate tfidf vs natural english corpora
+
+10/25/16
+
+get patterns from english side of dict and english text:
+scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf.redo &
+
+run test that applies patterns and also subsamples them:
+scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.test.redo
+todo:
+  * write a simpile paren/comma/semicolon parser as a contrastive
+  * get to a good point with the automated script and then compare outputs on turkish. also compare on uzbek/hausa
+  * expand dictionary scrapes considerably
+issues:
+  * need more patterns of various lengths to capture pretty simple phenomena but looks like we're getting good stuff that a human wouldn't get without lots of work
+  * speed of doing lots of patterns: logical or?
+  * human scoring
+
+speed hard to maintain. also, scores as they are now are annoying to deal with; better score needed
+let's try ngrams of various sizes with various dropouts (3-6 with 1-n-1 per) and high thresh
+
+TODO: put this onto hpc and parallelize the input to speed things up
+TODO: combined ngrams version is probably overcounting since a pattern can come up via various ngrams; best to make them individually and use the max
+
+11/15/16
+
+RL approach; may not need patterns.
+given a word and translation, make a decision on what words from the translation to use and whether to inflect the word.
+do that for all the words in the lexicon, and apply them to a test set. get bleu-1.
+rl magic to change some settings and try again.
+
+let's try it for hausa!
+
+first see if it can be done: get a sample sentence and detect coverage.
+
+hausa doesn't seem to be working well so far...
+turkish either. uzbek is ok.
+
+should make two-sided trie of morphologically rich words to identify most likely prefix/suffixes (compare to frequency statistics from other languages to eliminate simple things like 'a'.
+
+1) need to make a language of transformation. selection of english word sequences and inflection (/selection?) of foreign words. # of items allowed per entry.
+2) given a selection and a corpus, cover the corpus and score coverage
+3) hook this into a framework that allows selection modification, updates.
+
+
+let's try a sample uzbek sentence: (hpc ~/LE/mt2/v4/uzb/sbmt/test.[source,target] line 1; lots of mismatched data in this set!)
+
+Tibbiy xizmat koʻrsatish sifatining oshishi , aholining tibbiy madaniyati yuksalishi tufayli mamlakatimizda yuqumli kasalliklar yildan - yilga kamayib bormoqda .
+
+translation:
+
+Thanks to improvement of quality of health service and the level of medical culture of the population , the number of infectious diseases cases decreases in Uzbekistan .
+
+possibly relevant words (from ~/projects/lorelei/lextmp/BOLT_Uzbek_IL_LDC2015E89_V1.1/lexicon on laptop and hpc)
+tibbiy	ADJ	medical
+xizmat	UNK	duty
+xizmat	UNK	function
+xizmat	UNK	help
+xizmat	UNK	service
+xizmatona	UNK	wages
+xizmatxorlik	UNK	service
+koʻrsatishni	NOUN	showing
+koʻrsatish olmoshi	NOUN	demonstrative pronoun;
+2 koʻrsatish olmoshi	UNK	demonstrative pronoun
+sifat	NOUN	quality; property
+sifat	NOUN	adjective
+aholi	NOUN	population
+aholi	NOUN	inhabitants, people, population:
+madaniyat	UNK	culture
+yuksalish	NOUN	eminence, elevation, development
+tufayli	NOUN	freeloader
+tufayli	ADP	because (of); owing to, on account (of), in consequence (of)
+mamlakat	NOUN	country
+mamlakat	NOUN	country
+mamlakatdir	NOUN	country
+yuqumli	ADJ	infectious
+yuqumli	ADJ	infectious, contagious
+yuqumlik	ADJ	infectious
+kasallik	ADJ	sickness
+kasal	UNK	dilemma
+kasal	UNK	diseased
+kasal	UNK	flaw
+kasal	UNK	habit
+kasal	UNK	misfortune
+kasal	UNK	patient
+kasal	UNK	sick
+kasal	UNK	sickness
+asabiy kasalliklar	ADJ	nervous disease
+oyda-yilda	ADJ	sparse, rarely,very seldom
+yilgi	NOUN	year
+yilgi	ADJ	annual, yearly, anniversary
+kamay	VERB	lessen
+kamaymoq	VERB	diminish; decrease, abate, lessen
+bormoq	VERB	go, start, leave:
+
+suffix/prefix list (made up so this works)
+ni
+ining
+ning
+i
+imizda
+dir
+lar
+gi
+dan
+ga
+ib
+moq
+da
+
+
+seems ok.
+
+how to connect it up? need a model for determining whether a word is on or off
+
+x^1 -> y_1^1 y_2^1 ... y_n^1
+choose e.g. y_1^1 y_3^1. We want, for any y_i^1, p(y_i^1|...)
+context can be source word and adjacent targets. Could do RNN/LSTM model with input vector = x, y_i-1, y_i+1, y_i-2, y_i+2.... with special stop at end of shortest.
+simple single layer then predicts on/off. Each element discrete.
+
+TODO: tf or other

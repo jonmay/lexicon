@@ -1,0 +1,134 @@
+12/7/16
+
+investigation into scoring conundrum:
+
+# original dictionary
+cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.188762
+Recall: 0.163334
+F1: 0.175130
+
+# tokenized
+$ paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev 2> /dev/null
+Precision: 0.317169
+Recall: 0.422648
+F1: 0.362389
+
+
+# lowercased
+
+cut -f1,3 additional/lexicon/lexicon | lowercase.py > uig.lex.lc
+$ ../../scripts/scoredict.py -d uig.lex.lc -c uig.dev
+Precision: 0.186832
+Recall: 0.161861
+F1: 0.173452
+
+# lowercased and tokenized
+
+$ paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev 2> /dev/null
+Precision: 0.305248
+Recall: 0.406441
+F1: 0.348650
+
+# original dictionary transformed by seb script
+python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i additional/lexicon/lexicon -o uig.lex.seb.norm
+$ cut -f1,3 uig.lex.seb.norm | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.559165
+Recall: 0.202905
+F1: 0.297761
+
+# original dictionary transformed by seb script and tokenized
+
+$ for d in uig.lex.seb.norm; do paste <(cut -f1 $d) <(cut -f3 $d | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev 2> /dev/null ; done
+Precision: 0.583286
+Recall: 0.217428
+F1: 0.316774
+
+
+# lowercased dictionary transformed
+$ cut -f1,3 uig.lex.seb.norm | lowercase.py | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.519164
+Recall: 0.188171
+F1: 0.276224
+
+# lowercased tokenized dictionary transformed
+
+$ for d in uig.lex.seb.norm; do paste <(cut -f1 $d) <(cut -f3 $d | ~/projects/lorelei/unitok/scripts/tok.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev 2> /dev/null; done
+Precision: 0.544633
+Recall: 0.202905
+F1: 0.295660
+
+
+# modified seb script outputs normal seb analysis but also 'explanation' that doesn't include cross references, etc. that can then be 'unrolled' into instruction
+# file, which can be used to generate modified dictionary
+python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+
+# the dictionary in expl (compare to 29.77 above for plain transformation):
+$  cut -f1-2 uig.lex.seb.adj.expl | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.200315
+Recall: 0.133656
+F1: 0.160333
+
+# the dictionary in expl with english tokenized first (compare to the 16.0 above)
+$ paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.376272
+Recall: 0.365818
+F1: 0.370971
+
+
+paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+
+# the original filtered for cross-reference dictionary scored
+cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.383282
+Recall: 0.367712
+F1: 0.375336
+
+
+# the effect of the instruction file scored
+$ ../../scripts/simplifydict.py -d <(cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni) -i <(cut -f4 uig.lex.seb.adj.expl.tok.codes.ni) | ../../scripts/scoredict.py -c uig.dev
+Precision: 0.616099
+Recall: 0.167544
+F1: 0.263445
+
+
+             p   r  f
+orig untok  .19 .16 .18
+seb  untok  .56 .20 .30
+orig   tok  .32 .42 .36
+seb    tok  .58 .22 .32
+
+tok drastically affects orig, doesn't affect seb
+
+let's look at cases where orig tok >> orig untok and see what seb untok did in these cases as well
+paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev --persent -o orig.tok.dev.persent
+cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev --persent -o orig.untok.dev.persent
+cut -f1,3 uig.lex.seb.norm | ../../scripts/scoredict.py -c uig.dev --persent -o seb.untok.dev.persent
+paste <(cut -f1 orig.untok.dev.persent) <(cut -f1 orig.tok.dev.persent) <(cut -f1,3 seb.untok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent) <(cut -f2 seb.untok.dev.persent) | awk '$(12)>$6{print}' | head
+
+p 0.000000 r 0.000000 f 0.000000	p 0.500000 r 0.285714 f 0.363636	p 1.000000 r 0.142857 f 0.250000	[[[The current script will be lost .]]]	[[[current.///present,]]]	[[[.///,///present///current]]]	[[[current]]]
+period tokenized off in both cases; errant punctuation reward
+p 0.000000 r 0.000000 f 0.000000	p 0.125000 r 0.166667 f 0.142857	p 0.500000 r 0.166667 f 0.250000	[[[% s missing name or label]]]	[[[wrong,///or.///mistaken.///erroneous,]]]	[[[mistaken///erroneous///.///wrong///,///or]]]	[[[erroneous///or]]]
+period tokenized off
+p 0.000000 r 0.000000 f 0.000000	p 0.100000 r 0.250000 f 0.142857	p 0.000000 r 0.000000 f 0.000000	[[[That won't happen .]]]	[[[matters,///(demonstrative///that///things,///adjective).///business.///hundred.]]][[[hundred///adjective///(///.///)///that///work///demonstrative]]]	[[[appearance///activities///he]]]
+case issue, errant punc reward
+p 0.250000 r 0.200000 f 0.222222	p 0.400000 r 0.400000 f 0.400000	p 1.000000 r 0.200000 f 0.333333	[[[I don't speak Japanese .]]]	[[[in///Japanese///the///way.]]]	[[[.///Japanese///the///way///in]]]	[[[Japanese]]]
+errant punc reward
+p 0.000000 r 0.000000 f 0.000000	p 0.333333 r 0.333333 f 0.333333	p 1.000000 r 0.166667 f 0.285714	[[[People from Madrid are weird .]]]	[[[strange,///surprising,///weird.]]]	[[[weird///,///strange///.///surprising]]]	[[[weird]]]
+tok issue, errant punc reward
+p 0.166667 r 0.166667 f 0.166667	p 0.230769 r 0.500000 f 0.315789	p 1.000000 r 0.500000 f 0.666667	[[[Are they all the same ?]]]	[[[someone.///form)///they.///definite///the///(in]]]	[[[,///the///same///common///a///single///they///.///unique]]]	[[[they///same///the]]]
+tok issue, 
+p 0.200000 r 0.125000 f 0.153846	p 0.200000 r 0.250000 f 0.222222	p 0.333333 r 0.125000 f 0.181818	[[[He would be glad to hear that .]]]	[[[happy,///(demonstrative///that///joyful.///adjective).]]]	[[[adjective///joyful///(///.///,///)///that///happy///demonstrative]]]	[[[delighted///with///that]]]
+synonym miss, errant punc reward
+p 0.000000 r 0.000000 f 0.000000	p 0.080000 r 0.250000 f 0.121212	p 0.200000 r 0.125000 f 0.153846	[[[" Thank you ." " You're welcome ."]]]	[[[all///welcome!///a///not///retort///you're///thanks).///Mercy.///it!///(as///[REL]///Divine///at///mention///to///don't]]]	[[[it///as///to///)///you///retort///at///!///re///don///t///thank///not///welcome///a///(///.///mention///'///thanks///all]]]	[[[don't///mention///thank///you///it!]]]
+tok issue, errant punc reward
+p 0.000000 r 0.000000 f 0.000000	p 0.500000 r 0.400000 f 0.444444	p 1.000000 r 0.200000 f 0.333333	[[[I don't know him .]]]	[[[I,///me.]]]	[[[.///,///I///me]]]	[[[I]]]
+tok issue, errant punc reward
+p 0.000000 r 0.000000 f 0.000000	p 0.250000 r 0.400000 f 0.307692	p 0.200000 r 0.200000 f 0.200000	[[[Yesterday we had fun .]]]	[[[entertainment,///yesterday.///amusement,///fun.]]]	[[[entertainment///,///amusement///fun///.///yesterday]]]	[[[in///past///the///fun///recent]]]
+capitalization, tok issue, errant punc reward
+
+Based on this I will:
+a) run tokenizer and lowercaser on dev
+b) internal to scoring script eliminate all tokens in reference or lookups that are 100% punctuation
+
+the motivation is that those shouldn't matter in coverage decisions

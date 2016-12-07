@@ -1,0 +1,345 @@
+2016-11-18.11-20-06.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/.stats    elisa.il3-eng.unseq.y1r1.v0.xml.gz    old
+2016-11-18.11-20-17.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/.stats    elisa.il3-eng.unseq.y1r1.v0.xml.gz    old
+2016-11-18.11-20-30.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/dryrun/il3/elisa.il3.package.y1r1.v2/elisa.il3.additional.y1r1.v2.tgz .
+2016-11-18.11-20-49.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/dryrun/il3/elisa.il3.package.y1r1.v2/elisa.il3-eng.domain.y1r1.v0.xml.gz .
+2016-11-18.11-20-54.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-21-23.Jonathan-Mays-MacBook-Pro-2.local zcat elisa.il3-eng.domain.y1r1.v0.xml.gz | less
+2016-11-18.11-21-38.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/elisa2flat.py -h
+2016-11-18.11-21-51.Jonathan-Mays-MacBook-Pro-2.local #~/projects/lorelei/panxbranchtools/elisa2flat.py -f 
+2016-11-18.11-21-57.Jonathan-Mays-MacBook-Pro-2.local zcat elisa.il3-eng.domain.y1r1.v0.xml.gz | less
+2016-11-18.11-22-20.Jonathan-Mays-MacBook-Pro-2.local #~/projects/lorelei/panxbranchtools/elisa2flat.py -f LRLP_TOKENIZED_SOURCE LRLP_TOKENIZED_TARGET -i elisa.il3-eng.domain.y1r1.v0.xml.gz -o domain
+2016-11-18.11-22-21.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-11-18.11-22-29.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/elisa2flat.py -f LRLP_TOKENIZED_SOURCE LRLP_TOKENIZED_TARGET -i elisa.il3-eng.domain.y1r1.v0.xml.gz -o uig.domain
+2016-11-18.11-22-36.Jonathan-Mays-MacBook-Pro-2.local less uig.domain 
+2016-11-18.11-22-48.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/dryrun/il3/elisa.il3.package.y1r1.v2/elisa.il3-eng.dev*.gz ..
+2016-11-18.11-23-15.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/elisa2flat.py -f LRLP_TOKENIZED_SOURCE LRLP_TOKENIZED_TARGET -i elisa.il3-eng.dev.y1r1.v2.xml.gz -o uig.dev
+2016-11-18.11-23-16.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-23-22.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-11-18.11-23-26.Jonathan-Mays-MacBook-Pro-2.local mv ../*gz .
+2016-11-18.11-23-30.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/elisa2flat.py -f LRLP_TOKENIZED_SOURCE LRLP_TOKENIZED_TARGET -i elisa.il3-eng.dev.y1r1.v2.xml.gz -o uig.dev
+2016-11-18.11-23-43.Jonathan-Mays-MacBook-Pro-2.local less uig.dev
+2016-11-18.11-23-50.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-23-58.Jonathan-Mays-MacBook-Pro-2.local tar -zxf elisa.il3.additional.y1r1.v2.tgz 
+2016-11-18.11-23-59.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-24-00.Jonathan-Mays-MacBook-Pro-2.local ls additional/
+2016-11-18.11-24-02.Jonathan-Mays-MacBook-Pro-2.local ls additional/lexicon/
+2016-11-18.11-24-12.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-11-18.11-24-45.Jonathan-Mays-MacBook-Pro-2.local #cut -f1,3 additional/lexicon/lexicon > ui
+2016-11-18.11-24-46.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.11-24-47.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-11-18.11-24-50.Jonathan-Mays-MacBook-Pro-2.local ls ../..
+2016-11-18.11-24-56.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-11-18.11-25-29.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | lowercase.py > uig.lex.lc
+2016-11-18.11-25-42.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon.norm | lowercase.py > uig.lex.norm.lc
+2016-11-18.11-26-06.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc -c uig.dev
+2016-11-18.11-26-13.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc -c uig.domain
+2016-11-18.11-26-32.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.norm.lc -c uig.dev
+2016-11-18.11-27-39.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-27-43.Jonathan-Mays-MacBook-Pro-2.local ls additional/
+2016-11-18.11-27-47.Jonathan-Mays-MacBook-Pro-2.local du -sh additional/*
+2016-11-18.11-27-51.Jonathan-Mays-MacBook-Pro-2.local rm -rf additional/docs
+2016-11-18.11-28-22.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.11-29-05.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -h
+2016-11-18.11-29-51.Jonathan-Mays-MacBook-Pro-2.local #python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i 
+2016-11-18.11-29-52.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-31-16.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i additional/lexicon/lexicon -o uig.lex.seb.norm
+2016-11-18.11-31-34.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.11-31-44.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm 
+2016-11-18.11-31-57.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.norm > uig.lex.seb.norm.lc
+2016-11-18.11-32-05.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm.lc 
+2016-11-18.11-32-29.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.norm | lowercase.py -o uig.lex.seb.norm.lc
+2016-11-18.11-32-36.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm.lc 
+2016-11-18.11-32-54.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c uig.dev
+2016-11-18.13-12-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.13-12-17.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc -c uig.dev
+2016-11-18.13-12-27.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.norm.lc -c uig.dev
+2016-11-18.13-12-39.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c uig.dev
+2016-11-18.13-56-07.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.13-56-08.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.13-57-37.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i additional/lexicon/lexicon -o uig.lex.seb.norm -e uig.lex.seb.expl
+2016-11-18.14-00-58.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.expl 
+2016-11-18.14-05-18.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.14-06-41.Jonathan-Mays-MacBook-Pro-2.local #python3 ../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i ../lextmp/BOLT_Uzbek_IL_LDC2015E89_V1.1/lexicon | cut -f1,3 | lowercase.py -o uzb.lex.seb.norm.lc
+2016-11-18.14-07-29.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d <(cut -f1,3 uig.lex.seb.adj.norm | lowercase.py) -c uig.dev
+2016-11-18.14-07-54.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c uig.dev
+2016-11-18.14-08-22.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.14-08-38.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-18.14-08-41.Jonathan-Mays-MacBook-Pro-2.local ls ../lextmp[
+2016-11-18.14-08-42.Jonathan-Mays-MacBook-Pro-2.local ls ../lextmp
+2016-11-18.14-08-43.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.14-09-06.Jonathan-Mays-MacBook-Pro-2.local head uzb.lex.seb.adj.ex
+2016-11-18.14-09-15.Jonathan-Mays-MacBook-Pro-2.local head uig.lex.seb.adj.expl 
+2016-11-18.14-09-27.Jonathan-Mays-MacBook-Pro-2.local grep "reverse, inverse" additional/lexicon/lexicon | head
+2016-11-18.14-10-52.Jonathan-Mays-MacBook-Pro-2.local grep "reverse, inverse" additional/lexicon/lexicon | head
+2016-11-18.14-12-08.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.16-32-08.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-35-00.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.16-35-57.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-36-04.Jonathan-Mays-MacBook-Pro-2.local grep pertaining additional/lexicon/lexicon | wc
+2016-11-18.16-36-08.Jonathan-Mays-MacBook-Pro-2.local grep pertaining additional/lexicon/lexicon | head
+2016-11-18.16-36-25.Jonathan-Mays-MacBook-Pro-2.local grep -c bolshevism additional/lexicon/lexicon
+2016-11-18.16-36-28.Jonathan-Mays-MacBook-Pro-2.local grep bolshevism additional/lexicon/lexicon
+2016-11-18.16-36-38.Jonathan-Mays-MacBook-Pro-2.local grep bolshevism uig.lex.seb.adj.norm
+2016-11-18.16-37-03.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-37-31.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-51-00.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.16-52-42.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.16-53-19.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-53-36.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.16-54-39.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.17-01-25.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.17-15-13.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.17-15-32.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.17-18-40.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.17-20-08.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.17-22-38.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.17-23-01.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.17-24-22.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-11-18.17-28-58.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl 
+2016-11-18.17-29-13.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/lorelei/unitok/
+2016-11-18.17-29-41.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/unitok/scripts/tok.py -i uig.lex.seb.adj.expl -o uig.lex.seb.adj.expl.tok
+2016-11-18.17-30-07.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok 
+2016-11-18.17-30-14.Jonathan-Mays-MacBook-Pro-2.local python
+2016-11-18.17-33-07.Jonathan-Mays-MacBook-Pro-2.local python
+2016-11-18.17-33-18.Jonathan-Mays-MacBook-Pro-2.local cut -f2 uig.lex.seb.adj.expl.tok  | less
+2016-11-18.17-33-28.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl
+2016-11-18.17-33-31.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl | cut -f1
+2016-11-18.17-33-33.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl | cut -f2
+2016-11-18.17-33-34.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl | cut -f3
+2016-11-18.17-33-39.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok | cut -f1
+2016-11-18.17-34-36.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  > uig.lex.seb.adj.expl.tok
+2016-11-18.17-34-44.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok 
+2016-11-18.17-34-47.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok | cut -f1
+2016-11-18.17-35-11.Jonathan-Mays-MacBook-Pro-2.local cut -f2 uig.lex.seb.adj.expl.tok | less
+2016-11-18.17-39-48.Jonathan-Mays-MacBook-Pro-2.local cut -f2- uig.lex.seb.adj.expl.tok | less
+2016-11-18.17-43-45.Jonathan-Mays-MacBook-Pro-2.local python
+2016-11-18.17-44-01.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-11-18.17-44-13.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -h
+2016-11-18.17-44-23.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | head
+2016-11-18.17-44-42.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | head
+2016-11-18.17-44-49.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | head
+2016-11-18.17-44-57.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head
+2016-11-18.17-48-48.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-11-18.17-52-04.Jonathan-Mays-MacBook-Pro-2.local python
+2016-11-21.21-05-46.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-11-30.19-28-20.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-30.19-28-46.Jonathan-Mays-MacBook-Pro-2.local less .history 
+2016-11-30.19-28-47.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -h
+2016-11-30.19-28-56.Jonathan-Mays-MacBook-Pro-2.local tail .history
+2016-11-30.19-29-13.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-11-30.19-29-55.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-30.19-30-02.Jonathan-Mays-MacBook-Pro-2.local less uig.domain 
+2016-11-30.19-30-07.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.domain
+2016-11-30.19-30-15.Jonathan-Mays-MacBook-Pro-2.local ls additional/
+2016-11-30.19-30-23.Jonathan-Mays-MacBook-Pro-2.local less additional/README.txt 
+2016-11-30.19-30-41.Jonathan-Mays-MacBook-Pro-2.local less uig.dev
+2016-11-30.19-31-11.Jonathan-Mays-MacBook-Pro-2.local ls ../../scripts/scoredict.py
+2016-11-30.19-31-15.Jonathan-Mays-MacBook-Pro-2.local ls ../../scripts/
+2016-11-30.19-31-52.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/scoredict.py
+2016-11-30.19-32-11.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/getpatterns.py
+2016-11-30.19-32-22.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/applymatches.py
+2016-11-30.19-32-44.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/unrollexpl.py
+2016-11-30.19-33-00.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/runtest.py
+2016-11-30.19-33-06.Jonathan-Mays-MacBook-Pro-2.local less ../../scripts/runtest.py
+2016-12-05.10-05-05.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/rl/uig
+2016-12-05.10-05-10.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-05-59.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-06-19.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-17-28.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.10-17-47.Jonathan-Mays-MacBook-Pro-2.local which pip
+2016-12-05.10-17-51.Jonathan-Mays-MacBook-Pro-2.local pip --version
+2016-12-05.10-17-58.Jonathan-Mays-MacBook-Pro-2.local pip2.7 --version
+2016-12-05.10-18-05.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.10-18-16.Jonathan-Mays-MacBook-Pro-2.local sudo pip2.7 install distance
+2016-12-05.10-27-49.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.10-27-55.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-28-29.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-29-13.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -20
+2016-12-05.10-29-47.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- | head -200
+2016-12-05.10-34-42.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-05.10-36-23.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm.redo -e uig.lex.seb.adj.expl.redo
+2016-12-05.10-37-09.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.adj.norm uig.lex.seb.adj.norm.redo | head
+2016-12-05.10-37-24.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.adj.expl uig.lex.seb.adj.expl.redo | head
+2016-12-05.10-38-59.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm.redo -e uig.lex.seb.adj.expl.redo
+2016-12-05.10-39-20.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.adj.expl uig.lex.seb.adj.expl.redo | head
+2016-12-05.10-40-49.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.unrolled
+2016-12-05.10-41-08.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok
+2016-12-05.10-41-11.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok | cut -f1
+2016-12-05.10-41-12.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok | cut -f2
+2016-12-05.10-41-14.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl.tok | cut -f3
+2016-12-05.10-41-21.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.unrolled
+2016-12-05.10-41-33.Jonathan-Mays-MacBook-Pro-2.local head -23 uig.lex.seb.adj.expl.tok | tail -1
+2016-12-05.10-41-36.Jonathan-Mays-MacBook-Pro-2.local head -23 uig.lex.seb.adj.expl.tok | tail -1 | cut -f1
+2016-12-05.10-41-37.Jonathan-Mays-MacBook-Pro-2.local head -23 uig.lex.seb.adj.expl.tok | tail -1 | cut -f2
+2016-12-05.10-41-39.Jonathan-Mays-MacBook-Pro-2.local head -23 uig.lex.seb.adj.expl.tok | tail -1 | cut -f3
+2016-12-05.10-41-50.Jonathan-Mays-MacBook-Pro-2.local head -23 uig.lex.seb.adj.expl | tail -1
+2016-12-05.10-43-12.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.unrolled
+2016-12-05.10-43-19.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok
+2016-12-05.10-43-22.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.unrolled 
+2016-12-05.10-44-35.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.unrolled 
+2016-12-05.10-44-40.Jonathan-Mays-MacBook-Pro-2.local grep -c insert uig.lex.seb.adj.expl.tok.unrolled 
+2016-12-05.10-48-57.Jonathan-Mays-MacBook-Pro-2.local grep insert uig.lex.seb.adj.expl.tok.unrolled | less
+2016-12-05.10-52-26.Jonathan-Mays-MacBook-Pro-2.local grep insert uig.lex.seb.adj.expl.tok.unrolled | less
+2016-12-05.10-53-38.Jonathan-Mays-MacBook-Pro-2.local grep replace uig.lex.seb.adj.expl.tok.unrolled | less
+2016-12-05.10-57-52.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.10-58-04.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.10-59-43.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-16-01.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-18-44.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-18-50.Jonathan-Mays-MacBook-Pro-2.local #python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-18-57.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes 
+2016-12-05.11-19-22.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes 
+2016-12-05.11-20-30.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> /dev/null | wc
+2016-12-05.11-20-44.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-20-48.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes 
+2016-12-05.11-20-59.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> /dev/null | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-21-01.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes 
+2016-12-05.11-21-12.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes 
+2016-12-05.11-21-34.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok | wc -l
+2016-12-05.11-21-40.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> /dev/null | wc -l
+2016-12-05.11-21-52.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok > nopipe
+2016-12-05.11-21-58.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> /dev/null > pipe
+2016-12-05.11-22-00.Jonathan-Mays-MacBook-Pro-2.local wc -l pipe
+2016-12-05.11-22-05.Jonathan-Mays-MacBook-Pro-2.local wc -l nopipe
+2016-12-05.11-22-11.Jonathan-Mays-MacBook-Pro-2.local ls /dev/null
+2016-12-05.11-22-24.Jonathan-Mays-MacBook-Pro-2.local echo "a" > /dev/null
+2016-12-05.11-22-39.Jonathan-Mays-MacBook-Pro-2.local diff pipe <(head -71 nopipe) | head
+2016-12-05.11-22-47.Jonathan-Mays-MacBook-Pro-2.local head -72 nopipe | tail -3
+2016-12-05.11-22-56.Jonathan-Mays-MacBook-Pro-2.local tail -3 pipe
+2016-12-05.11-23-55.Jonathan-Mays-MacBook-Pro-2.local python ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> pipe.stderr > pipe
+2016-12-05.11-23-57.Jonathan-Mays-MacBook-Pro-2.local wc -l pipe
+2016-12-05.11-24-17.Jonathan-Mays-MacBook-Pro-2.local less pipe.stderr
+2016-12-05.11-24-39.Jonathan-Mays-MacBook-Pro-2.local python3 ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> pipe.stderr > pipe
+2016-12-05.11-33-18.Jonathan-Mays-MacBook-Pro-2.local wc -l pipe
+2016-12-05.11-33-22.Jonathan-Mays-MacBook-Pro-2.local less pipe.stderr
+2016-12-05.11-33-26.Jonathan-Mays-MacBook-Pro-2.local less pipe
+2016-12-05.11-33-40.Jonathan-Mays-MacBook-Pro-2.local rm nopipe pipe pipe.stderr 
+2016-12-05.11-34-09.Jonathan-Mays-MacBook-Pro-2.local python3 ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok 2> unroll.stderr | cut -f2- > uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-34-15.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-34-30.Jonathan-Mays-MacBook-Pro-2.local python3 ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok --no-insert 2> unroll.ni.stderr | cut -f2- > uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-34-33.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-35-13.Jonathan-Mays-MacBook-Pro-2.local less unroll.ni.stderr
+2016-12-05.11-35-21.Jonathan-Mays-MacBook-Pro-2.local grep -c Unexpected unroll.ni.stderr
+2016-12-05.11-35-34.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.adj.expl.tok.codes uig.lex.seb.adj.expl.tok.codes.ni | head
+2016-12-05.11-36-33.Jonathan-Mays-MacBook-Pro-2.local python3 ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok --no-insert 2> unroll.ni.stderr | cut -f2- > uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-36-37.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-36-41.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.codes
+2016-12-05.11-37-15.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes.ni 
+2016-12-05.11-37-23.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.adj.expl.tok.codes.ni | head
+2016-12-05.11-37-42.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | awk '{print NF}' | head
+2016-12-05.11-37-59.Jonathan-Mays-MacBook-Pro-2.local diff <(cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | awk '{print NF}') <(cut -f3 uig.lex.seb.adj.expl.tok.codes.ni | awk '{print NF}') | head
+2016-12-05.11-39-25.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-42-37.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | less
+2016-12-05.11-42-44.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | sed 's/ /\n/g' | less
+2016-12-05.11-42-48.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | gsed 's/ /\n/g' | less
+2016-12-05.11-43-09.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | gsed 's/ /\n/g' | sort | uniq -c | less
+2016-12-05.11-43-25.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | gsed 's/ /\n/g' | sort | uniq -c | awk '$1>=5{print}' | wc
+2016-12-05.11-43-37.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.lex.seb.adj.expl.tok.codes.ni | gsed 's/ /\n/g' | sort | uniq -c | awk '$1<5{print}' | wc
+2016-12-05.11-44-24.Jonathan-Mays-MacBook-Pro-2.local head -3 uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.11-44-44.Jonathan-Mays-MacBook-Pro-2.local sample.py -h
+2016-12-05.11-44-58.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.11-45-11.Jonathan-Mays-MacBook-Pro-2.local mkdir uig.lex.seb.adj.expl.tok.codes.ni.exp
+2016-12-05.13-52-50.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-05.13-53-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-05.13-54-25.Jonathan-Mays-MacBook-Pro-2.local python3 ../../scripts/unrollexpl.py -i uig.lex.seb.adj.expl.tok --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-05.13-54-29.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-05.13-54-34.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-46-34.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-50-12.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm.lc
+2016-12-06.15-54-58.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.15-55-35.Jonathan-Mays-MacBook-Pro-2.local #python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i 
+2016-12-06.17-13-33.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-13-55.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-06.17-16-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-16-54.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/unitok/scripts/tok.py -i uig.lex.lc -o uig.lex.lc.tok
+2016-12-06.17-17-12.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/unitok/scripts/tok.py -i uig.lex.seb.norm.lc -o uig.lex.seb.norm.lc.tok
+2016-12-06.17-17-41.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-17-49.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.lc
+2016-12-06.17-17-51.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.lc | cut -f1
+2016-12-06.17-18-24.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/unitok/scripts/tok.py -i <(cut -f2 uig.lex.lc) | paste <(cut -f1 uig.lex.lc) - > uig.lex.lc.tok 
+2016-12-06.17-18-30.Jonathan-Mays-MacBook-Pro-2.local head uig.lex.lc.tok
+2016-12-06.17-18-49.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/unitok/scripts/tok.py -i <(cut -f2 uig.lex.seb.norm.lc) | paste <(cut -f1 uig.lex.seb.norm.lc) - > uig.lex.seb.norm.lc.tok 
+2016-12-06.17-19-20.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-06.17-20-04.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_dict.py -i uig.lex.lc.tok -o uig.lex.lc.tok.seb.norm
+2016-12-06.17-20-12.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.lc.tok.seb.norm
+2016-12-06.17-20-20.Jonathan-Mays-MacBook-Pro-2.local rm uig.lex.lc.tok.seb.norm
+2016-12-06.17-20-32.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.lc.tok
+2016-12-06.17-49-51.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c <(head -1 uig.dev)
+2016-12-06.17-50-43.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c <(head -1 uig.dev)
+2016-12-06.17-50-47.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c <(head -1 uig.dev) --persent
+2016-12-06.17-50-56.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c <(head uig.dev) --persent
+2016-12-06.17-51-32.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.seb.norm.lc -c <(head uig.dev) --persent
+2016-12-06.17-51-41.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-06.17-51-43.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.09-58-14.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.09-58-29.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc -c ../uig.dev
+2016-12-07.09-58-34.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc -c uig.dev
+2016-12-07.09-59-41.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-01-05.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.norm.redo
+2016-12-07.10-01-36.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.norm uig.lex.sub.adj.norm | head
+2016-12-07.10-01-41.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.norm uig.lex.seb.adj.norm | head
+2016-12-07.10-01-56.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm uig.lex.seb.adj.norm
+2016-12-07.10-02-44.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.norm | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-04-08.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-05-07.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.norm | lowercase.py | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-06-46.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl
+2016-12-07.10-07-02.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok
+2016-12-07.10-07-09.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.10-07-28.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.norm
+2016-12-07.10-07-41.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.norm
+2016-12-07.10-07-47.Jonathan-Mays-MacBook-Pro-2.local wc uiog.lex.seb.adj.expl
+2016-12-07.10-07-50.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl
+2016-12-07.10-08-12.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.expl
+2016-12-07.10-08-21.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.lex.seb.adj.norm
+2016-12-07.10-11-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-11-28.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.10-11-54.Jonathan-Mays-MacBook-Pro-2.local head -2 uig.lex.seb.adj.expl.tok
+2016-12-07.10-13-32.Jonathan-Mays-MacBook-Pro-2.local mkdir bkp
+2016-12-07.10-13-37.Jonathan-Mays-MacBook-Pro-2.local cp uig.lex.seb.adj.expl bkp/
+2016-12-07.10-13-42.Jonathan-Mays-MacBook-Pro-2.local ls *ni
+2016-12-07.10-13-45.Jonathan-Mays-MacBook-Pro-2.local cp *ni bkp
+2016-12-07.10-14-48.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.10-15-47.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl
+2016-12-07.10-15-50.Jonathan-Mays-MacBook-Pro-2.local wc bkp/uig.lex.seb.adj.expl
+2016-12-07.10-16-52.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-07.10-17-22.Jonathan-Mays-MacBook-Pro-2.local # paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )
+2016-12-07.10-17-24.Jonathan-Mays-MacBook-Pro-2.local un roll | grep ni
+2016-12-07.10-17-57.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-07.10-18-05.Jonathan-Mays-MacBook-Pro-2.local less unroll.ni.stderr 
+2016-12-07.10-18-11.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.10-20-25.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/simplifydict.py -d <(cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni) -i <(cut -f4 uig.lex.seb.adj.expl.tok.codes.ni) | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-20-40.Jonathan-Mays-MacBook-Pro-2.local cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-22-21.Jonathan-Mays-MacBook-Pro-2.local cut -f1-2 uig.lex.seb.adj.expl | head -3
+2016-12-07.10-22-31.Jonathan-Mays-MacBook-Pro-2.local cut -f1-2 uig.lex.seb.adj.expl | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-23-04.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.10-26-05.Jonathan-Mays-MacBook-Pro-2.local cut -f2 uig.lex.seb.adj.expl | head -3
+2016-12-07.10-26-29.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-26-51.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d uig.lex.lc.tok -c uig.dev
+2016-12-07.10-27-46.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev 2> /dev/null
+2016-12-07.10-28-14.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev 2> /dev/null
+2016-12-07.10-29-17.Jonathan-Mays-MacBook-Pro-2.local for d in uig.lex.seb.norm; do paste <(cut -f1 $d) <(cut -f3 $d | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev 2> /dev/null; done
+2016-12-07.10-30-13.Jonathan-Mays-MacBook-Pro-2.local for d in uig.lex.seb.norm; do paste <(cut -f1 $d) <(cut -f3 $d | ~/projects/lorelei/unitok/scripts/tok.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev 2> /dev/null; done
+2016-12-07.10-39-43.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm
+2016-12-07.10-41-23.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev --persent -o orig.untok.dev.persent
+2016-12-07.10-41-51.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev --persent -o orig.tok.dev.persent
+2016-12-07.10-41-56.Jonathan-Mays-MacBook-Pro-2.local head -3 orig.untok.dev.persent
+2016-12-07.10-42-10.Jonathan-Mays-MacBook-Pro-2.local head -3 orig.untok.dev.persent | cut -f1
+2016-12-07.10-42-45.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev --persent -o orig.untok.dev.persent
+2016-12-07.10-42-51.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev --persent -o orig.tok.dev.persent
+2016-12-07.10-42-55.Jonathan-Mays-MacBook-Pro-2.local head -3 orig.untok.dev.persent | cut -f1
+2016-12-07.10-44-10.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1-2 orig.tok.dev.persent) <(cut -f3 orig.untok.dev.persent) <(cut -f3 orig.tok.dev.persent)  | head -3
+2016-12-07.10-45-07.Jonathan-Mays-MacBook-Pro-2.local head -1 uig.dev
+2016-12-07.10-45-36.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1,3 orig.tok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent)  | head -3
+2016-12-07.10-46-10.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1,3 orig.tok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent)  | awk '${12}>$6{print}' | head
+2016-12-07.10-46-16.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1,3 orig.tok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent)  | awk '$(12)>$6{print}' | head
+2016-12-07.10-48-19.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev --persent -o orig.tok.dev.persent
+2016-12-07.10-48-29.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev --persent -o orig.untok.dev.persent
+2016-12-07.10-48-36.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1,3 orig.tok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent)  | awk '$(12)>$6{print}' | head
+2016-12-07.10-50-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.10-50-31.Jonathan-Mays-MacBook-Pro-2.local less uig.dev
+2016-12-07.10-51-50.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 uig.lex.seb.norm | ../../scripts/scoredict.py -c uig.dev --persent -o seb.untok.dev.persent
+2016-12-07.10-53-20.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.untok.dev.persent) <(cut -f1 orig.tok.dev.persent) <(cut -f1,3 seb.untok.dev.persent) <(cut -f2 orig.untok.dev.persent) <(cut -f2 orig.tok.dev.persent) <(cut -f2 seb.untok.dev.persent) | awk '$(12)>$6{print}' | head
+2016-12-07.11-05-10.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-07.11-07-02.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.11-07-05.Jonathan-Mays-MacBook-Pro-2.local git add README
+2016-12-07.11-07-08.Jonathan-Mays-MacBook-Pro-2.local git add .history 

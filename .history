@@ -1,0 +1,1332 @@
+2016-09-26.11-34-14.Jonathan-Mays-MacBook-Pro-2.local ln -s ~/projects/srilm/bin/macosx/ngram-count .
+2016-09-26.11-34-17.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help
+2016-09-26.11-34-19.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-26.11-34-27.Jonathan-Mays-MacBook-Pro-2.local ln -s ../lextmp .
+2016-09-26.11-34-29.Jonathan-Mays-MacBook-Pro-2.local ls lextmp
+2016-09-26.11-34-33.Jonathan-Mays-MacBook-Pro-2.local ls lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/
+2016-09-26.11-34-45.Jonathan-Mays-MacBook-Pro-2.local find lextmp -name lexicon
+2016-09-26.11-34-51.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon
+2016-09-26.11-35-07.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon | xargs cut -f3; done > engside
+2016-09-26.11-35-21.Jonathan-Mays-MacBook-Pro-2.local #find lextmp/ -name lexicon | xargs cut -f3 >> engside
+2016-09-26.11-35-22.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-26.11-35-27.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon | xargs cut -f3 >> engside
+2016-09-26.11-35-30.Jonathan-Mays-MacBook-Pro-2.local wc -l engside
+2016-09-26.11-35-40.Jonathan-Mays-MacBook-Pro-2.local less engside
+2016-09-26.11-35-51.Jonathan-Mays-MacBook-Pro-2.local wc lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon
+2016-09-26.11-36-04.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon | xargs wc -l
+2016-09-26.11-36-19.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help
+2016-09-26.11-37-34.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -order 6 -write6 6grams -write5 5grams -write4 4grams -write3 3grams -write2 2grams -write1 1grams
+2016-09-26.11-37-35.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-26.11-37-36.Jonathan-Mays-MacBook-Pro-2.local ls =l
+2016-09-26.11-37-37.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-09-26.11-38-10.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -order 6 -write6 6grams -write5 5grams -write4 4grams -write3 3grams -write2 2grams -write1 1grams -text engside
+2016-09-26.11-38-34.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-09-26.11-39-03.Jonathan-Mays-MacBook-Pro-2.local less 6grams 
+2016-09-26.11-39-21.Jonathan-Mays-MacBook-Pro-2.local mkdir scripts
+2016-09-26.12-25-17.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-09-26.12-38-30.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-09-26.12-38-31.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-26.12-38-35.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/maskngram.py
+2016-09-26.12-38-44.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -h
+2016-09-26.12-39-16.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-09-26.12-39-47.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-09-26.12-40-09.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-09-26.12-40-28.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams 
+2016-09-26.12-40-42.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-09-26.12-41-58.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-09-26.12-42-04.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1 2
+2016-09-26.12-44-02.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-09-26.12-56-14.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-09-26.12-56-47.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -m 1 2 -i 3grams -o 3grams.masked
+2016-09-26.12-56-51.Jonathan-Mays-MacBook-Pro-2.local du -sh .
+2016-09-26.12-56-53.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-56-56.Jonathan-Mays-MacBook-Pro-2.local wc -l 3grams
+2016-09-26.12-56-59.Jonathan-Mays-MacBook-Pro-2.local wc -l 3grams.masked
+2016-09-26.12-57-27.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -m 34 -i 6grams -o 6grams.masked &
+2016-09-26.12-57-29.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-57-33.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-57-42.Jonathan-Mays-MacBook-Pro-2.local wc -l 6grams 6grams.masked
+2016-09-26.12-57-50.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -m 3 4 -i 6grams -o 6grams.masked &
+2016-09-26.12-57-52.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-57-54.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-58-00.Jonathan-Mays-MacBook-Pro-2.local df -h .
+2016-09-26.12-58-17.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.12-58-26.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked
+2016-09-26.13-01-49.Jonathan-Mays-MacBook-Pro-2.local sort 3grams.masked > 3grams.masked.sorted
+2016-09-26.13-05-07.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-05-11.Jonathan-Mays-MacBook-Pro-2.local rm 3grams.masked
+2016-09-26.13-05-30.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked.sorted 
+2016-09-26.13-10-29.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/uniqcount.py
+2016-09-26.13-10-35.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted 
+2016-09-26.13-10-41.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted | scripts/uniqcount.py 
+2016-09-26.13-11-00.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 3grams.masked.sorted -o 3grams.masked.sorted.summed &
+2016-09-26.13-11-02.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-11-51.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked.sorted.summed 
+2016-09-26.13-11-59.Jonathan-Mays-MacBook-Pro-2.local wc -l 3grams.masked.sorted.summed 
+2016-09-26.13-12-05.Jonathan-Mays-MacBook-Pro-2.local wc -l 3grams.masked.sorted
+2016-09-26.13-12-11.Jonathan-Mays-MacBook-Pro-2.local tail 3grams.masked.sorted.summed 
+2016-09-26.13-12-15.Jonathan-Mays-MacBook-Pro-2.local tail 3grams.masked.sorted
+2016-09-26.13-12-30.Jonathan-Mays-MacBook-Pro-2.local man sort
+2016-09-26.13-12-36.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed 
+2016-09-26.13-12-44.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed | sort -t$'\t' -k2nr
+2016-09-26.13-12-56.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed | sort -t$'\t' -k2nr
+2016-09-26.13-13-06.Jonathan-Mays-MacBook-Pro-2.local sort -t$'\t' -k2nr 3grams.masked.sorted.summed > 3grams.masked.sorted.summed.bycount &
+2016-09-26.13-13-07.Jonathan-Mays-MacBook-Pro-2.local sort -t$'\t' -k2nr 3grams.masked.sorted.summed > 3grams.masked.sorted.summed.bycount &
+2016-09-26.13-13-09.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-13-15.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-13-27.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-13-28.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-15-09.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-09-26.13-15-44.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked.sorted.summed.bycount 
+2016-09-26.13-16-16.Jonathan-Mays-MacBook-Pro-2.local sort 6grams.masked > 6grams.masked.sorted &
+2016-09-26.13-16-17.Jonathan-Mays-MacBook-Pro-2.local sort 6grams.masked > 6grams.masked.sorted &
+2016-09-26.13-24-50.Jonathan-Mays-MacBook-Pro-2.local sort 6grams.masked > 6grams.masked.sorted &
+2016-09-26.13-24-54.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-25-03.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-25-09.Jonathan-Mays-MacBook-Pro-2.local wc -l 6grams.masked
+2016-09-26.13-34-15.Jonathan-Mays-MacBook-Pro-2.local wc -l 6grams.masked
+2016-09-26.13-34-17.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-09-26.13-34-24.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-09-26.13-34-34.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160706
+2016-09-26.13-34-40.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160524
+2016-09-26.13-34-43.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160524/uzb
+2016-09-26.13-34-52.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160601
+2016-09-26.13-34-53.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160601
+2016-09-26.13-34-55.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160602
+2016-09-26.13-34-59.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160415
+2016-09-26.13-35-03.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp_160331
+2016-09-26.13-35-12.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7
+2016-09-26.13-35-20.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7urd
+2016-09-26.13-35-24.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd
+2016-09-26.13-35-29.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd/parallel
+2016-09-26.13-35-32.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd/parallel/extracted/
+2016-09-26.13-35-37.Jonathan-Mays-MacBook-Pro-2.local ls -l ../tmp7/urd/parallel/extracted/original/
+2016-09-26.13-35-44.Jonathan-Mays-MacBook-Pro-2.local wc -l ../tmp7/urd/parallel/extracted/original/fromsource.generic.original.eng.flat 
+2016-09-26.13-35-48.Jonathan-Mays-MacBook-Pro-2.local wc ../tmp7/urd/parallel/extracted/original/fromsource.generic.original.eng.flat 
+2016-09-26.13-36-26.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-26.13-36-28.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-09-26.13-36-58.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7
+2016-09-26.13-37-02.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd
+2016-09-26.13-37-08.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd/parallel/
+2016-09-26.13-37-11.Jonathan-Mays-MacBook-Pro-2.local ls ../tmp7/urd/parallel/extracted/
+2016-09-26.13-37-15.Jonathan-Mays-MacBook-Pro-2.local ls -l ../tmp7/urd/parallel/extracted/original/
+2016-09-26.13-37-47.Jonathan-Mays-MacBook-Pro-2.local less ../tmp7/urd/parallel/extracted/original/fromtarget.elicitation.original.eng.flat 
+2016-09-26.13-38-07.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-26.13-38-09.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/
+2016-09-26.13-38-19.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/treeworld/
+2016-09-26.13-38-46.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/parse/
+2016-09-26.13-38-53.Jonathan-Mays-MacBook-Pro-2.local less ~/projects/parse/collins1
+2016-09-26.13-39-40.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-09-26.13-39-50.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-09-26.13-40-26.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 6grams.masked.sorted -o 6grams.masked.sorted.summed &
+2016-09-26.13-40-27.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 6grams.masked.sorted -o 6grams.masked.sorted.summed &
+2016-09-26.13-40-32.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 6grams.masked.sorted -o 6grams.masked.sorted.summed &
+2016-09-26.13-40-35.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-40-44.Jonathan-Mays-MacBook-Pro-2.local rm 6grams.masked
+2016-09-26.13-41-02.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.sorted.summed 
+2016-09-26.13-41-03.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.sorted.summed 
+2016-09-26.13-41-20.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.sorted.summed 
+2016-09-26.13-41-25.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-26.13-41-35.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-27.10-30-51.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-27.20-09-30.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/
+2016-09-27.20-21-52.Jonathan-Mays-MacBook-Pro-2.local ls scripts/
+2016-09-27.20-22-22.Jonathan-Mays-MacBook-Pro-2.local scp -r scripts hpc:projects/lorelei/clueweb
+2016-09-27.20-46-48.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/clueweb/bolt.ce/10k/*gz .
+2016-09-27.20-53-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.20-53-26.Jonathan-Mays-MacBook-Pro-2.local for i in 10 100; do mkdir -p bolt.ce/"$i"k; done
+2016-09-27.20-53-37.Jonathan-Mays-MacBook-Pro-2.local mv 3grams.masked.sorted.summed.bycount.gz bolt.ce/10k/
+2016-09-27.20-53-40.Jonathan-Mays-MacBook-Pro-2.local mv 6grams.masked.sorted.summed.bycount.gz bolt.ce/10k/
+2016-09-27.20-57-27.Jonathan-Mays-MacBook-Pro-2.local which join
+2016-09-27.20-57-30.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.20-57-54.Jonathan-Mays-MacBook-Pro-2.local join 3grams.masked.sorted.summed.bycount bolt.ce/10k/3grams.masked.sorted.summed.bycount | wc -l
+2016-09-27.20-57-58.Jonathan-Mays-MacBook-Pro-2.local join 3grams.masked.sorted.summed.bycount bolt.ce/10k/3grams.masked.sorted.summed.bycount
+2016-09-27.20-58-11.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed.bycount 
+2016-09-27.20-58-35.Jonathan-Mays-MacBook-Pro-2.local wc -l 3grams.masked.sorted*
+2016-09-27.21-01-10.Jonathan-Mays-MacBook-Pro-2.local join 3grams.masked.sorted.summed bolt.ce/10k/3grams.masked.sorted.summed | wc
+2016-09-27.21-01-30.Jonathan-Mays-MacBook-Pro-2.local join <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.sorted.summed) | wc
+2016-09-27.21-01-41.Jonathan-Mays-MacBook-Pro-2.local join <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.sorted.summed) | less
+2016-09-27.21-01-46.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed
+2016-09-27.21-01-51.Jonathan-Mays-MacBook-Pro-2.local man join
+2016-09-27.21-02-08.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.sorted.summed) | wc
+2016-09-27.21-02-11.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.sorted.summed)
+2016-09-27.21-02-30.Jonathan-Mays-MacBook-Pro-2.local head 3grams.masked.sorted.summed
+2016-09-27.21-02-51.Jonathan-Mays-MacBook-Pro-2.local head bolt.ce/10k/3grams.masked.sorted.summed
+2016-09-27.21-20-25.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/clueweb/bolt.ce/10k/*gz .
+2016-09-27.21-20-26.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/clueweb/bolt.ce/10k/*gz .
+2016-09-27.21-27-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.21-27-23.Jonathan-Mays-MacBook-Pro-2.local cp 3grams.masked.resorted.summed.gz bolt.ce/10k/
+2016-09-27.21-27-34.Jonathan-Mays-MacBook-Pro-2.local cp 6grams.masked.resorted.summed.gz bolt.ce/10k/
+2016-09-27.21-28-52.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.21-29-06.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.21-29-13.Jonathan-Mays-MacBook-Pro-2.local rm *gz
+2016-09-27.21-29-31.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-09-27.21-30-05.Jonathan-Mays-MacBook-Pro-2.local LANG=C sort 3grams.masked > 3grams.masked.sorted &
+2016-09-27.21-30-31.Jonathan-Mays-MacBook-Pro-2.local LANG=C sort 3grams.masked.sorted > 3grams.masked.resorted &
+2016-09-27.21-30-37.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-09-27.21-31-03.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -m 1 2 -i 3grams -o 3grams.masked &
+2016-09-27.21-31-25.Jonathan-Mays-MacBook-Pro-2.local LANG=C sort 6grams.masked.sorted > 6grams.masked.resorted &
+2016-09-27.21-31-28.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-27.21-31-46.Jonathan-Mays-MacBook-Pro-2.local LANG=C sort 3grams.masked > 3grams.masked.sorted &
+2016-09-27.21-31-51.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-09-27.21-31-53.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-09-27.21-46-55.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-09-27.21-47-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.21-47-04.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-09-27.21-47-34.Jonathan-Mays-MacBook-Pro-2.local diff 6grams.masked.sorted 6grams.masked.resorted | head
+2016-09-27.21-47-45.Jonathan-Mays-MacBook-Pro-2.local mv 6grams.masked.resorted 6grams.masked.sorted
+2016-09-27.21-47-52.Jonathan-Mays-MacBook-Pro-2.local rm 3grams.masked.resorted 
+2016-09-27.21-47-57.Jonathan-Mays-MacBook-Pro-2.local ls scripts/
+2016-09-27.21-48-08.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 3grams.masked.sorted -o 3grams.masked.sorted.summed &
+2016-09-27.21-48-14.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 6grams.masked.sorted -o 6grams.masked.sorted.summed &
+2016-09-27.21-52-53.Jonathan-Mays-MacBook-Pro-2.local scripts/uniqcount.py -i 6grams.masked.sorted -o 6grams.masked.sorted.summed &
+2016-09-27.21-53-05.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/10k
+2016-09-27.21-53-16.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.resorted.summed) | wc
+2016-09-27.21-53-19.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' <(head 3grams.masked.sorted.summed) <(head bolt.ce/10k/3grams.masked.resorted.summed)
+2016-09-27.21-54-19.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' 3grams.masked.sorted.summed bolt.ce/10k/3grams.masked.resorted.summed > 3grams.masked.summed.tf.df &
+2016-09-27.21-54-21.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' 3grams.masked.sorted.summed bolt.ce/10k/3grams.masked.resorted.summed > 3grams.masked.summed.tf.df &
+2016-09-27.22-12-06.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' 3grams.masked.sorted.summed bolt.ce/10k/3grams.masked.resorted.summed > 3grams.masked.summed.tf.df &
+2016-09-27.22-12-12.Jonathan-Mays-MacBook-Pro-2.local wc 3grams.masked.summed.tf.df 
+2016-09-27.22-12-20.Jonathan-Mays-MacBook-Pro-2.local wc 3grams.masked.sorted.summed
+2016-09-27.22-12-40.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked.summed.tf.df
+2016-09-27.22-13-00.Jonathan-Mays-MacBook-Pro-2.local less 3grams.masked.summed.tf.df
+2016-09-27.22-13-36.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{print $2}' 3grams.masked.summed.tf.df | less
+2016-09-27.22-13-56.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3}' 3grams.masked.summed.tf.df | less
+2016-09-27.22-14-06.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.masked.summed.tf.df | less
+2016-09-27.22-14-11.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.masked.summed.tf.df | sort -k2nr | head
+2016-09-27.22-14-23.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.masked.summed.tf.df | sort -t$'\t' -k2nr | head
+2016-09-27.22-14-44.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-27.22-14-48.Jonathan-Mays-MacBook-Pro-2.local less 3grams
+2016-09-27.22-15-07.Jonathan-Mays-MacBook-Pro-2.local grep someone 3grams | less
+2016-09-28.10-04-29.guest-wireless-207-151-057-069.usc.edu ls bolt.ce
+2016-09-28.10-04-31.guest-wireless-207-151-057-069.usc.edu ls bolt.ce/10k
+2016-09-28.10-04-51.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.masked.sorted.summed bolt.ce/10k/6grams.masked.resorted.summed > 6grams.masked.summed.tf.df &
+2016-09-28.10-04-53.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.masked.sorted.summed bolt.ce/10k/6grams.masked.resorted.summed > 6grams.masked.summed.tf.df &
+2016-09-28.10-04-56.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.10-04-59.guest-wireless-207-151-057-069.usc.edu ls bolt.ce/10k
+2016-09-28.10-05-01.guest-wireless-207-151-057-069.usc.edu ls bolt.ce/100k
+2016-09-28.10-05-50.guest-wireless-207-151-057-069.usc.edu ls bolt.ce/100k
+2016-09-28.10-05-52.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.10-06-02.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.summed.tf.df 
+2016-09-28.10-06-23.guest-wireless-207-151-057-069.usc.edu wc -l  6grams.masked.summed.tf.df 
+2016-09-28.10-06-26.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.10-06-32.guest-wireless-207-151-057-069.usc.edu wv -l 6grams.masked.sorted.summed 
+2016-09-28.10-06-36.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.masked.sorted.summed 
+2016-09-28.10-06-40.guest-wireless-207-151-057-069.usc.edu wc -l  6grams.masked.summed.tf.df 
+2016-09-28.10-07-14.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.masked.summed.tf.df | sort -t$'\t' -k2nr | head
+2016-09-28.10-07-32.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.10-07-41.guest-wireless-207-151-057-069.usc.edu less engside
+2016-09-28.10-08-19.guest-wireless-207-151-057-069.usc.edu grep "one that is" engside | less
+2016-09-28.10-08-26.guest-wireless-207-151-057-069.usc.edu grep "one that is" engside | less
+2016-09-28.10-40-09.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/6grams.masked.sorted.summed > 3grams.vs100k.masked.summed.tf.df &
+2016-09-28.10-40-10.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/6grams.masked.sorted.summed > 3grams.vs100k.masked.summed.tf.df &
+2016-09-28.10-40-20.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/6grams.masked.sorted.summed > 3grams.vs100k.masked.summed.tf.df &
+2016-09-28.10-40-25.guest-wireless-207-151-057-069.usc.edu less 3grams.vs100k.masked.summed.tf.df 
+2016-09-28.10-40-30.guest-wireless-207-151-057-069.usc.edu ls -l 3grams.vs100k.masked.summed.tf.df 
+2016-09-28.10-40-36.guest-wireless-207-151-057-069.usc.edu head jobs
+2016-09-28.10-40-39.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.10-40-40.guest-wireless-207-151-057-069.usc.edu kill %1
+2016-09-28.10-40-41.guest-wireless-207-151-057-069.usc.edu kill %1
+2016-09-28.10-40-48.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/3grams.masked.sorted.summed > 3grams.vs100k.masked.summed.tf.df &
+2016-09-28.10-40-51.guest-wireless-207-151-057-069.usc.edu ls -l
+2016-09-28.10-41-10.guest-wireless-207-151-057-069.usc.edu less 3grams.vs100k.masked.summed.tf.df 
+2016-09-28.10-41-15.guest-wireless-207-151-057-069.usc.edu wc -l 3grams.vs100k.masked.summed.tf.df 
+2016-09-28.10-41-23.guest-wireless-207-151-057-069.usc.edu wc 3grams.masked.sorted.summed
+2016-09-28.10-42-06.guest-wireless-207-151-057-069.usc.edu man join
+2016-09-28.10-42-33.guest-wireless-207-151-057-069.usc.edu join -v 1 -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/3grams.masked.sorted.summed > 3grams.vs100k.masked.summed.noce &
+2016-09-28.10-42-34.guest-wireless-207-151-057-069.usc.edu join -v 1 -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/3grams.masked.sorted.summed > 3grams.vs100k.masked.summed.noce &
+2016-09-28.10-42-37.guest-wireless-207-151-057-069.usc.edu join -v 1 -t$'\t' 3grams.masked.sorted.summed bolt.ce/100k/3grams.masked.sorted.summed > 3grams.vs100k.masked.summed.noce &
+2016-09-28.10-42-51.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.vs100k.masked.summed.tf.df | sort -t$'\t' -k2nr | head
+2016-09-28.10-43-18.guest-wireless-207-151-057-069.usc.edu less 3grams.vs100k.masked.summed.noce 
+2016-09-28.10-44-04.guest-wireless-207-151-057-069.usc.edu sort -t$'\t' -k2nr 3grams.vs100k.masked.summed.noce | head
+2016-09-28.10-44-05.guest-wireless-207-151-057-069.usc.edu wc -l 3grams.vs100k.masked.summed.noce
+2016-09-28.10-44-06.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.10-44-15.guest-wireless-207-151-057-069.usc.edu wc -l 3grams.masked.sorted.summed
+2016-09-28.10-44-28.guest-wireless-207-151-057-069.usc.edu wc -l 3grams.vs100k.masked.summed.tf.df
+2016-09-28.10-45-17.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.10-45-42.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.masked.sorted.summed bolt.ce/100k/6grams.masked.sorted.summed > 6grams.vs100k.masked.summed.tf.df &
+2016-09-28.10-45-55.guest-wireless-207-151-057-069.usc.edu join -v 1 -t$'\t' 6grams.masked.sorted.summed bolt.ce/100k/6grams.masked.sorted.summed > 6grams.vs100k.masked.summed.noce &
+2016-09-28.10-46-27.guest-wireless-207-151-057-069.usc.edu head 3grams.vs100k.masked.summed.noce | awk -F$'\t' '$2>1{print}'
+2016-09-28.10-46-35.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 3grams.vs100k.masked.summed.noce | head
+2016-09-28.10-46-48.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 3grams.vs100k.masked.summed.noce | wc -l
+2016-09-28.10-47-18.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 3grams.vs100k.masked.summed.noce | sort -t$'\t' -k2nr > 3grams.vs100k.masked.summed.noce.bycount &
+2016-09-28.10-47-20.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.10-56-47.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.10-57-07.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 6grams.vs100k.masked.summed.noce | sort -t$'\t' -k2nr > 6grams.vs100k.masked.summed.noce.bycount &
+2016-09-28.10-57-28.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.vs100k.masked.summed.tf.df | sort -t$'\t' -k2nr | head
+2016-09-28.10-57-35.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.vs100k.masked.summed.tf.df 
+2016-09-28.10-57-52.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.vs100k.masked.summed.noce
+2016-09-28.10-57-57.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.vs100k.masked.summed.noce
+2016-09-28.10-58-18.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.vs100k.masked.summed.tf.df | sort -t$'\t' -k2nr > 6grams.vs100k.masked.summed.tfidf.sorted &
+2016-09-28.10-58-33.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.vs100k.masked.summed.tf.df | sort -t$'\t' -k2nr > 3grams.vs100k.masked.summed.tfidf.sorted &
+2016-09-28.10-58-35.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 3grams.vs100k.masked.summed.tf.df | sort -t$'\t' -k2nr > 3grams.vs100k.masked.summed.tfidf.sorted &
+2016-09-28.10-59-35.guest-wireless-207-151-057-069.usc.edu less  6grams.vs100k.masked.summed.tfidf.sorted
+2016-09-28.10-59-42.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.10-59-45.guest-wireless-207-151-057-069.usc.edu ls scripts/
+2016-09-28.11-00-05.guest-wireless-207-151-057-069.usc.edu scripts/maskngram.py -m 1 2 -i 6grams -o 6grams.12.masked &
+2016-09-28.11-00-09.guest-wireless-207-151-057-069.usc.edu ls -lh
+2016-09-28.11-00-12.guest-wireless-207-151-057-069.usc.edu df -h .
+2016-09-28.11-00-14.guest-wireless-207-151-057-069.usc.edu ls -lh .
+2016-09-28.11-00-18.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.11-00-42.guest-wireless-207-151-057-069.usc.edu rm 3grams.masked 3grams.masked.sorted.summed.bycount 
+2016-09-28.11-00-44.guest-wireless-207-151-057-069.usc.edu df -h .
+2016-09-28.11-00-47.guest-wireless-207-151-057-069.usc.edu du -sh 
+2016-09-28.11-00-49.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-00-50.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.11-00-52.guest-wireless-207-151-057-069.usc.edu ls -lh
+2016-09-28.11-04-25.guest-wireless-207-151-057-069.usc.edu ls -lh
+2016-09-28.11-04-27.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.11-04-29.guest-wireless-207-151-057-069.usc.edu ls -lh
+2016-09-28.11-04-38.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked 
+2016-09-28.11-04-44.guest-wireless-207-151-057-069.usc.edu ls scripts/
+2016-09-28.11-05-24.guest-wireless-207-151-057-069.usc.edu LANG=C sort 6grams.12.masked > 6grams.12.masked.sorted &
+2016-09-28.11-05-58.guest-wireless-207-151-057-069.usc.edu LANG=C sort 6grams.12.masked > 6grams.12.masked.sorted &
+2016-09-28.11-06-06.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked.sorted 
+2016-09-28.11-06-21.guest-wireless-207-151-057-069.usc.edu scripts/uniqcount.py -i 6grams.12.masked.sorted -o 6grams.12.masked.sorted.summed &
+2016-09-28.11-06-24.guest-wireless-207-151-057-069.usc.edu ls -lh
+2016-09-28.11-06-40.guest-wireless-207-151-057-069.usc.edu rm 6grams.12.masked
+2016-09-28.11-07-30.guest-wireless-207-151-057-069.usc.edu head 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.11-07-47.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1
+2016-09-28.11-12-34.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1 | gsed 's/(<VAR> )+/\1/'
+2016-09-28.11-12-40.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1 | gsed 's/(<VAR> )+/$1/'
+2016-09-28.11-13-02.guest-wireless-207-151-057-069.usc.edu echo "aab | gsed 's/a+/a/'
+2016-09-28.11-13-06.guest-wireless-207-151-057-069.usc.edu echo "aab" | gsed 's/a+/a/'
+2016-09-28.11-13-11.guest-wireless-207-151-057-069.usc.edu man gsed
+2016-09-28.11-13-16.guest-wireless-207-151-057-069.usc.edu man sed
+2016-09-28.11-13-20.guest-wireless-207-151-057-069.usc.edu echo "aab" | gsed -E 's/a+/a/'
+2016-09-28.11-13-26.guest-wireless-207-151-057-069.usc.edu echo "aab" | gsed -E 's/(a)+/\1/'
+2016-09-28.11-13-36.guest-wireless-207-151-057-069.usc.edu echo "abcabcd" | gsed -E 's/(abc)+/\1/'
+2016-09-28.11-13-54.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1 | gsed -E 's/(<VAR> )+/\1/'
+2016-09-28.11-13-56.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1 | gsed -E 's/(<VAR> )+/\1/g'
+2016-09-28.11-14-08.guest-wireless-207-151-057-069.usc.edu man sed
+2016-09-28.11-14-16.guest-wireless-207-151-057-069.usc.edu head -3 6grams.vs100k.masked.summed.tfidf.sorted | tail -1 | gsed -E 's/(<VAR>\W)+/\1/g'
+2016-09-28.11-14-24.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-14-59.guest-wireless-207-151-057-069.usc.edu #gsed -E 's/(<VAR>\W)+/\1/g' < 6grams.masked.sorted | LANG=C sort > 6grams.masked.reduced.sorted &
+2016-09-28.11-15-02.guest-wireless-207-151-057-069.usc.edu ls scripts/
+2016-09-28.11-15-34.guest-wireless-207-151-057-069.usc.edu gsed -E 's/(<VAR>\W)+/\1/g' < 6grams.masked.sorted | head -300 | LANG=C sort | scripts/uniqcount.py -o 6grams.masked.reduced.sorted.summed
+2016-09-28.11-15-44.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.sorted.summed 
+2016-09-28.11-15-57.guest-wireless-207-151-057-069.usc.edu gsed -E 's/(<VAR>\W)+/\1/g' < 6grams.masked.sorted | LANG=C sort | scripts/uniqcount.py -o 6grams.masked.reduced.sorted.summed &
+2016-09-28.11-16-40.guest-wireless-207-151-057-069.usc.edu gsed -E 's/(<VAR>\W)+/\1/g' < 6grams.masked.sorted | LANG=C sort | scripts/uniqcount.py -o 6grams.masked.reduced.sorted.summed &
+2016-09-28.11-16-44.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-16-52.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked.sorted.summed 
+2016-09-28.11-16-59.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.12.masked.sorted.summed 
+2016-09-28.11-17-22.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 6grams.12.masked.sorted.summed | wc-l
+2016-09-28.11-18-25.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 6grams.12.masked.sorted.summed | wc -l
+2016-09-28.11-18-31.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 6grams.12.masked.sorted.summed | wc -l
+2016-09-28.11-20-04.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '$2>1{print}' 6grams.12.masked.sorted.summed | LANG=C sort -t$'\t' -k2nr | head
+2016-09-28.11-24-01.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-24-37.guest-wireless-207-151-057-069.usc.edu grep "fact or act of" engside | less
+2016-09-28.11-25-03.guest-wireless-207-151-057-069.usc.edu grep "one that is" engside | less
+2016-09-28.11-25-16.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.sorted.summed 
+2016-09-28.11-27-40.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-32-24.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-32-33.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked.sorted.summed 
+2016-09-28.11-32-38.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.12.masked.sorted.summed 
+2016-09-28.11-33-14.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.12.masked.sorted.summed bolt.ce/100k/6grams.12.masked.sorted.summed > 6grams.12.masked.summed.tf.df &
+2016-09-28.11-33-23.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.12.masked.sorted.summed bolt.ce/100k/6grams.12.masked.sorted.summed > 6grams.12.masked.summed.tf.df &
+2016-09-28.11-33-54.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked.summed.tf.df 
+2016-09-28.11-33-56.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-34-05.guest-wireless-207-151-057-069.usc.edu les 3grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.11-34-11.guest-wireless-207-151-057-069.usc.edu less 3grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.11-35-15.guest-wireless-207-151-057-069.usc.edu less 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.11-35-17.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.11-35-22.guest-wireless-207-151-057-069.usc.edu wc -l 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.11-56-58.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.11-57-00.guest-wireless-207-151-057-069.usc.edu jobs
+2016-09-28.11-57-29.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.masked.reduced.sorted.summed bolt.ce/100k/6grams.masked.reduced.sorted.summed > 6grams.masked.reduced.summed.tf.df &
+2016-09-28.12-01-22.guest-wireless-207-151-057-069.usc.edu join -t$'\t' 6grams.masked.reduced.sorted.summed bolt.ce/100k/6grams.masked.reduced.sorted.summed > 6grams.masked.reduced.summed.tf.df &
+2016-09-28.12-02-00.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.masked.reduced.summed.tf.df | sort -t$'\t' -k2nr > 6grams.masked.reduced.summed.tfidf.sorted &
+2016-09-28.12-02-35.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.masked.reduced.summed.tf.df | sort -t$'\t' -k2nr > 6grams.masked.reduced.summed.tfidf.sorted &
+2016-09-28.12-02-58.guest-wireless-207-151-057-069.usc.edu awk -F$'\t' '{printf("%s\t%f\n", $1,$2/$3)}' 6grams.12.masked.summed.tf.df | sort -t$'\t' -k2nr > 6grams.12.masked.summed.tfidf.sorted &
+2016-09-28.12-03-03.guest-wireless-207-151-057-069.usc.edu ls -l
+2016-09-28.12-03-12.guest-wireless-207-151-057-069.usc.edu ls *tfidf*
+2016-09-28.12-03-33.guest-wireless-207-151-057-069.usc.edu less 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-09-28.12-04-03.guest-wireless-207-151-057-069.usc.edu less 6grams.12.masked.summed.tfidf.sorted 
+2016-09-28.12-04-28.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.summed.tfidf.sorted 
+2016-09-28.12-04-31.guest-wireless-207-151-057-069.usc.edu less
+2016-09-28.12-04-32.guest-wireless-207-151-057-069.usc.edu ls
+2016-09-28.12-04-43.guest-wireless-207-151-057-069.usc.edu grep "something with" engside | less
+2016-09-28.12-04-46.guest-wireless-207-151-057-069.usc.edu less
+2016-09-28.12-05-28.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.summed.tfidf.sorted 
+2016-09-28.12-06-59.guest-wireless-207-151-057-069.usc.edu grep "of someone" engside | less
+2016-09-28.12-07-09.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.summed.tfidf.sorted 
+2016-09-28.12-09-59.guest-wireless-207-151-057-069.usc.edu grep "one that is" engside | less
+2016-09-28.12-10-07.guest-wireless-207-151-057-069.usc.edu less 6grams.masked.reduced.summed.tfidf.sorted 
+2016-09-28.12-10-29.guest-wireless-207-151-057-069.usc.edu grep "with" engside | grep "hand" | less
+2016-09-28.12-12-28.guest-wireless-207-151-057-069.usc.edu grep "with " engside | grep " hand " | less
+2016-09-28.12-51-58.guest-wireless-207-151-057-069.usc.edu ls ~/projects/
+2016-09-28.12-52-01.guest-wireless-207-151-057-069.usc.edu ls ~/projects/poetry/
+2016-09-28.12-52-25.guest-wireless-207-151-057-069.usc.edu ls ~/projects/journal/
+2016-09-28.15-15-44.Jonathan-Mays-MacBook-Pro-2.local mkdir ~/projects/material
+2016-09-28.15-34-42.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-28.15-34-45.Jonathan-Mays-MacBook-Pro-2.local ls ../release/
+2016-09-28.15-37-39.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-28.15-44-42.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-09-28.15-44-43.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-28.15-44-51.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-28.15-45-46.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.reduced.summed.tfidf.sorted 
+2016-09-28.15-45-50.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-28.15-45-59.Jonathan-Mays-MacBook-Pro-2.local ls lextmp
+2016-09-28.15-46-04.Jonathan-Mays-MacBook-Pro-2.local ls lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/
+2016-09-28.15-46-38.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-46-43.Jonathan-Mays-MacBook-Pro-2.local grep -c LEXICON lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-46-48.Jonathan-Mays-MacBook-Pro-2.local grep  LEXICON lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-47-07.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon_lexicon.llf.xml 
+2016-09-28.15-47-36.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-49-06.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/
+2016-09-28.15-49-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-28.15-49-21.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-51-24.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-09-28.15-51-26.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-09-28.15-51-34.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/elisa2flat.py 
+2016-09-28.15-51-36.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/elisa2flat.py -h
+2016-09-28.15-51-47.Jonathan-Mays-MacBook-Pro-2.local #../panxbranchtools/elisa2flat.py -
+2016-09-28.15-51-54.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-52-12.Jonathan-Mays-MacBook-Pro-2.local #../panxbranchtools/elisa2flat.py -s ENTRY -f GLOSS.source GLOSS
+2016-09-28.15-52-19.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-28.15-52-53.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/elisa2flat.py -s ENTRY -f GLOSS.source WORD GLOSS -i lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml | less
+2016-09-28.15-52-55.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-09-28.15-53-16.Jonathan-Mays-MacBook-Pro-2.local find lextmp -name '*.xml' | wc -l
+2016-09-28.15-53-21.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name '*.xml' | wc -l
+2016-09-28.15-53-23.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name '*.xml'
+2016-09-28.15-54-53.Jonathan-Mays-MacBook-Pro-2.local for i in `find lextmp/ -name '*.xml'`; do ../panxbranchtools/elisa2flat.py -s ENTRY -f GLOSS.source WORD GLOSS -i $i; done > source.word.gloss
+2016-09-28.15-55-02.Jonathan-Mays-MacBook-Pro-2.local less source.word.gloss 
+2016-09-28.15-55-10.Jonathan-Mays-MacBook-Pro-2.local cut -f1 source.word.gloss | uniq | wc -l
+2016-09-28.15-55-22.Jonathan-Mays-MacBook-Pro-2.local cut -f1 source.word.gloss | sort | uniq -c | wc -l
+2016-09-28.15-55-31.Jonathan-Mays-MacBook-Pro-2.local cut -f1 source.word.gloss | sort | uniq -c
+2016-09-28.15-56-31.Jonathan-Mays-MacBook-Pro-2.local less lextmp//REFLEX_Tagalog_LDC2015E90_V1.1/lexicon_Tagalog_Lexicon.llf.xml
+2016-09-28.18-07-07.Jonathan-Mays-MacBook-Pro-2.local less lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon_hau_lexicon.llf.xml 
+2016-09-29.18-31-52.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-10-05.09-00-04.Jonathan-Mays-MacBook-Pro-2.local sftp kk2@elisa.isi.edu
+2016-10-05.09-27-31.Jonathan-Mays-MacBook-Pro-2.local sftp kk2@elisa.isi.edu
+2016-10-05.10-25-52.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-10-05.15-52-34.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-10-07.15-38-21.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-07.15-38-23.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-10-07.15-38-24.Jonathan-Mays-MacBook-Pro-2.local du -sh .
+2016-10-07.15-38-35.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce
+2016-10-07.15-38-37.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/100k
+2016-10-07.15-38-55.Jonathan-Mays-MacBook-Pro-2.local less 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-10-07.15-39-00.Jonathan-Mays-MacBook-Pro-2.local du -sh 6grams.vs100k.masked.summed.tfidf.sorted 
+2016-10-07.15-39-16.Jonathan-Mays-MacBook-Pro-2.local less 6grams
+2016-10-07.15-39-25.Jonathan-Mays-MacBook-Pro-2.local du -sh 6grams
+2016-10-07.15-39-59.Jonathan-Mays-MacBook-Pro-2.local tar -zxf 6grams.vs100k.stats.forseb.tgz 6grams 6grams.vs100k.masked.summed.tfidf.sorted
+2016-10-07.15-40-06.Jonathan-Mays-MacBook-Pro-2.local tar -zcf 6grams.vs100k.stats.forseb.tgz 6grams 6grams.vs100k.masked.summed.tfidf.sorted
+2016-10-07.15-40-14.Jonathan-Mays-MacBook-Pro-2.local ls -lh 6grams.vs100k.stats.forseb.tgz
+2016-10-07.15-40-50.Jonathan-Mays-MacBook-Pro-2.local scp 6grams.vs100k.stats.forseb.tgz hpc:projects/lorelei/lexicon
+2016-10-10.12-51-37.Jonathan-Mays-MacBook-Pro-2.local scp 6grams.vs100k.stats.forseb.tgz hpc:projects/lorelei/lexicon
+2016-10-11.12-52-50.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-10-11.12-52-54.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.14-30-32.Jonathan-Mays-MacBook-Pro-2.local less engside
+2016-10-19.14-30-54.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon
+2016-10-19.14-31-13.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -h
+2016-10-19.14-31-15.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help
+2016-10-19.14-31-21.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help  | grep case
+2016-10-19.14-31-30.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help  2>&1 | grep case
+2016-10-19.14-31-34.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.14-31-54.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-19.14-34-44.Jonathan-Mays-MacBook-Pro-2.local find ../panxbranchtools -name '*.py' -exec grep -H 'check_call' '{}' \; | cut -d':' -f1 | uniq
+2016-10-19.14-56-59.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.14-57-51.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.14-57-59.Jonathan-Mays-MacBook-Pro-2.local ls -l | grep ngram-count
+2016-10-19.15-00-31.Jonathan-Mays-MacBook-Pro-2.local less 6grams.12.masked.sorted
+2016-10-19.15-00-44.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.sorted
+2016-10-19.15-07-51.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-19.15-08-05.Jonathan-Mays-MacBook-Pro-2.local ls -l
+2016-10-19.15-08-14.Jonathan-Mays-MacBook-Pro-2.local less 3grams
+2016-10-19.15-08-18.Jonathan-Mays-MacBook-Pro-2.local head 3grams
+2016-10-19.15-08-31.Jonathan-Mays-MacBook-Pro-2.local head 3grams | scripts/maskngram.py -m 2 --no-compress
+2016-10-19.15-08-38.Jonathan-Mays-MacBook-Pro-2.local head 3grams | scripts/maskngram.py -m 2
+2016-10-19.15-08-45.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 2 --no-compress
+2016-10-19.15-08-57.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 2
+2016-10-19.15-09-23.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams
+2016-10-19.15-09-25.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 2
+2016-10-19.15-09-34.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 3
+2016-10-19.15-09-40.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 3 --no-compress
+2016-10-19.15-09-45.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1 --no-compress
+2016-10-19.15-09-52.Jonathan-Mays-MacBook-Pro-2.local head -2 3grams | scripts/maskngram.py -m 1
+2016-10-19.15-33-49.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.15-34-29.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count --help
+2016-10-19.15-34-33.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help
+2016-10-19.15-34-51.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.15-35-13.Jonathan-Mays-MacBook-Pro-2.local head engside | ./ngram-count -order 2 -write2 foo -text -
+2016-10-19.15-35-20.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-19.15-35-25.Jonathan-Mays-MacBook-Pro-2.local less engside
+2016-10-19.15-35-28.Jonathan-Mays-MacBook-Pro-2.local head engside
+2016-10-19.15-35-32.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-10-19.15-35-39.Jonathan-Mays-MacBook-Pro-2.local head engside | ./ngram-count -order 2 -write2 - -text - | head
+2016-10-19.15-35-43.Jonathan-Mays-MacBook-Pro-2.local head foo
+2016-10-19.15-35-55.Jonathan-Mays-MacBook-Pro-2.local head engside | ./ngram-count -order 2 -write2 foo -text -
+2016-10-19.15-35-57.Jonathan-Mays-MacBook-Pro-2.local head foo
+2016-10-19.15-35-59.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-10-19.15-40-34.Jonathan-Mays-MacBook-Pro-2.local head -1 engside 
+2016-10-19.15-40-46.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4
+2016-10-19.15-40-57.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -write4 - -text -
+2016-10-19.15-41-07.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -write4 - -text - | scripts/maskngram.py -m 1
+2016-10-19.15-41-11.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -write4 - -text - | scripts/maskngram.py -m 3
+2016-10-19.15-41-14.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -write4 - -text - | scripts/maskngram.py -m 3 | wc
+2016-10-19.15-41-18.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -write4 - -text - | scripts/maskngram.py -m 1 | wc
+2016-10-19.15-41-26.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 2 -write2 - -text - | scripts/maskngram.py -m 1 | wc
+2016-10-19.15-41-46.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | ./ngram-count -order 2 -write2 - -text - | scripts/maskngram.py -m 1 | wc
+2016-10-19.15-41-49.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | ./ngram-count -order 2 -write2 - -text - | scripts/maskngram.py -m 1
+2016-10-19.15-41-56.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/getpatterns.py
+2016-10-19.15-42-01.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-19.15-42-35.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-42-58.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-43-22.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-43-49.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-44-02.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-44-06.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.15-44-38.Jonathan-Mays-MacBook-Pro-2.local less scripts/uniqcount.py
+2016-10-19.15-46-34.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-46-37.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1 | sort
+2016-10-19.15-47-12.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1 | sort
+2016-10-19.15-47-43.Jonathan-Mays-MacBook-Pro-2.local ls scripts/
+2016-10-19.15-49-25.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1 | sort
+2016-10-19.15-49-27.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | cut -d' ' -f1-4 | scripts/getpatterns.py -n 2 -m 1
+2016-10-19.15-49-39.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 | wc
+2016-10-19.15-49-53.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 | less
+2016-10-19.16-36-58.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-19.16-39-25.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-19.16-40-05.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-19.16-40-59.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-19.16-41-02.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-19.16-41-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.16-41-05.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-10-19.16-52-48.Jonathan-Mays-MacBook-Pro-2.local popd
+2016-10-19.16-53-01.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 -o new
+2016-10-19.16-53-39.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 -o new
+2016-10-19.16-53-44.Jonathan-Mays-MacBook-Pro-2.local less new
+2016-10-19.16-54-01.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 -o old
+2016-10-19.16-54-05.Jonathan-Mays-MacBook-Pro-2.local diff old new | head
+2016-10-19.16-54-47.Jonathan-Mays-MacBook-Pro-2.local head engside | scripts/getpatterns.py -n 2 -m 1 -o new
+2016-10-19.16-54-50.Jonathan-Mays-MacBook-Pro-2.local less new
+2016-10-19.16-54-52.Jonathan-Mays-MacBook-Pro-2.local rm new old
+2016-10-19.17-05-23.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.17-05-35.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce
+2016-10-19.17-05-37.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/10k
+2016-10-19.17-05-46.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/100k
+2016-10-19.17-07-39.Jonathan-Mays-MacBook-Pro-2.local cp hpc:prects/lorelei/clueweb/bolt.ce/10k/bolt.ce.10k.sample.gz .
+2016-10-19.17-08-01.Jonathan-Mays-MacBook-Pro-2.local cp hpc:prects/lorelei/clueweb/bolt.ce/10k/bolt.ce.10k.sample.gz .
+2016-10-19.17-08-08.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/clueweb/bolt.ce/10k/bolt.ce.10k.sample.gz .
+2016-10-19.17-08-16.Jonathan-Mays-MacBook-Pro-2.local scp hpc:projects/lorelei/clueweb/bolt.ce/100k/bolt.ce.100k.sample.gz .
+2016-10-19.17-24-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.17-24-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.17-24-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-19.17-24-23.Jonathan-Mays-MacBook-Pro-2.local ls -lh engside
+2016-10-19.17-24-37.Jonathan-Mays-MacBook-Pro-2.local head 100 engside > engside.mini
+2016-10-19.17-24-42.Jonathan-Mays-MacBook-Pro-2.local head -100 engside > engside.mini
+2016-10-19.17-24-59.Jonathan-Mays-MacBook-Pro-2.local zcat bolt.ce.10k.sample.gz | head -1000 > bolt.mini
+2016-10-19.17-25-31.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.mini -o out.mini
+2016-10-19.17-27-23.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.mini -o out.mini
+2016-10-19.17-28-22.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.mini -o out.mini
+2016-10-19.17-28-27.Jonathan-Mays-MacBook-Pro-2.local ls /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/getpatterns.py4y_1ocxh
+2016-10-19.17-29-36.Jonathan-Mays-MacBook-Pro-2.local popd
+2016-10-19.17-29-53.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.mini -o out.mini
+2016-10-19.17-29-59.Jonathan-Mays-MacBook-Pro-2.local less out.mini
+2016-10-19.17-45-56.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-19.17-46-38.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.mini -o out.mini --basengramfile bolt.ngram.mini
+2016-10-19.17-46-46.Jonathan-Mays-MacBook-Pro-2.local less bolt.ngram.mini
+2016-10-19.17-47-07.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ngram.mini -o out2.mini --no-basetext
+2016-10-19.17-47-13.Jonathan-Mays-MacBook-Pro-2.local diff out.mini out2.mini | head
+2016-10-19.17-47-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.17-49-36.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ngram.mini -o out2.mini --no-basetext
+2016-10-19.17-49-46.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ngram.mini -o out2.mini --no-basetext
+2016-10-19.17-51-01.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ngram.mini -o out2.mini --no-basetext
+2016-10-19.17-51-05.Jonathan-Mays-MacBook-Pro-2.local less out2.mini
+2016-10-19.17-51-47.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n",$1,$2/$3)}' out2.mini | head
+2016-10-19.17-51-58.Jonathan-Mays-MacBook-Pro-2.local awk -F$'\t' '{printf("%s\t%f\n",$1,$2/$3)}' out2.mini | sort -t$'\t' -k2nr | head
+2016-10-19.17-52-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-19.20-35-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside -b bolt.ce/100k/6grams.12.masked.sorted.summed -o 6grams.12.masked.summed.tf.df.redo --no-basetext
+2016-10-20.10-56-28.Jonathan-Mays-MacBook-Pro-2.local less 6grams.12.masked.summed.tf.df.redo 
+2016-10-20.10-56-32.Jonathan-Mays-MacBook-Pro-2.local ls -l 6grams.12.masked.summed.tf.df.redo 
+2016-10-20.10-56-35.Jonathan-Mays-MacBook-Pro-2.local ls -l 6grams.12.masked.summed.tf.df
+2016-10-20.10-56-46.Jonathan-Mays-MacBook-Pro-2.local head 6grams.12.masked.summed.tf.df
+2016-10-20.10-56-52.Jonathan-Mays-MacBook-Pro-2.local head 6grams.12.masked.summed.tf.df.redo 
+2016-10-20.10-57-45.Jonathan-Mays-MacBook-Pro-2.local diff 6grams.12.masked.summed.tf.df 6grams.12.masked.summed.tf.df.redo | head
+2016-10-20.10-58-04.Jonathan-Mays-MacBook-Pro-2.local diff 6grams.12.masked.summed.tf.df 6grams.12.masked.summed.tf.df.redo | less
+2016-10-20.10-58-17.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.10-58-29.Jonathan-Mays-MacBook-Pro-2.local ls -l 6grams.masked.reduced.summed.tf.df
+2016-10-20.10-58-45.Jonathan-Mays-MacBook-Pro-2.local ls -l 6grams.12.masked.summed.tf.df.redo 
+2016-10-20.10-58-56.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.reduced.sorted.summed
+2016-10-20.10-59-10.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.reduced.summed.tf.df
+2016-10-20.11-07-03.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-07-10.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-07-18.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-09-29.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-12-10.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-18-11.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-20.11-18-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-19-17.Jonathan-Mays-MacBook-Pro-2.local python
+2016-10-20.11-19-18.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-21-35.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-20.11-23-20.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-23-25.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-20.11-25-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d engside.mini -b bolt.ce/100k/6grams.12.masked.sorted.summed -o foo --no-basetext
+2016-10-20.11-25-39.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-20.11-25-41.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.11-26-16.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon | head -2
+2016-10-20.11-26-34.Jonathan-Mays-MacBook-Pro-2.local cut -f3 lextmp//BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon > hau.engside
+2016-10-20.11-26-59.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside -b bolt.ce/100k/6grams.12.masked.sorted.summed -o hau.6grams.12.tfidf --no-basetext &
+2016-10-20.11-27-11.Jonathan-Mays-MacBook-Pro-2.local cut -f3 lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon > tur.engside
+2016-10-20.11-27-25.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce/100k/6grams.12.masked.sorted.summed -o tur.6grams.12.tfidf --no-basetext &
+2016-10-20.11-27-27.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.11-29-38.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.11-29-51.Jonathan-Mays-MacBook-Pro-2.local less tur.6grams.12.tfidf 
+2016-10-20.11-29-54.Jonathan-Mays-MacBook-Pro-2.local wc tur.engside 
+2016-10-20.11-30-13.Jonathan-Mays-MacBook-Pro-2.local less tur.6grams.12.tfidf 
+2016-10-20.11-30-28.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce
+2016-10-20.11-30-30.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/100k
+2016-10-20.11-30-33.Jonathan-Mays-MacBook-Pro-2.local ls bolt.ce/100k
+2016-10-20.11-31-11.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce/100k/6grams.masked.reduced.sorted.summed 
+2016-10-20.11-31-13.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce/100k/6grams.masked.reduced.sorted.summed 
+2016-10-20.11-31-15.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.11-31-32.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside -
+2016-10-20.11-31-52.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.11-32-19.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help 2>&1 | less
+2016-10-20.11-32-30.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help 2>&1 | less
+2016-10-20.11-33-04.Jonathan-Mays-MacBook-Pro-2.local less hau.6grams.12.tfidf 
+2016-10-20.11-33-13.Jonathan-Mays-MacBook-Pro-2.local less hau.6grams.12.tfidf 
+2016-10-20.11-33-23.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-20.11-34-37.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample.gz --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-34-50.Jonathan-Mays-MacBook-Pro-2.local gunzip bolt.ce.10k.sample.gz
+2016-10-20.11-34-52.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample.gz --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-34-54.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample.gz --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-35-01.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-35-04.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-35-10.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce.10k.sample 
+2016-10-20.11-35-44.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-36-31.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-36-57.Jonathan-Mays-MacBook-Pro-2.local popd
+2016-10-20.11-37-04.Jonathan-Mays-MacBook-Pro-2.local ls /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/
+2016-10-20.11-37-09.Jonathan-Mays-MacBook-Pro-2.local rm -rf /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/getpatterns.py*
+2016-10-20.11-37-17.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.11-37-43.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -tolower -order 6 -write6 foo -text tur.engside
+2016-10-20.11-37-58.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text -
+2016-10-20.11-38-31.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | scripts/maskngram.py -m  1 2 > foo
+2016-10-20.11-38-40.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m  1 2 > foo
+2016-10-20.11-38-51.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | scripts/maskngram.py -m  1 2 > foo
+2016-10-20.11-39-07.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -321 | tail -1
+2016-10-20.11-39-12.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -322 | tail -1
+2016-10-20.11-39-26.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -322 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-39-32.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -500 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-39-36.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -5000 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-39-41.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -3000 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-39-45.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-39-51.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -1000 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-40-01.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-40-05.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail -5 | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-40-12.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail -7 | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-40-17.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail -7 | head -3 | scripts/maskngram.py -m 1 2 > foo
+2016-10-20.11-40-21.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -tolower -order 6 -write6 - -text - | head -2000 | tail -7 | head -3 
+2016-10-20.11-40-31.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside | ./ngram-count -order 6 -write6 - -text - | head -2000 | tail -7 | head -3 
+2016-10-20.11-40-41.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside | wc
+2016-10-20.11-40-43.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside
+2016-10-20.11-41-15.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside | ./ngram-count -order 6
+2016-10-20.11-41-17.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside | ./ngram-count -order 6 -text -
+2016-10-20.11-41-22.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside | ./ngram-count -tolower -order 6 -text -
+2016-10-20.11-46-22.Jonathan-Mays-MacBook-Pro-2.local echo $LANG
+2016-10-20.11-47-54.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-20.11-48-17.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/tolower.py
+2016-10-20.11-48-23.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside
+2016-10-20.11-48-28.Jonathan-Mays-MacBook-Pro-2.local grep "and a half," tur.engside | scripts/tolower.py 
+2016-10-20.11-49-32.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-49-52.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.10k.sample --basengramfile bolt.10k.6g.12.base -o tur.6g.12.10k.tfidf --basetext &
+2016-10-20.11-49-53.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.11-51-36.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.11-51-43.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.10k.tfidf 
+2016-10-20.11-51-54.Jonathan-Mays-MacBook-Pro-2.local less bolt.10k.6g.12.base
+2016-10-20.11-51-57.Jonathan-Mays-MacBook-Pro-2.local less bolt.10k.6g.12.base
+2016-10-20.11-52-12.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample.gz --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-52-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample.gz --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-52-46.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample.gz --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-52-52.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample.gz --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-53-03.Jonathan-Mays-MacBook-Pro-2.local gunzip bolt.ce.100k.sample.gz 
+2016-10-20.11-53-11.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-53-15.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-56-29.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-58-57.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside -b bolt.ce.100k.sample --basengramfile bolt.100k.6g.12.base -o tur.6g.12.100k.tfidf --basetext &
+2016-10-20.11-59-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.11-59-12.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-20.12-00-08.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside --basefile bolt.10k.6g.12.base --no-basetext -o hau.6g.12.10k.tfidf &
+2016-10-20.12-00-14.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside --basefile bolt.10k.6g.12.base --no-basetext -o hau.6g.12.10k.tfidf &
+2016-10-20.12-00-30.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside --basefile bolt.10k.6g.12.base --no-basetext -o hau.6g.12.10k.tfidf &
+2016-10-20.12-00-46.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon | head -3
+2016-10-20.12-02-18.Jonathan-Mays-MacBook-Pro-2.local less lextmp//BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon
+2016-10-20.12-03-01.Jonathan-Mays-MacBook-Pro-2.local less lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-03-02.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.12-03-16.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce.10k.sample 
+2016-10-20.12-03-21.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-10-20.12-03-24.Jonathan-Mays-MacBook-Pro-2.local ls ../panxbranchtools
+2016-10-20.12-03-33.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -h
+2016-10-20.12-03-44.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -
+2016-10-20.12-04-15.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -o hau.engside.toklc -i hau.engside
+2016-10-20.12-04-16.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -o hau.engside.toklc -i hau.engside
+2016-10-20.12-04-28.Jonathan-Mays-MacBook-Pro-2.local less hau.engside.toklc
+2016-10-20.12-04-53.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -o tur.engside.toklc -i tur.engside
+2016-10-20.12-05-12.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.12-25-06.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.12-25-08.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.12-25-11.Jonathan-Mays-MacBook-Pro-2.local echo $LC_COLLATE
+2016-10-20.12-32-59.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.tfidf 
+2016-10-20.12-33-23.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside --basefile bolt.ce.100k.samp --no-basetext -o hau.6g.12.10k.tfidf &
+2016-10-20.12-33-25.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-20.12-34-30.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside --basefile bolt.ce.100k.sample --basengramfile bolt.100k.6g.34.base -o tur.6g.34.100k.tfidf --basetext - &
+2016-10-20.12-35-24.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf &
+2016-10-20.12-35-33.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf &
+2016-10-20.12-35-46.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf &
+2016-10-20.12-36-26.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.6g.34.base  -o tur.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.12-36-27.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.6g.34.base  -o tur.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.12-40-49.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.6g.34.base  -o tur.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.12-40-51.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.12-41-10.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.tfidf 
+2016-10-20.12-41-13.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.12.100k.toklc.tfidf 
+2016-10-20.12-41-33.Jonathan-Mays-MacBook-Pro-2.local grep "<s> .* in the .* </s>" tur.engside | less
+2016-10-20.12-41-38.Jonathan-Mays-MacBook-Pro-2.local #grep "<s> .* in the .* </s>" tur.engside | less
+2016-10-20.12-41-48.Jonathan-Mays-MacBook-Pro-2.local man grep
+2016-10-20.12-41-58.Jonathan-Mays-MacBook-Pro-2.local grep -E "<s> .* in the .* </s>" tur.engside | less
+2016-10-20.12-42-08.Jonathan-Mays-MacBook-Pro-2.local grep -E ".* in the .* " tur.engside | less
+2016-10-20.12-42-14.Jonathan-Mays-MacBook-Pro-2.local grep " in the " tur.engside | less
+2016-10-20.12-42-18.Jonathan-Mays-MacBook-Pro-2.local less tur.engside
+2016-10-20.12-42-26.Jonathan-Mays-MacBook-Pro-2.local head -1 tur.engside
+2016-10-20.12-42-29.Jonathan-Mays-MacBook-Pro-2.local head -1 tur.engside | grep sister
+2016-10-20.12-42-36.Jonathan-Mays-MacBook-Pro-2.local head -1 tur.engside | grep " .* sister"
+2016-10-20.12-42-47.Jonathan-Mays-MacBook-Pro-2.local grep " in the " tur.engside | less
+2016-10-20.12-42-57.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside | less
+2016-10-20.12-43-01.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside | head
+2016-10-20.12-43-14.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside.toklc | head
+2016-10-20.12-43-25.Jonathan-Mays-MacBook-Pro-2.local grep ascendant tur.engside | head
+2016-10-20.12-43-29.Jonathan-Mays-MacBook-Pro-2.local grep -i ascendant tur.engside | head
+2016-10-20.12-43-51.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside.toklc | wc -l
+2016-10-20.12-43-59.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-44-04.Jonathan-Mays-MacBook-Pro-2.local grep "in the" tur.engside.toklc | sort | uniq | less
+2016-10-20.12-44-09.Jonathan-Mays-MacBook-Pro-2.local grep " in the" tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-44-48.Jonathan-Mays-MacBook-Pro-2.local grep " in the" tur.engside.toklc | sort | uniq | less
+2016-10-20.12-44-57.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.12.100k.toklc.tfidf
+2016-10-20.12-46-10.Jonathan-Mays-MacBook-Pro-2.local less /usr/share/dict/words
+2016-10-20.12-46-23.Jonathan-Mays-MacBook-Pro-2.local grep '^c.*h$' /usr/share/dict/words | head
+2016-10-20.12-46-54.Jonathan-Mays-MacBook-Pro-2.local grep '.* in the .*' tur.engside.toklc | head
+2016-10-20.12-47-13.Jonathan-Mays-MacBook-Pro-2.local grep '^to .* , .* ,' tur.engside.toklc | head
+2016-10-20.12-47-37.Jonathan-Mays-MacBook-Pro-2.local grep '^to .* , .* ,' tur.engside.toklc | wc -l
+2016-10-20.12-47-45.Jonathan-Mays-MacBook-Pro-2.local grep '^to .* , .* ,' tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-49-58.Jonathan-Mays-MacBook-Pro-2.local #grep '^to .* , .* ,' tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-49-59.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-10-20.12-50-12.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.12-50-40.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.12.100k.toklc.tfidf
+2016-10-20.12-50-56.Jonathan-Mays-MacBook-Pro-2.local grep '.* in the .*' tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-51-00.Jonathan-Mays-MacBook-Pro-2.local grep '.* in the .*' tur.engside.toklc | sort | uniq | head
+2016-10-20.12-51-03.Jonathan-Mays-MacBook-Pro-2.local grep '.* in the .*' tur.engside.toklc | sort | uniq | head -20
+2016-10-20.12-51-18.Jonathan-Mays-MacBook-Pro-2.local #grep '^to .* , .* ,' tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-51-21.Jonathan-Mays-MacBook-Pro-2.local grep '^to .* , .* ,' tur.engside.toklc | sort | uniq | wc -l
+2016-10-20.12-51-23.Jonathan-Mays-MacBook-Pro-2.local grep '^to .* , .* ,' tur.engside.toklc | sort | uniq | head -20
+2016-10-20.12-51-56.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.12-53-26.Jonathan-Mays-MacBook-Pro-2.local grep '.* in the .*' tur.engside.toklc | sort | uniq
+2016-10-20.12-53-55.Jonathan-Mays-MacBook-Pro-2.local grep -ci "throw in the towel" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-53-58.Jonathan-Mays-MacBook-Pro-2.local grep -i "throw in the towel" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-54-13.Jonathan-Mays-MacBook-Pro-2.local grep -i "pain in the neck" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-54-47.Jonathan-Mays-MacBook-Pro-2.local grep -i "put in the dock" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-55-09.Jonathan-Mays-MacBook-Pro-2.local grep -i "be in the ascendant" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-56-02.Jonathan-Mays-MacBook-Pro-2.local grep -i "put in the lottery" lextmp//BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-20.12-58-02.Jonathan-Mays-MacBook-Pro-2.local grep '@-@ to @-@' tur.engside.toklc | sort | uniq | wc
+2016-10-20.12-58-04.Jonathan-Mays-MacBook-Pro-2.local grep '@-@ to @-@' tur.engside.toklc | sort | uniq
+2016-10-20.13-06-39.Jonathan-Mays-MacBook-Pro-2.local grep '@-@ to @-@' tur.engside.toklc | sort | uniq
+2016-10-20.13-06-41.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.13-06-57.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-06-59.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-07-03.Jonathan-Mays-MacBook-Pro-2.local ls -lh bolt.100k.6g.34.base
+2016-10-20.13-07-50.Jonathan-Mays-MacBook-Pro-2.local ls -lh
+2016-10-20.13-08-05.Jonathan-Mays-MacBook-Pro-2.local ls -lh | grep G
+2016-10-20.13-08-30.Jonathan-Mays-MacBook-Pro-2.local rm 6grams.masked.sorted 6grams.12.masked.sorted
+2016-10-20.13-08-36.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.13-08-41.Jonathan-Mays-MacBook-Pro-2.local ls -lh bolt.100k.6g.34.base
+2016-10-20.13-08-44.Jonathan-Mays-MacBook-Pro-2.local ls -lh bolt.100k.6g.34.base
+2016-10-20.13-08-47.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-08-48.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-08-49.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-34-31.Jonathan-Mays-MacBook-Pro-2.local ls -l bolt.100k.6g.34.base
+2016-10-20.13-34-53.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.45.100k.toklc.tfidf 
+2016-10-20.13-35-16.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.34.base -o hau.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.13-35-18.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.34.base -o hau.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.13-39-23.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.34.base -o hau.6g.45.100k.toklc.tfidf -m 3 4 &
+2016-10-20.13-39-46.Jonathan-Mays-MacBook-Pro-2.local mv tur.6g.45.100k.toklc.tfidf tur.6g.34.100k.toklc.tfidf 
+2016-10-20.13-39-51.Jonathan-Mays-MacBook-Pro-2.local ls *45*
+2016-10-20.13-39-56.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.34.100k.toklc.tfidf 
+2016-10-20.13-40-20.Jonathan-Mays-MacBook-Pro-2.local grep ' one ' tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-40-22.Jonathan-Mays-MacBook-Pro-2.local grep ' one ' tur.engside.toklc | sort | uniq | head
+2016-10-20.13-40-39.Jonathan-Mays-MacBook-Pro-2.local grep ' of$' tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-40-46.Jonathan-Mays-MacBook-Pro-2.local grep " of$" tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-40-59.Jonathan-Mays-MacBook-Pro-2.local less tur.engside.toklc
+2016-10-20.13-41-04.Jonathan-Mays-MacBook-Pro-2.local grep " leak$" tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-41-11.Jonathan-Mays-MacBook-Pro-2.local head tur.engside.toklc
+2016-10-20.13-41-13.Jonathan-Mays-MacBook-Pro-2.local head tur.engside.toklc | grep open
+2016-10-20.13-41-24.Jonathan-Mays-MacBook-Pro-2.local head tur.engside.toklc | grep open
+2016-10-20.13-41-29.Jonathan-Mays-MacBook-Pro-2.local grep " leak $" tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-41-34.Jonathan-Mays-MacBook-Pro-2.local grep " of $" tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-41-37.Jonathan-Mays-MacBook-Pro-2.local grep " of $" tur.engside.toklc | sort | uniq | head
+2016-10-20.13-41-47.Jonathan-Mays-MacBook-Pro-2.local grep " of $" tur.engside.toklc | sort | uniq | head -20
+2016-10-20.13-43-24.Jonathan-Mays-MacBook-Pro-2.local grep " @-@ .* @-@ " tur.engside.toklc | head
+2016-10-20.13-43-52.Jonathan-Mays-MacBook-Pro-2.local grep " one 's " tur.engside.toklc | head
+2016-10-20.13-43-57.Jonathan-Mays-MacBook-Pro-2.local grep " one 's " tur.engside.toklc | wc
+2016-10-20.13-44-01.Jonathan-Mays-MacBook-Pro-2.local grep " one 's " tur.engside.toklc | sort | uniq | wc
+2016-10-20.13-44-04.Jonathan-Mays-MacBook-Pro-2.local grep " one 's " tur.engside.toklc | sort | uniq | head
+2016-10-20.13-44-07.Jonathan-Mays-MacBook-Pro-2.local grep " one 's " tur.engside.toklc | sort | uniq | head -20
+2016-10-20.13-56-26.cambalache.isi.edu grep " one 's " tur.engside.toklc | sort | uniq | head -20
+2016-10-20.13-56-28.cambalache.isi.edu jobs
+2016-10-20.13-56-30.cambalache.isi.edu ls
+2016-10-20.13-56-43.cambalache.isi.edu less engside
+2016-10-20.13-57-14.cambalache.isi.edu less tur.engside
+2016-10-20.13-57-36.cambalache.isi.edu less bolt.100k.6g.34.base 
+2016-10-20.15-19-50.Jonathan-Mays-MacBook-Pro-2.local grep ";" bolt.100k.6g.34.base | less
+2016-10-20.15-19-52.Jonathan-Mays-MacBook-Pro-2.local grep ";" bolt.100k.6g.34.base | less
+2016-10-20.15-19-53.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.15-20-03.Jonathan-Mays-MacBook-Pro-2.local ls -l hau.6g.45.100k.toklc.tfidf
+2016-10-20.15-20-05.Jonathan-Mays-MacBook-Pro-2.local df -h .
+2016-10-20.15-53-41.Jonathan-Mays-MacBook-Pro-2.local df -h .
+2016-10-20.15-53-44.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-20.15-54-01.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-20.15-54-16.Jonathan-Mays-MacBook-Pro-2.local kill %1
+2016-10-20.15-54-18.Jonathan-Mays-MacBook-Pro-2.local kill %1
+2016-10-20.15-55-50.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.34.base -o hau.6g.45.100k.toklc.tfidf -m 3 4 --no-basetext &
+2016-10-20.15-55-57.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.34.base -o hau.6g.45.100k.toklc.tfidf -m 3 4 --no-basetext &
+2016-10-20.15-56-09.Jonathan-Mays-MacBook-Pro-2.local less hau.engside.toklc 
+2016-10-20.15-56-10.Jonathan-Mays-MacBook-Pro-2.local less hau.engside.toklc 
+2016-10-20.16-30-51.Jonathan-Mays-MacBook-Pro-2.local less hau.engside.toklc 
+2016-10-20.16-31-10.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.45.100k.toklc.tfidf 
+2016-10-20.16-31-18.Jonathan-Mays-MacBook-Pro-2.local ls *45*
+2016-10-20.16-31-29.Jonathan-Mays-MacBook-Pro-2.local mv hau.6g.45.100k.toklc.tfidf hau.6g.34.100k.toklc.tfidf
+2016-10-20.16-32-13.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.34.100k.toklc.tfidf 
+2016-10-20.16-32-24.Jonathan-Mays-MacBook-Pro-2.local grep " & c " hau.engside.toklc
+2016-10-20.16-32-35.Jonathan-Mays-MacBook-Pro-2.local grep " & c " hau.engside.toklc | wc
+2016-10-20.16-32-42.Jonathan-Mays-MacBook-Pro-2.local grep " & c " hau.engside.toklc | less
+2016-10-20.16-32-54.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon  | head -3
+2016-10-20.16-32-57.Jonathan-Mays-MacBook-Pro-2.local find lextmp/ -name lexicon  | head -5
+2016-10-20.16-33-18.Jonathan-Mays-MacBook-Pro-2.local cut -f3 lextmp/BOLT_Uzbek_IL_LDC2015E89_V1.1/lexicon > uzb.engside
+2016-10-20.16-33-21.Jonathan-Mays-MacBook-Pro-2.local wc -l uzb.engside 
+2016-10-20.16-33-37.Jonathan-Mays-MacBook-Pro-2.local less uzb.engside
+2016-10-20.16-33-46.Jonathan-Mays-MacBook-Pro-2.local awk '{print NF}'  uzb.engside | head
+2016-10-20.16-33-50.Jonathan-Mays-MacBook-Pro-2.local awk '{print NF}'  uzb.engside | sort | uniq -c | wc
+2016-10-20.16-33-53.Jonathan-Mays-MacBook-Pro-2.local awk '{print NF}'  uzb.engside | sort | uniq -c
+2016-10-20.16-34-23.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d uzb.engside --basefile bolt.100k.6g.34.base -o uzb.6g.34.100k.tok
+2016-10-20.16-34-41.Jonathan-Mays-MacBook-Pro-2.local ../panxbranchtools/agiletok.sh -o uzb.engside.toklc -i uzb.engside
+2016-10-20.16-35-09.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.34.base -o uzb.6g.34.100k.toklc.tfidf -m 3 4 --no-basetext 
+2016-10-20.16-35-22.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.34.base -o uzb.6g.34.100k.toklc.tfidf -m 3 4 --no-basetext &
+2016-10-20.16-35-27.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.34.base -o uzb.6g.34.100k.toklc.tfidf -m 3 4 --no-basetext &
+2016-10-20.16-38-42.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.34.base -o uzb.6g.34.100k.toklc.tfidf -m 3 4 --no-basetext &
+2016-10-20.16-39-05.Jonathan-Mays-MacBook-Pro-2.local less uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-39-38.Jonathan-Mays-MacBook-Pro-2.local grep " ; .* , " uzb.engside.toklc | less
+2016-10-20.16-39-55.Jonathan-Mays-MacBook-Pro-2.local less uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-39-57.Jonathan-Mays-MacBook-Pro-2.local less uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-40-18.Jonathan-Mays-MacBook-Pro-2.local grep " , be " uzb.engside.toklc | less
+2016-10-20.16-40-27.Jonathan-Mays-MacBook-Pro-2.local less uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-40-29.Jonathan-Mays-MacBook-Pro-2.local less uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-40-49.Jonathan-Mays-MacBook-Pro-2.local grep " ( to ) " uzb.engside.toklc | less
+2016-10-20.16-41-53.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.16-42-05.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.34.100k.toklc.tfidf
+2016-10-20.16-42-08.Jonathan-Mays-MacBook-Pro-2.local head hau.6g.34.100k.toklc.tfidf
+2016-10-20.16-42-28.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.34.100k.toklc.tfidf 
+2016-10-20.16-42-49.Jonathan-Mays-MacBook-Pro-2.local head uzb.6g.34.100k.toklc.tfidf 
+2016-10-20.16-59-38.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.34.100k.toklc.tfidf 
+2016-10-20.17-51-26.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-20.17-52-24.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o hau.6g.12.110k.toklc.tfidf &
+2016-10-20.17-52-26.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o hau.6g.12.110k.toklc.tfidf &
+2016-10-20.17-52-37.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o uzb.6g.12.110k.toklc.tfidf &
+2016-10-20.18-07-44.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o uzb.6g.12.110k.toklc.tfidf &
+2016-10-20.23-43-59.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o uzb.6g.12.110k.toklc.tfidf &
+2016-10-20.23-44-01.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-21.09-13-19.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-10-21.09-13-26.Jonathan-Mays-MacBook-Pro-2.local ping google.com
+2016-10-21.09-13-33.jonmay.isi.edu ping google.com
+2016-10-21.09-13-35.jonmay.isi.edu ping google.com
+2016-10-21.19-23-12.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-10-24.11-47-15.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/
+2016-10-24.11-47-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-24.13-29-22.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-24.13-29-29.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/applymatches.py
+2016-10-24.14-28-40.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/applymatches.py
+2016-10-24.14-28-40.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/applymatches.py
+2016-10-24.16-16-46.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-10-24.16-24-57.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-24.16-25-45.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.tfidf 
+2016-10-24.16-25-49.Jonathan-Mays-MacBook-Pro-2.local head -1 tur.6g.12.100k.toklc.tfidf 
+2016-10-24.16-26-09.Jonathan-Mays-MacBook-Pro-2.local grep -n " in the " tur.engside.toklc | head
+2016-10-24.16-26-24.Jonathan-Mays-MacBook-Pro-2.local ls lextmp
+2016-10-24.16-26-29.Jonathan-Mays-MacBook-Pro-2.local ls lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/
+2016-10-24.16-26-38.Jonathan-Mays-MacBook-Pro-2.local head -1133 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1
+2016-10-24.16-27-01.Jonathan-Mays-MacBook-Pro-2.local head -1133 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1 | tr 'A-Z' 'a-z'
+2016-10-24.16-27-36.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -1133 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1 | tr 'A-Z' 'a-z') -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-28-41.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -1133 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1 | tr 'A-Z' 'a-z') -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-28-55.Jonathan-Mays-MacBook-Pro-2.local head -1 tur.6g.12.100k.toklc.tfidf
+2016-10-24.16-30-48.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.toklc 
+2016-10-24.16-30-55.Jonathan-Mays-MacBook-Pro-2.local wc -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-24.16-31-05.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1133 | tail -1
+2016-10-24.16-31-20.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1
+2016-10-24.16-31-51.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-32-11.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-33-01.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-33-19.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.tok.lc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-33-28.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-33-42.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-35-45.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-35-56.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste <(cut -f1-2 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-36-46.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1133 | tail -1) -p <(head -1 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-36-56.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1133 | tail -1) -p <(head -3 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-37-36.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1133 | tail -1) -p <(head -3 tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-38-20.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc -p <(head tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.top10.apply
+2016-10-24.16-38-28.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.top10.apply
+2016-10-24.16-38-34.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.top10.apply 
+2016-10-24.16-38-39.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.toklc 
+2016-10-24.16-38-50.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top10.apply 
+2016-10-24.16-39-23.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top10.apply 
+2016-10-24.16-39-47.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head tur.6g.12.100k.toklc.tfidf) | awk -F$'\t' '$3!=$4{print}' | wc
+2016-10-24.16-40-07.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head
+2016-10-24.16-40-23.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head | awk -F$'\t' '$3!=$4{print}'
+2016-10-24.16-40-27.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head | awk -F$'\t' '$3==$4{print}'
+2016-10-24.16-40-35.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head | awk -F$'\t' '{print $3, $4}'
+2016-10-24.16-42-35.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1) -p <(head tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-43-45.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1) -p <(head tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-44-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1) -p <(head tur.6g.12.100k.toklc.tfidf)
+2016-10-24.16-44-11.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.16-44-31.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough -o tur.6g.12.top10.apply.changes
+2016-10-24.16-44-37.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.top10.apply.changes 
+2016-10-24.16-45-00.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top10.apply.changes 
+2016-10-24.16-45-18.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough -o tur.6g.12.top100.apply.changes
+2016-10-24.16-45-23.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.top100.apply.changes 
+2016-10-24.16-46-03.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top100.apply.changes 
+2016-10-24.16-46-19.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top10.apply.changes 
+2016-10-24.16-46-32.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | grep weep | head -1
+2016-10-24.16-46-38.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | grep -n weep | head -1
+2016-10-24.16-58-38.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.16-59-15.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-01-01.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-24.17-01-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-01-19.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-03-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-03-52.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-04-07.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-04-41.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough -o tur.6g.12.top100.apply.changes
+2016-10-24.17-04-47.Jonathan-Mays-MacBook-Pro-2.local wc tur.6g.12.top100.apply.changes
+2016-10-24.17-07-33.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top100.apply.changes
+2016-10-24.17-07-40.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | grep -n avail | head -1
+2016-10-24.17-07-58.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-08-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-08-11.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-08-36.Jonathan-Mays-MacBook-Pro-2.local head -100 tur.6g.12.100k.toklc.tfidf | grep -c of
+2016-10-24.17-08-42.Jonathan-Mays-MacBook-Pro-2.local head -100 tur.6g.12.100k.toklc.tfidf | tail -90 | grep -c of
+2016-10-24.17-09-00.Jonathan-Mays-MacBook-Pro-2.local head -100 tur.6g.12.100k.toklc.tfidf | tail -90 | grep of | less
+2016-10-24.17-09-56.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-10-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough -o tur.6g.12.top100.apply.changes
+2016-10-24.17-10-25.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough -o tur.6g.12.top100.apply.changes
+2016-10-24.17-10-29.Jonathan-Mays-MacBook-Pro-2.local wc tur.6g.12.top100.apply.changes
+2016-10-24.17-34-13.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top100.apply.changes 
+2016-10-24.17-35-54.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-36-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-24.17-36-19.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -20 | tail -1) -p <(head tur.6g.12.100k.toklc.tfidf) --no-passthrough --no-mods
+2016-10-24.17-36-29.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7687 | tail -1) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --passthrough
+2016-10-24.17-36-57.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc) -p <(head -100 tur.6g.12.100k.toklc.tfidf) --passthrough --no-mods -o tur.6g.12.top100.apply.nochanges
+2016-10-24.17-37-08.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.top100.apply.*
+2016-10-24.17-37-36.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.top100.apply.nochanges 
+2016-10-24.17-44-42.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-24.17-44-48.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-24.17-45-08.Jonathan-Mays-MacBook-Pro-2.local less scripts/getpatterns.py
+2016-10-24.17-45-12.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-24.17-45-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-24.17-45-26.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -h
+2016-10-24.17-46-30.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-24.17-53-29.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-45-38.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-45-53.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf 
+2016-10-25.09-46-33.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-46-45.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-47-09.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-48-28.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.09-49-36.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.10-05-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.10-05-04.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-25.10-21-17.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-25.10-21-20.Jonathan-Mays-MacBook-Pro-2.local which sample.py
+2016-10-25.10-27-00.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/runtest.py
+2016-10-25.10-27-04.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -h
+2016-10-25.10-28-23.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test
+2016-10-25.10-28-42.Jonathan-Mays-MacBook-Pro-2.local ls -l scripts
+2016-10-25.10-29-36.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.10-29-41.Jonathan-Mays-MacBook-Pro-2.local ls -l /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.py9WJ4bX
+2016-10-25.10-29-55.Jonathan-Mays-MacBook-Pro-2.local less /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.py9WJ4bX/tmpwg4dvT 
+2016-10-25.10-31-26.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.py9WJ4bX/tmpwg4dvT --no-passthrough --scoremode > tur.6g.12.test/changes
+2016-10-25.10-32-58.Jonathan-Mays-MacBook-Pro-2.local cat tur.6g.12.100k.toklc.tfidf | scripts/applymatches.py -i /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.py9WJ4bX/tmpwg4dvT --no-passthrough --scoremode > tur.6g.12.test/changes
+2016-10-25.10-58-22.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/changes
+2016-10-25.10-59-13.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.10-59-32.Jonathan-Mays-MacBook-Pro-2.local /Users/jonmay/projects/lorelei/lexicon/scripts/applymatches.py -i /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pydQ_w9j/tmpdnUV5R --no-passthrough --scoremode | head
+2016-10-25.10-59-46.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.12.100k.toklc.tfidf | /Users/jonmay/projects/lorelei/lexicon/scripts/applymatches.py -i /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pydQ_w9j/tmpdnUV5R --no-passthrough --scoremode | head
+2016-10-25.11-01-40.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.11-01-52.Jonathan-Mays-MacBook-Pro-2.local ls -l scripts
+2016-10-25.11-03-09.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.11-03-41.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.11-04-13.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.11-12-56.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test --debug
+2016-10-25.11-13-27.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-13-40.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.12.t
+2016-10-25.11-13-41.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.12.test/
+2016-10-25.11-14-07.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/changes
+2016-10-25.11-14-13.Jonathan-Mays-MacBook-Pro-2.local grep "/" tur.6g.12.test/changes | head
+2016-10-25.11-14-15.Jonathan-Mays-MacBook-Pro-2.local grep "/" tur.6g.12.test/changes | head -1
+2016-10-25.11-14-46.Jonathan-Mays-MacBook-Pro-2.local grep "/" tur.6g.12.test/changes | head -1 | sed 's|//|\n|g'
+2016-10-25.11-14-49.Jonathan-Mays-MacBook-Pro-2.local grep "/" tur.6g.12.test/changes | head -1 | gsed 's|//|\n|g'
+2016-10-25.11-17-12.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.test/changes
+2016-10-25.11-21-42.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-21-56.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-22-54.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-23-49.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.toklc
+2016-10-25.11-23-58.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.test/changes
+2016-10-25.11-24-48.Jonathan-Mays-MacBook-Pro-2.local diff <(cut -f1-3 tur.6g.12.test/changes) lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | head
+2016-10-25.11-25-07.Jonathan-Mays-MacBook-Pro-2.local head -21 tur.6g.12.test/changes | tail -2
+2016-10-25.11-28-22.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-28-39.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/changes
+2016-10-25.11-30-40.Jonathan-Mays-MacBook-Pro-2.local grep "of the sea" tur.6g.12.100k.toklc.tfidf | head
+2016-10-25.11-31-29.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.tfidf
+2016-10-25.11-34-00.Jonathan-Mays-MacBook-Pro-2.local #scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -100 tur.6g.12.100k.toklc.tfidf) -o tur.6g.12.test
+2016-10-25.11-34-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.11-34-06.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-25.11-34-23.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf 
+2016-10-25.11-34-46.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test
+2016-10-25.11-34-53.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.test/changes
+2016-10-25.11-35-23.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/changes
+2016-10-25.11-36-01.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/sames
+2016-10-25.11-43-07.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.3g.12.100k.toklc.tfidf -o tur.3g.12.test
+2016-10-25.11-43-24.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.test/sames
+2016-10-25.11-43-28.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.test/changes
+2016-10-25.11-43-31.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.3g.12.test/changes
+2016-10-25.11-43-39.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.test/changes
+2016-10-25.11-43-50.Jonathan-Mays-MacBook-Pro-2.local diff tur.6g.12.test/changes tur.3g.12.test/changes | head
+2016-10-25.11-44-04.Jonathan-Mays-MacBook-Pro-2.local diff tur.6g.12.100k.toklc.tfidf tur.3g.12.100k.toklc.tfidf | head
+2016-10-25.11-44-30.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -h
+2016-10-25.11-44-44.Jonathan-Mays-MacBook-Pro-2.local less bolt.100k.3g.12.base 
+2016-10-25.11-44-54.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.11-47-37.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.11-49-31.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.3g.12.base -o tur.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.11-50-22.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf 
+2016-10-25.11-50-38.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.11-50-54.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d uzb.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o uzb.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.11-50-57.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.11-51-11.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o hau.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.12-18-56.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d hau.engside.toklc --basefile bolt.100k.3g.12.base --no-basetext -o hau.3g.12.100k.toklc.tfidf -m 1 2 -n 3 &
+2016-10-25.12-21-48.Jonathan-Mays-MacBook-Pro-2.local #scripts/runtest.py -l lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon -t hau.engside.toklc -p hau.6g.12.110k.toklc.tfidf 
+2016-10-25.12-40-27.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.3g.12.100k.toklc.tfidf -o tur.3g.12.test
+2016-10-25.12-41-03.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l <(head lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head tur.engside.toklc) -p <(head tur.3g.12.100k.toklc.tfidf) -o tur.3g.12.test
+2016-10-25.12-41-33.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head tur.3g.12.100k.toklc.tfidf) -o tur.3g.12.test
+2016-10-25.12-41-42.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head tur.3g.12.100k.toklc.tfidf) -o tur.3g.12.test
+2016-10-25.12-42-15.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-42-19.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-42-27.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.100k.toklc.tfidf 
+2016-10-25.12-42-40.Jonathan-Mays-MacBook-Pro-2.local cut -f2 tur.3g.12.100k.toklc.tfidf | less
+2016-10-25.12-42-49.Jonathan-Mays-MacBook-Pro-2.local cut -f2 tur.3g.12.100k.toklc.tfidf | awk '$1>=5.0{print}' | wc
+2016-10-25.12-42-54.Jonathan-Mays-MacBook-Pro-2.local cut -f2 tur.6g.12.100k.toklc.tfidf | awk '$1>=5.0{print}' | wc
+2016-10-25.12-43-22.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -50 tur.3g.12.100k.toklc.tfidf) -o tur.3g.12.test
+2016-10-25.12-44-52.Jonathan-Mays-MacBook-Pro-2.local grep affetmek lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | wc
+2016-10-25.12-44-55.Jonathan-Mays-MacBook-Pro-2.local grep affetmek lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-25.12-45-02.Jonathan-Mays-MacBook-Pro-2.local grep -n affetmek lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon
+2016-10-25.12-45-12.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-25.12-45-19.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -h
+2016-10-25.12-46-25.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(grep "^give" tur.3g.12.100k.toklc.tfidf | head -1)
+2016-10-25.12-47-51.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(head -100 tur.3g.12.100k.toklc.tfidf)
+2016-10-25.12-48-10.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(head -100 tur.3g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-25.12-48-27.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(head -50 tur.3g.12.100k.toklc.tfidf) --no-passthrough
+2016-10-25.12-48-44.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(head -50 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough
+2016-10-25.12-48-52.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -14 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | tail -1) -p <(head -50 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-49-51.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -14 | tail -1) -p <(head -50 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-50-15.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -14 | tail -1) -p <(grep "^give" tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-50-22.Jonathan-Mays-MacBook-Pro-2.local grep "^give" tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-50-36.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -14 | tail -1) -p <(grep "^give" tur.3g.12.100k.toklc.tfidf | head -1) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-51-52.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -14 | tail -1) -p <(grep "^give" tur.3g.12.100k.toklc.tfidf | head -1) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-53-00.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-53-09.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-53-11.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-53-19.Jonathan-Mays-MacBook-Pro-2.local head -5 tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-53-26.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-53-53.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-54-03.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1) -p <(head -50 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-54-22.Jonathan-Mays-MacBook-Pro-2.local paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -1 | tail -1
+2016-10-25.12-54-54.Jonathan-Mays-MacBook-Pro-2.local grep lmak lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | head -3
+2016-10-25.12-54-57.Jonathan-Mays-MacBook-Pro-2.local grep -n lmak lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | head -3
+2016-10-25.12-54-59.Jonathan-Mays-MacBook-Pro-2.local grep -n lmak lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon | head -3
+2016-10-25.12-55-10.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-55-24.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-55-38.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-56-29.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-56-52.Jonathan-Mays-MacBook-Pro-2.local head -5 tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-57-11.Jonathan-Mays-MacBook-Pro-2.local head -5 tur.3g.12.100k.toklc.tfidf
+2016-10-25.12-57-13.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-58-09.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-58-29.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-58-40.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(paste lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon tur.engside.toklc | head -7 | tail -1) -p <(head -5 tur.3g.12.100k.toklc.tfidf) -t 5.0 --no-passthrough --scoremode
+2016-10-25.12-58-48.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon -t hau.engside.toklc -p hau.6g.12.110k.toklc.tfidf -o hau.6g.12.test
+2016-10-25.12-58-57.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.12.110k.toklc.tfidf 
+2016-10-25.12-59-02.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.12.110k.toklc.tfidf 
+2016-10-25.12-59-04.Jonathan-Mays-MacBook-Pro-2.local less hau.6g.12.110k.toklc.tfidf 
+2016-10-25.13-09-03.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p <(head -50 tur.3g.12.100k.toklc.tfidf) -o tur.3g.12.test
+2016-10-25.13-11-46.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.test/changes
+2016-10-25.13-12-22.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.13-12-45.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf -o tur.6g.12.test
+2016-10-25.13-13-37.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.34.100k.toklc.tfidf -o tur.6g.34.test
+2016-10-25.13-15-17.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Hausa_RL_LDC2015E70_V1.1/lexicon -t hau.engside.toklc -p <(head -50 hau.6g.12.110k.toklc.tfidf) -o hau.6g.12.test
+2016-10-25.13-38-46.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.34.test
+2016-10-25.13-39-17.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.34.test/changes
+2016-10-25.13-39-42.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/changes
+2016-10-25.13-40-01.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test/sames
+2016-10-25.13-40-52.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.tfidf 
+2016-10-25.13-41-03.Jonathan-Mays-MacBook-Pro-2.local grep "all of a sudden" tur.engside | less
+2016-10-25.13-41-10.Jonathan-Mays-MacBook-Pro-2.local grep "all of a sudden" tur.engside.toklc | less
+2016-10-25.13-42-06.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-25.13-43-18.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc uzb.engside.toklc | scripts/getpatterns.py --basefile bolt.100k.6g.12.base --no-basetext -o turuzb.6g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.13-43-30.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc uzb.engside.toklc | scripts/getpatterns.py --basefile bolt.100k.6g.12.base --no-basetext -o turuzb.6g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.13-43-33.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc uzb.engside.toklc | scripts/getpatterns.py --basefile bolt.100k.6g.12.base --no-basetext -o turuzb.6g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.13-46-29.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc uzb.engside.toklc | scripts/getpatterns.py --basefile bolt.100k.6g.12.base --no-basetext -o turuzb.6g.12.100k.toklc.tfidf -m 1 2 &
+2016-10-25.13-47-13.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p turuzb.6g.12.100k.toklc.tfidf -o tur.turuzb.6g.12.test
+2016-10-25.13-47-18.Jonathan-Mays-MacBook-Pro-2.local wc tur.turuzb.6g.12.test/changes
+2016-10-25.13-47-23.Jonathan-Mays-MacBook-Pro-2.local wc tur.6g.12.test/changes
+2016-10-25.13-47-39.Jonathan-Mays-MacBook-Pro-2.local diff tur.turuzb.6g.12.test/changes tur.6g.12.test/changes | head
+2016-10-25.13-47-44.Jonathan-Mays-MacBook-Pro-2.local diff tur.turuzb.6g.12.test/changes tur.6g.12.test/changes | wc
+2016-10-25.13-48-21.Jonathan-Mays-MacBook-Pro-2.local diff tur.turuzb.6g.12.test/changes tur.6g.12.test/changes | less
+2016-10-25.13-48-37.Jonathan-Mays-MacBook-Pro-2.local diff tur.turuzb.6g.12.test/changes tur.6g.12.test/changes | less
+2016-10-25.13-48-45.Jonathan-Mays-MacBook-Pro-2.local less tur.engside.toklc 
+2016-10-25.13-48-48.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.toklc 
+2016-10-25.13-48-55.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | wc
+2016-10-25.13-49-07.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | less
+2016-10-25.13-49-14.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq -c | less
+2016-10-25.13-49-21.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq -c | sort -k1nr | head
+2016-10-25.13-50-19.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq -c | sort -k1nr | less
+2016-10-25.13-51-24.Jonathan-Mays-MacBook-Pro-2.local man join
+2016-10-25.13-51-26.Jonathan-Mays-MacBook-Pro-2.local man gjoin
+2016-10-25.13-51-30.Jonathan-Mays-MacBook-Pro-2.local which gjoin
+2016-10-25.13-51-32.Jonathan-Mays-MacBook-Pro-2.local gjoin -j
+2016-10-25.13-51-36.Jonathan-Mays-MacBook-Pro-2.local gjoin --help
+2016-10-25.13-52-16.Jonathan-Mays-MacBook-Pro-2.local man join
+2016-10-25.13-56-42.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.13-57-19.Jonathan-Mays-MacBook-Pro-2.local less 6grams.masked.reduced.sorted.summed 
+2016-10-25.13-59-28.Jonathan-Mays-MacBook-Pro-2.local #cat tur.engside.toklc | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2
+2016-10-25.13-59-31.Jonathan-Mays-MacBook-Pro-2.local scripts/maskngram.py -h
+2016-10-25.14-00-01.Jonathan-Mays-MacBook-Pro-2.local #cat tur.engside.toklc | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2 | sort | scripts/uniqcount.py > 
+2016-10-25.14-00-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.14-00-21.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2 | sort | scripts/uniqcount.py > tur.6grams.toklc.12 &
+2016-10-25.14-00-28.Jonathan-Mays-MacBook-Pro-2.local cat tur.engside.toklc | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2 | sort | scripts/uniqcount.py > tur.6grams.toklc.12 &
+2016-10-25.14-00-38.Jonathan-Mays-MacBook-Pro-2.local less tur.6grams.toklc.12
+2016-10-25.14-00-41.Jonathan-Mays-MacBook-Pro-2.local less tur.6grams.toklc.12
+2016-10-25.14-00-45.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6grams.toklc.12
+2016-10-25.14-01-17.Jonathan-Mays-MacBook-Pro-2.local #join -t$'\t' tur.6grams.toklc.12 bolt.100k.6g.12.
+2016-10-25.14-01-23.Jonathan-Mays-MacBook-Pro-2.local less bolt.100k.6g.12.base 
+2016-10-25.14-01-25.Jonathan-Mays-MacBook-Pro-2.local less bolt.100k.6g.12.base 
+2016-10-25.14-01-56.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' tur.6grams.toklc.12 bolt.100k.6g.12.base > tur.6g.12.100k.toklc.tf.df.redo &
+2016-10-25.14-02-00.Jonathan-Mays-MacBook-Pro-2.local join -t$'\t' tur.6grams.toklc.12 bolt.100k.6g.12.base > tur.6g.12.100k.toklc.tf.df.redo &
+2016-10-25.14-02-06.Jonathan-Mays-MacBook-Pro-2.local join --help
+2016-10-25.14-02-13.Jonathan-Mays-MacBook-Pro-2.local join -help
+2016-10-25.14-02-35.Jonathan-Mays-MacBook-Pro-2.local join -v 1 -t$'\t' tur.6grams.toklc.12 bolt.100k.6g.12.base > tur.6g.12.100k.toklc.nobolt &
+2016-10-25.14-02-36.Jonathan-Mays-MacBook-Pro-2.local join -v 1 -t$'\t' tur.6grams.toklc.12 bolt.100k.6g.12.base > tur.6g.12.100k.toklc.nobolt &
+2016-10-25.14-02-43.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g*
+2016-10-25.14-02-56.Jonathan-Mays-MacBook-Pro-2.local head tur.6g.12.100k.toklc.nobolt
+2016-10-25.14-03-15.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.nobolt
+2016-10-25.14-03-26.Jonathan-Mays-MacBook-Pro-2.local grep -c "out of joint" tur.engside.toklc 
+2016-10-25.14-03-29.Jonathan-Mays-MacBook-Pro-2.local grep "out of joint" tur.engside.toklc 
+2016-10-25.14-06-25.Jonathan-Mays-MacBook-Pro-2.local grep "out of joint" tur.engside.toklc 
+2016-10-25.14-06-37.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.nobolt 
+2016-10-25.14-06-51.Jonathan-Mays-MacBook-Pro-2.local sort -t$'\t' -k2nr tur.6g.12.100k.toklc.nobolt | head
+2016-10-25.14-07-31.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2 | sort | scripts/uniqcount.py > tur.6grams.toklc.su.12 &
+2016-10-25.14-07-46.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | ./ngram-count -order 6 -write6 - -text - | scripts/maskngram.py -m 1 2 | sort | scripts/uniqcount.py > tur.6grams.toklc.su.12 &
+2016-10-25.14-08-17.Jonathan-Mays-MacBook-Pro-2.local join -v 1 -t$'\t' tur.6grams.toklc.su.12 bolt.100k.6g.12.base > tur.6g.12.100k.su.toklc.nobolt &
+2016-10-25.14-08-22.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.14-08-27.Jonathan-Mays-MacBook-Pro-2.local du -sh .
+2016-10-25.14-08-46.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce.100k.sample 
+2016-10-25.14-08-50.Jonathan-Mays-MacBook-Pro-2.local wc -l bolt.ce.100k.sample 
+2016-10-25.14-08-58.Jonathan-Mays-MacBook-Pro-2.local sort bolt.ce.100k.sample | uniq | wc -l
+2016-10-25.14-09-24.Jonathan-Mays-MacBook-Pro-2.local head bolt.ce.100k.sample | sort | uniq -c
+2016-10-25.14-09-41.Jonathan-Mays-MacBook-Pro-2.local sort bolt.ce.100k.sample | uniq | sort -k1nr | head
+2016-10-25.14-10-00.Jonathan-Mays-MacBook-Pro-2.local sort bolt.ce.100k.sample | uniq -c | sort -k1nr | head
+2016-10-25.14-10-20.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.su.toklc.nobolt 
+2016-10-25.14-10-29.Jonathan-Mays-MacBook-Pro-2.local sort -t$'\t' -k2nr tur.6g.12.100k.su.toklc.nobolt | head
+2016-10-25.14-10-34.Jonathan-Mays-MacBook-Pro-2.local sort -t$'\t' -k2nr tur.6g.12.100k.su.toklc.nobolt | head -30
+2016-10-25.14-11-32.Jonathan-Mays-MacBook-Pro-2.local grep "out @-@ of @-@" tur.engside.toklc | less
+2016-10-25.14-20-13.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.14-20-17.Jonathan-Mays-MacBook-Pro-2.local git init
+2016-10-25.14-20-24.Jonathan-Mays-MacBook-Pro-2.local git add scripts/*.py
+2016-10-25.14-20-27.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-25.14-20-46.Jonathan-Mays-MacBook-Pro-2.local git commit -m 'first set of scripts'
+2016-10-25.14-20-52.Jonathan-Mays-MacBook-Pro-2.local git remote add origin git@github.com:jonmay/lexicon.git
+2016-10-25.14-20-59.Jonathan-Mays-MacBook-Pro-2.local git push -u origin master
+2016-10-25.14-45-19.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-25.14-46-09.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf.redo &
+2016-10-25.14-46-32.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.14-46-51.Jonathan-Mays-MacBook-Pro-2.local less bolt.10k.6g.12.base
+2016-10-25.14-46-52.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-10-25.14-47-33.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.10k.6g.12.base --no-basetext -o foo
+2016-10-25.14-48-47.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.10k.6g.12.base --no-basetext -o foo
+2016-10-25.14-50-06.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.10k.6g.12.base --no-basetext -o foo
+2016-10-25.14-50-21.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-25.14-50-26.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf.redo &
+2016-10-25.14-51-33.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf.redo &
+2016-10-25.14-56-43.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.100k.6g.12.base --no-basetext -o tur.6g.12.100k.toklc.tfidf.redo &
+2016-10-25.14-56-52.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.100k.toklc.tfidf.redo
+2016-10-25.14-56-54.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.6g.12.100k.toklc.tfidf
+2016-10-25.14-57-07.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.100k.toklc.tfidf.redo
+2016-10-25.14-58-17.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.test.redo
+2016-10-25.14-58-53.Jonathan-Mays-MacBook-Pro-2.local wc tur.6g.12.test.redo/changes
+2016-10-25.14-58-57.Jonathan-Mays-MacBook-Pro-2.local wc tur.6g.12.test/changes
+2016-10-25.15-02-53.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test.redo/changes
+2016-10-25.15-03-12.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test.redo/sames
+2016-10-25.15-03-22.Jonathan-Mays-MacBook-Pro-2.local grep ; tur.6g.12.100k.toklc.tfidf.redo  | wc
+2016-10-25.15-03-27.Jonathan-Mays-MacBook-Pro-2.local grep ";" tur.6g.12.100k.toklc.tfidf.redo  | wc
+2016-10-25.15-03-55.Jonathan-Mays-MacBook-Pro-2.local grep ";" tur.6g.12.100k.toklc.tfidf.redo  | less
+2016-10-25.15-14-19.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf 
+2016-10-25.15-14-23.Jonathan-Mays-MacBook-Pro-2.local less tur.3g.12.100k.toklc.tfidf 
+2016-10-25.15-18-05.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.12.test.redo/sames
+2016-10-25.15-18-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.15-18-18.Jonathan-Mays-MacBook-Pro-2.local less bolt.ce.100k.sample 
+2016-10-25.15-18-33.Jonathan-Mays-MacBook-Pro-2.local awk 'NF==6{print}' bolt.ce.100k.sample | less
+2016-10-25.15-18-36.Jonathan-Mays-MacBook-Pro-2.local awk 'NF==6{print}' bolt.ce.100k.sample | wc
+2016-10-25.15-18-42.Jonathan-Mays-MacBook-Pro-2.local awk 'NF==6{print}' bolt.ce.100k.sample | grep -c ","
+2016-10-25.15-19-12.Jonathan-Mays-MacBook-Pro-2.local awk 'NF==6{print}' bolt.ce.100k.sample | grep "," | less
+2016-10-25.15-19-25.Jonathan-Mays-MacBook-Pro-2.local awk 'NF==3{print}' bolt.ce.100k.sample | grep "," | less
+2016-10-25.15-22-57.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-25.15-44-32.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.15-45-16.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -10 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -10 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.15-45-40.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -100 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -100 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.15-45-53.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.toklc
+2016-10-25.15-47-02.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/
+2016-10-25.15-47-09.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -1000 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -1000 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.15-47-42.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-25.15-48-41.Jonathan-Mays-MacBook-Pro-2.local ls scripts/
+2016-10-25.15-49-12.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2016-10-25.15-58-57.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -100 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -100 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.15-59-55.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.16-00-25.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -100 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -100 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.16-09-30.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-25.16-09-38.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/applymatches_union.py
+2016-10-25.16-09-47.Jonathan-Mays-MacBook-Pro-2.local #time scripts/runtest.py -l <(head -100 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -100 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o tur.6g.12.0.1d.test.redo
+2016-10-25.16-09-48.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.16-09-50.Jonathan-Mays-MacBook-Pro-2.local rm foo
+2016-10-25.16-10-13.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -10 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -10 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo -o foo
+2016-10-25.16-10-54.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -10 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -10 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo --applyprog scripts/applymatches_union.py -o foo2 
+2016-10-25.16-11-49.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l <(head -10 lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon) -t <(head -10 tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo --applyprog scripts/applymatches_union.py -o foo2 --debug
+2016-10-25.16-12-30.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV -t 0.1 --no-passthrough --scoremode > foo1
+2016-10-25.16-13-14.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head -1 tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-18.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head -1 tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-27.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head -2 tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-33.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head  tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-41.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head  tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-48.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head -1 /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-13-54.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p <(head tur.6g.12.100k.toklc.tfidf.redo) -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-14-20.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-14-42.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-16-16.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-17-46.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-24-42.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-10-25.16-37-10.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-37-23.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-46-34.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-47-32.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-48-13.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-48-27.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-50-44.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-54-30.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-55-07.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-56-22.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches_union.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-56-37.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 0.1 --no-passthrough --scoremode
+2016-10-25.16-56-48.Jonathan-Mays-MacBook-Pro-2.local scripts/applymatches.py -i <(head  /var/folders/mm/r_kz1h697cbb_x0b5wm9w69r0000gq/T/runtest.pyTM6JjO/tmpiWZGTV) -p tur.6g.12.100k.toklc.tfidf.redo -t 5 --no-passthrough --scoremode
+2016-10-25.16-58-28.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -h
+2016-10-25.16-58-30.Jonathan-Mays-MacBook-Pro-2.local ./ngram-count -help
+2016-10-25.16-58-43.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.16-58-47.Jonathan-Mays-MacBook-Pro-2.local head -1 engside
+2016-10-25.16-59-31.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 3 -text - -write foo
+2016-10-25.16-59-34.Jonathan-Mays-MacBook-Pro-2.local rm -rf foo*
+2016-10-25.16-59-36.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 3 -text - -write foo
+2016-10-25.16-59-57.Jonathan-Mays-MacBook-Pro-2.local less foo
+2016-10-25.17-02-50.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -text - -write -
+2016-10-25.17-03-32.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -text - -write - | scripts/maskngram.py -m 1 2 3 | sort | scripts/uniqcount.py 
+2016-10-25.17-04-45.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -text - -write - | scripts/maskngram.py -m 1 2 3 | sort | scripts/uniqcount.py 
+2016-10-25.17-04-51.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -text - -write - | scripts/maskngram.py -m 1 2 3 | sort | scripts/uniqcount.py  | grep -v VAR
+2016-10-25.17-05-09.Jonathan-Mays-MacBook-Pro-2.local head -1 engside | ./ngram-count -order 4 -text - -write - | scripts/maskngram.py -m 1 2 3 | sort | scripts/uniqcount.py  | grep -v VAR
+2016-10-25.17-17-10.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.10k.sample --basengramfile bolt.10k.comp.6g.base -o tur.6g.comp.10k.toklc.tfidf -m 1 2 3 4 5 -n 6
+2016-10-25.17-20-18.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.10k.toklc.tfidf 
+2016-10-25.17-20-49.Jonathan-Mays-MacBook-Pro-2.local #time scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc) -d 0.1 -p tur.6g.12.100k.toklc.tfidf.redo --applyprog scripts/applymatches_union.py -o foo2 --debug
+2016-10-25.17-20-53.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.10k.toklc.tfidf 
+2016-10-25.17-21-02.Jonathan-Mays-MacBook-Pro-2.local cut -f2 tur.6g.comp.10k.toklc.tfidf | less
+2016-10-25.17-21-11.Jonathan-Mays-MacBook-Pro-2.local cut -f2 tur.6g.comp.10k.toklc.tfidf | awk '$1>=5{print}' | wc
+2016-10-25.17-21-56.Jonathan-Mays-MacBook-Pro-2.local head -12041 tur.6g.comp.10k.toklc.tfidf | less
+2016-10-25.17-23-33.Jonathan-Mays-MacBook-Pro-2.local #scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 100 -p tur.6g.comp.10k.toklc.tfidf -o 
+2016-10-25.17-23-33.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.17-24-09.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 100 -p tur.6g.comp.10k.toklc.tfidf -o tur.6g.comp.10k
+2016-10-25.17-25-33.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.10k/changes
+2016-10-25.17-25-59.Jonathan-Mays-MacBook-Pro-2.local scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 100 -p tur.6g.comp.10k.toklc.tfidf -o tur.6g.comp.10k.100
+2016-10-25.17-26-47.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 50 -p tur.6g.comp.10k.toklc.tfidf -o tur.6g.comp.10k.50
+2016-10-25.17-26-55.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.comp.10k/100
+2016-10-25.17-26-57.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.comp.10k.100
+2016-10-25.17-27-01.Jonathan-Mays-MacBook-Pro-2.local ls -l tur.6g.comp.10k.50
+2016-10-25.17-28-25.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.10k.50/changes
+2016-10-25.17-28-59.Jonathan-Mays-MacBook-Pro-2.local grep hard tur.6g.comp.10k.toklc.tfidf | less
+2016-10-25.17-29-17.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | grep hard | less
+2016-10-25.17-29-26.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | grep hard | less
+2016-10-25.17-29-33.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.toklc | uniq | grep -c "^hard" | less
+2016-10-25.17-30-18.Jonathan-Mays-MacBook-Pro-2.local grep "^hard" tur.engside.toklc > tur.engside.harddemo
+2016-10-25.17-30-22.Jonathan-Mays-MacBook-Pro-2.local wc -l tur.engside.harddemo 
+2016-10-25.17-30-28.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.10k.sample --basengramfile bolt.10k.comp.6g.base -o tur.6g.comp.10k.toklc.tfidf -m 1 2 3 4 5 -n 6
+2016-10-25.17-31-00.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.harddemo --basefile bolt.10k.comp.6g.base --no-basetext -o tur.harddemo &
+2016-10-25.17-31-16.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.harddemo --basefile bolt.10k.comp.6g.base --no-basetext -o tur.harddemo &
+2016-10-25.17-33-37.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.harddemo --basefile bolt.10k.comp.6g.base --no-basetext -o tur.harddemo &
+2016-10-25.17-33-50.Jonathan-Mays-MacBook-Pro-2.local less tur.harddemo 
+2016-10-25.17-33-59.Jonathan-Mays-MacBook-Pro-2.local sort tur.engside.harddemo | uniq | wc
+2016-10-25.17-49-17.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.10k.comp.6g.base -o tur.6g.comp.10k.toklc.tfidf -m 1 2 3 4 5 -n 6
+2016-10-25.17-49-21.Jonathan-Mays-MacBook-Pro-2.local du -sh .
+2016-10-25.17-49-44.Jonathan-Mays-MacBook-Pro-2.local #scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.10k.comp.6g.base -o tur.6g.comp.10k.toklc.tfidf -m 1 2 3 4 5 -n 6
+2016-10-25.17-50-00.Jonathan-Mays-MacBook-Pro-2.local mv bolt.10k.comp.6g.base bolt.100k.comp.6g.base
+2016-10-25.17-50-01.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.17-50-41.Jonathan-Mays-MacBook-Pro-2.local for i in k k.100 k.50; do mv tur.6g.comp.10$i tur.6g.comp.100$i; done
+2016-10-25.17-50-42.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.17-50-57.Jonathan-Mays-MacBook-Pro-2.local mv tur.6g.comp.10k.toklc.tfidf tur.6g.comp.100k.toklc.tfidf 
+2016-10-25.17-51-37.Jonathan-Mays-MacBook-Pro-2.local ls -l *base
+2016-10-25.17-51-50.Jonathan-Mays-MacBook-Pro-2.local mv bolt.100k.comp.6g.base bolt.10k.comp.6g.base
+2016-10-25.17-51-59.Jonathan-Mays-MacBook-Pro-2.local mv tur.6g.comp.100k.toklc.tfidf tur.6g.comp.10k.toklc.tfidf 
+2016-10-25.17-52-01.Jonathan-Mays-MacBook-Pro-2.local mv tur.6g.comp.100k.toklc.tfidf tur.6g.comp.10k.toklc.tfidf 
+2016-10-25.17-52-09.Jonathan-Mays-MacBook-Pro-2.local for i in k k.100 k.50; do mv tur.6g.comp.100$i tur.6g.comp.10$i; done
+2016-10-25.17-52-10.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-25.17-52-14.Jonathan-Mays-MacBook-Pro-2.local ls | grep comp
+2016-10-25.17-52-37.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.comp.6g.base -o tur.6g.comp.100k.toklc.tfidf -m 1 2 3 4 5 -n 6 &
+2016-10-25.17-54-31.Jonathan-Mays-MacBook-Pro-2.local scripts/getpatterns.py -d tur.engside.toklc --basefile bolt.ce.100k.sample --basengramfile bolt.100k.comp.6g.base -o tur.6g.comp.100k.toklc.tfidf -m 1 2 3 4 5 -n 6 &
+2016-10-25.17-54-42.Jonathan-Mays-MacBook-Pro-2.local mkdir getpatternscountdemo
+2016-10-25.18-00-15.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-10-25.18-00-16.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/
+2016-10-25.18-00-17.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-25.23-50-37.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.100k.toklc.tfidf 
+2016-10-26.08-50-12.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm6
+2016-10-26.08-50-51.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm12.isi.edu
+2016-10-26.08-51-07.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm38.isi.edu
+2016-10-26.09-19-18.Jonathan-Mays-MacBook-Pro-2.local jobs
+2016-10-26.09-19-19.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-26.09-20-07.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-10-26.09-20-19.Jonathan-Mays-MacBook-Pro-2.local time scripts/runtest.py -l lextmp/BOLT_Turkish_RL_LDC2014E115_V2.1/lexicon -t tur.engside.toklc -d 50 -p tur.6g.comp.100k.toklc.tfidf -o tur.6g.comp.100k.50
+2016-10-26.10-28-43.Jonathan-Mays-MacBook-Pro-2.local ls tur.6g.comp.100k.50/
+2016-10-26.10-29-20.Jonathan-Mays-MacBook-Pro-2.local less tur.6g.comp.100k.50/changes
+2016-10-26.10-29-28.Jonathan-Mays-MacBook-Pro-2.local cat tur.6g.comp.100k.50/changesamples 
+2016-10-26.10-30-35.Jonathan-Mays-MacBook-Pro-2.local cat tur.6g.comp.10k.50/changesamples 
+2016-10-26.11-09-36.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-10-26.11-15-45.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm4
+2016-10-26.12-17-07.guest-wireless-207-151-059-030.usc.edu ssh hpc
+2016-10-26.12-42-53.guest-wireless-207-151-059-030.usc.edu ssh hpc
+2016-10-26.14-03-32.guest-wireless-207-151-059-030.usc.edu ssh elisa
+2016-10-26.14-13-19.guest-wireless-207-151-059-030.usc.edu ssh hpc
+2016-10-26.23-33-05.Jonathan-Mays-MacBook-Pro-2.local ssh elisa.isi.edu
+2016-10-27.09-51-50.Jonathan-Mays-MacBook-Pro-2.local clear
+2016-10-27.17-45-44.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-10-28.09-40-38.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-10-28.09-40-41.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/
+2016-10-28.09-40-43.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/bol
+2016-10-28.09-40-44.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/bolt
+2016-10-28.09-40-49.Jonathan-Mays-MacBook-Pro-2.local ls ~/projects/bolt/bbny2dr1/
+2016-11-17.15-34-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-17.15-34-16.Jonathan-Mays-MacBook-Pro-2.local mkdir rl
+2016-11-17.15-37-29.Jonathan-Mays-MacBook-Pro-2.local chmod a+x scripts/simplifydict.py
+2016-11-17.15-37-33.Jonathan-Mays-MacBook-Pro-2.local scripts/simplifydict.py -h
+2016-11-17.15-38-04.Jonathan-Mays-MacBook-Pro-2.local scripts/simplifydict.py -h
+2016-11-17.15-38-21.Jonathan-Mays-MacBook-Pro-2.local scripts/simplifydict.py -h
+2016-11-18.11-18-23.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-30.19-27-02.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-11-30.19-27-32.Jonathan-Mays-MacBook-Pro-2.local less README
+2016-12-07.11-06-37.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.11-06-44.Jonathan-Mays-MacBook-Pro-2.local git add README
+2016-12-07.11-06-48.Jonathan-Mays-MacBook-Pro-2.local git add .history
