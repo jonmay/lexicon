@@ -343,3 +343,191 @@
 2016-12-07.11-07-02.Jonathan-Mays-MacBook-Pro-2.local ls
 2016-12-07.11-07-05.Jonathan-Mays-MacBook-Pro-2.local git add README
 2016-12-07.11-07-08.Jonathan-Mays-MacBook-Pro-2.local git add .history 
+2016-12-07.13-51-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.13-51-40.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.dev) <(cut -f2 uig.dev | ~/projects/lorelei/unitok/scripts/tok.py) > uig.dev.tok
+2016-12-07.13-51-59.Jonathan-Mays-MacBook-Pro-2.local less uig.dev.tok
+2016-12-07.13-52-49.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-07.13-54-27.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.13-54-42.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-12-07.13-55-24.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.13-57-36.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.13-57-51.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.13-58-05.Jonathan-Mays-MacBook-Pro-2.local cut -f1,3 additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev --no-puncfilt
+2016-12-07.13-58-39.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev --no-puncfilt 2> /dev/null
+2016-12-07.13-58-47.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py -c uig.dev  2> /dev/null
+2016-12-07.13-59-16.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py --persent -c <(head -1 uig.dev)  2> /dev/null
+2016-12-07.13-59-27.Jonathan-Mays-MacBook-Pro-2.local head uig.dev
+2016-12-07.13-59-58.Jonathan-Mays-MacBook-Pro-2.local cut -f1 uig.dev | less
+2016-12-07.14-00-14.Jonathan-Mays-MacBook-Pro-2.local cut -f2 uig.dev | less
+2016-12-07.14-00-25.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-02-09.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-02-47.Jonathan-Mays-MacBook-Pro-2.local less additional/lexicon/lexicon
+2016-12-07.14-02-57.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | head
+2016-12-07.14-03-24.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-03-36.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-03-47.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-04-01.Jonathan-Mays-MacBook-Pro-2.local head -8 uig.dev | tail -1
+2016-12-07.14-04-10.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-04-34.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) > lex.tok
+2016-12-07.14-04-36.Jonathan-Mays-MacBook-Pro-2.local wc lex.tok
+2016-12-07.14-04-52.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py --persent -d lex.tok -c <(head -8 uig.dev | tail -1)
+2016-12-07.14-05-05.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) > lex.tok
+2016-12-07.14-05-09.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-05-28.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-05-58.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-07-34.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-08-44.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-09-02.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py --persent -c <(head -8 uig.dev | tail -1)  2> /dev/null
+2016-12-07.14-09-20.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py -c uig.dev
+2016-12-07.14-09-36.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py 2>/dev/null) | ../../scripts/scoredict.py -c uig.dev.tok 
+2016-12-07.14-10-35.Jonathan-Mays-MacBook-Pro-2.local lowercase.py -i uig.dev.tok -o uig.dev.tok.lc
+2016-12-07.14-10-44.Jonathan-Mays-MacBook-Pro-2.local less uig.dev.tok.lc
+2016-12-07.14-11-42.Jonathan-Mays-MacBook-Pro-2.local cut -f2 lex.tok | less
+2016-12-07.14-11-48.Jonathan-Mays-MacBook-Pro-2.local lowercase.py -i lex.tok -o lex.tok.lc
+2016-12-07.14-12-53.Jonathan-Mays-MacBook-Pro-2.local for d in uig.lex.seb.norm; do paste <(cut -f1 $d) <(cut -f3 $d | ~/projects/lorelei/unitok/scripts/tok.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+2016-12-07.14-13-24.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/scoredict.py -d lex.tok.lc -c uig.dev.tok.lc
+2016-12-07.14-27-12.Jonathan-Mays-MacBook-Pro-2.local head uig.lex.seb.norm | cut -f1
+2016-12-07.14-27-14.Jonathan-Mays-MacBook-Pro-2.local head uig.lex.seb.norm | cut -f2
+2016-12-07.14-27-18.Jonathan-Mays-MacBook-Pro-2.local head uig.lex.seb.norm | cut -f3
+2016-12-07.14-29-22.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null
+2016-12-07.14-30-31.Jonathan-Mays-MacBook-Pro-2.local for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | lowercase.py | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+2016-12-07.14-30-41.Jonathan-Mays-MacBook-Pro-2.local for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+2016-12-07.14-32-46.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc --persent -o orig.tok.lc.nopunc.dev.persent
+2016-12-07.14-33-18.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.norm) <(cut -f3 uig.lex.seb.norm | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc --persent -o seb.tok.lc.nopunc.dev.persent
+2016-12-07.14-34-26.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)>$6{print}' | head
+2016-12-07.14-35-02.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)<$6{print}' | head
+2016-12-07.14-35-08.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)<$6{print}' | wc
+2016-12-07.14-35-12.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)>$6{print}' | wc
+2016-12-07.14-38-24.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)==$6{print}' | wc
+2016-12-07.14-53-21.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)>$6{print}' | head
+2016-12-07.14-53-55.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)<$6{print}' | head
+2016-12-07.15-01-58.Jonathan-Mays-MacBook-Pro-2.local for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+2016-12-07.15-03-02.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.norm) <(cut -f3 uig.lex.seb.norm | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc --persent -o seb.tok.lc.nopunc.dev.persent
+2016-12-07.15-03-18.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc --persent -o orig.tok.lc.nopunc.dev.persent
+2016-12-07.15-03-28.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)<$6{print}' | wc
+2016-12-07.15-03-31.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)>$6{print}' | wc
+2016-12-07.15-03-51.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(8)>$2{print}' | wc
+2016-12-07.15-04-03.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(10)>$4{print}' | wc
+2016-12-07.15-04-08.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(10)<$4{print}' | wc
+2016-12-07.15-04-12.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(10)==$4{print}' | wc
+2016-12-07.15-06-05.Jonathan-Mays-MacBook-Pro-2.local for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+2016-12-07.15-06-51.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-48-27.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-50-23.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl
+2016-12-07.15-50-26.Jonathan-Mays-MacBook-Pro-2.local wc -l uig.lex.seb.adj.expl
+2016-12-07.15-50-35.Jonathan-Mays-MacBook-Pro-2.local wc -l additional/lexicon/lexicon
+2016-12-07.15-51-35.Jonathan-Mays-MacBook-Pro-2.local cut -f2 uig.lex.seb.adj.expl | less
+2016-12-07.15-52-21.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+2016-12-07.15-53-12.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl | less
+2016-12-07.15-54-03.Jonathan-Mays-MacBook-Pro-2.local grep -c Error uig.lex.seb.adj.expl
+2016-12-07.15-56-07.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.15-56-14.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl
+2016-12-07.15-56-18.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl | cut -f1
+2016-12-07.15-58-46.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.15-58-49.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl | cut -f1
+2016-12-07.15-58-55.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl
+2016-12-07.16-00-35.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.16-02-35.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl
+2016-12-07.16-02-51.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+2016-12-07.16-04-24.Jonathan-Mays-MacBook-Pro-2.local less  uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-04-39.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-07.16-05-09.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-07.16-05-47.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl.tok.codes.ni) <(cut -f2 uig.lex.seb.adj.expl.tok.codes.ni | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2016-12-07.16-05-57.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-06-06.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl
+2016-12-07.16-07-08.Jonathan-Mays-MacBook-Pro-2.local less unroll.ni.stderr
+2016-12-07.16-07-10.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-07-12.Jonathan-Mays-MacBook-Pro-2.local ls uig.
+2016-12-07.16-07-15.Jonathan-Mays-MacBook-Pro-2.local ls uig.lex.
+2016-12-07.16-07-19.Jonathan-Mays-MacBook-Pro-2.local ls uig.lex.seb.adj.expl.tok.codes.ni.exp/
+2016-12-07.16-07-24.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni.exp/all
+2016-12-07.16-07-57.Jonathan-Mays-MacBook-Pro-2.local cut -f3 uig.lex.seb.adj.expl | less
+2016-12-07.16-08-51.Jonathan-Mays-MacBook-Pro-2.local cut -f2-3 uig.lex.seb.adj.expl | less
+2016-12-07.16-09-13.Jonathan-Mays-MacBook-Pro-2.local ls -l uig.lex.seb.adj.expl
+2016-12-07.16-10-20.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.norm
+2016-12-07.16-10-36.Jonathan-Mays-MacBook-Pro-2.local cut -f3 uig.lex.seb.adj.norm | less
+2016-12-07.16-10-45.Jonathan-Mays-MacBook-Pro-2.local less additional/lexicon/lexicon
+2016-12-07.16-10-57.Jonathan-Mays-MacBook-Pro-2.local grep ruffle additional/lexicon/lexicon
+2016-12-07.16-11-48.Jonathan-Mays-MacBook-Pro-2.local grep ruffle additional/lexicon/lexicon | python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py 
+2016-12-07.16-21-00.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-21-13.Jonathan-Mays-MacBook-Pro-2.local wc *ni
+2016-12-07.16-21-16.Jonathan-Mays-MacBook-Pro-2.local ls -l *ni
+2016-12-07.16-22-12.Jonathan-Mays-MacBook-Pro-2.local grep -c hurdle uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-22-15.Jonathan-Mays-MacBook-Pro-2.local grep hurdle uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-22-26.Jonathan-Mays-MacBook-Pro-2.local grep hurdle uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-22-27.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-22-38.Jonathan-Mays-MacBook-Pro-2.local grep -c hurdle additional/lexicon/lexicon
+2016-12-07.16-22-41.Jonathan-Mays-MacBook-Pro-2.local grep hurdle additional/lexicon/lexicon
+2016-12-07.16-23-33.Jonathan-Mays-MacBook-Pro-2.local grep hurdle additional/lexicon/lexicon | head -1 | python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py
+2016-12-07.16-24-07.Jonathan-Mays-MacBook-Pro-2.local grep hurdle additional/lexicon/lexicon | head -4 | tail -1 | python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py
+2016-12-07.16-24-55.Jonathan-Mays-MacBook-Pro-2.local grep hurdle additional/lexicon/lexicon | head -4 | tail -1 | python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py
+2016-12-07.16-25-42.Jonathan-Mays-MacBook-Pro-2.local grep hurdle additional/lexicon/lexicon | head -4 | tail -1 | python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py
+2016-12-07.16-27-24.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.16-29-28.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.16-30-27.Jonathan-Mays-MacBook-Pro-2.local python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.16-34-47.Jonathan-Mays-MacBook-Pro-2.local grep vigilante uig.lex.seb.adj.expl
+2016-12-07.16-35-19.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+2016-12-07.16-35-32.Jonathan-Mays-MacBook-Pro-2.local less unroll.ni.stderr 
+2016-12-07.16-35-38.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-35-46.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni.exp/all
+2016-12-07.16-36-16.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2016-12-07.16-37-14.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2016-12-07.16-38-13.Jonathan-Mays-MacBook-Pro-2.local head -3 uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-38-18.Jonathan-Mays-MacBook-Pro-2.local head -3 uig.lex.seb.adj.expl.tok.codes.ni | cut -f1
+2016-12-07.16-38-26.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-38-35.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl
+2016-12-07.16-38-43.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-07.16-39-08.Jonathan-Mays-MacBook-Pro-2.local #python3 ../../../uyghur-dictprocessing/tools/norm_flat_uyghur_instructions.py -i additional/lexicon/lexicon -o uig.lex.seb.adj.norm -e uig.lex.seb.adj.expl
+2016-12-07.16-39-10.Jonathan-Mays-MacBook-Pro-2.local wc additional/lexicon/lexicon
+2016-12-07.16-40-10.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl.tok.codes.ni) <(cut -f2 uig.lex.seb.adj.expl.tok.codes.ni | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2016-12-07.16-41-10.Jonathan-Mays-MacBook-Pro-2.local ../../scripts/simplifydict.py -d <(cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni) -i <(cut -f4 uig.lex.seb.adj.expl.tok.codes.ni) -o uig.lex.seb.adj.expl.tok.simplified
+2016-12-07.16-41-22.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.simplified
+2016-12-07.16-41-57.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 uig.lex.seb.adj.expl.tok.simplified) <(cut -f2 uig.lex.seb.adj.expl.tok.simplified | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2016-12-07.16-46-46.Jonathan-Mays-MacBook-Pro-2.local diff uig.lex.seb.adj.expl.tok.codes.ni uig.lex.seb.adj.expl.tok.codes.ni.exp/all | head
+2016-12-08.09-34-40.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-58-02.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-58-24.Jonathan-Mays-MacBook-Pro-2.local ls additional/
+2016-12-08.09-58-26.Jonathan-Mays-MacBook-Pro-2.local ls additional/lexicon/
+2016-12-08.09-59-53.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-00-09.Jonathan-Mays-MacBook-Pro-2.local less orig.tok.lc.nopunc.dev.persent
+2016-12-08.10-00-32.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon) <(cut -f3 additional/lexicon/lexicon | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+2016-12-08.10-00-51.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon.norm) <(cut -f3 additional/lexicon/lexicon.norm | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+2016-12-08.10-04-19.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-04-48.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 additional/lexicon/lexicon.norm) <(cut -f3 additional/lexicon/lexicon.norm | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc --persent -o jonmay.tok.lc.nopunc.dev.persent
+2016-12-08.10-06-35.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$6>$(12) && $6>$(18){print}' | wc
+2016-12-08.10-06-41.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$6>$(12) && $6>$(18){print}' | sample.py -s 2
+2016-12-08.10-11-37.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$12>$(6) && $12>$(18){print}' | wc
+2016-12-08.10-11-41.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$12>$(6) && $12>$(18){print}' | sample.py -s 2
+2016-12-08.10-14-03.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$18>$(6) && $18>$(12){print}' | wc
+2016-12-08.10-14-33.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)>$(6) && $(18)>$(12){print}' | wc
+2016-12-08.10-14-54.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)>$(6) && $(18)==$(12){print}' | wc
+2016-12-08.10-15-04.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)<$(6) && $(18)==$(12){print}' | wc
+2016-12-08.10-16-00.Jonathan-Mays-MacBook-Pro-2.local wc orig.tok.lc.nopunc.dev.persent 
+2016-12-08.10-16-06.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)==$(6) && $(18)==$(12){print}' | wc
+2016-12-08.10-19-22.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)==$(6) && $(18)>$(12){print}' | wc
+2016-12-08.10-19-32.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)==$(6) && $(12)>$(18){print}' | wc
+2016-12-08.10-23-42.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1 jonmay.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 jonmay.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(18)>$(6) && $(18)>$(12){print}' | sample.py -s 2
+2016-12-08.10-38-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-41-43.Jonathan-Mays-MacBook-Pro-2.local less unroll.ni.stderr 
+2016-12-08.10-45-45.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-08.10-45-52.Jonathan-Mays-MacBook-Pro-2.local grep chaotic uig.lex.seb.adj.expl.tok.codes.ni | head -1
+2016-12-08.10-46-08.Jonathan-Mays-MacBook-Pro-2.local grep chaotic uig.lex.seb.adj.expl.tok.codes.ni | head -1 | ~/projects/lorelei/uroman-v1.1/bin/uroman.pl -l uig
+2016-12-08.10-52-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-55-29.Jonathan-Mays-MacBook-Pro-2.local wc additional/lexicon/lexicon
+2016-12-08.10-55-51.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-56-29.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.norm
+2016-12-08.11-02-07.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-19.16-53-19.Jonathan-Mays-MacBook-Pro-2.local pushd ~/projects/lorelei/lexicon/rl/uig/
+2016-12-19.16-53-19.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-19.16-53-45.Jonathan-Mays-MacBook-Pro-2.local less uig.dev.tok.lc
+2016-12-19.17-10-00.Jonathan-Mays-MacBook-Pro-2.local find ~/projects/lorelei/panxbranchtools -name '*.py' -exec grep -H '{}' shchain \; | cut -d':' -f1 | uniq
+2016-12-19.17-10-00.Jonathan-Mays-MacBook-Pro-2.local find ~/projects/lorelei/panxbranchtools -name '*.py' -exec grep -H '{}' shchain \; | cut -d':' -f1 | uniq
+2016-12-19.17-10-08.Jonathan-Mays-MacBook-Pro-2.local find ~/projects/lorelei/panxbranchtools -name '*.py' -exec grep -H shchain '{}' \; | cut -d':' -f1 | uniq
+2016-12-19.17-10-58.Jonathan-Mays-MacBook-Pro-2.local find ~/projects/lorelei/scripts -name '*.py' -exec grep -H shchain '{}' \; | cut -d':' -f1 | uniq
+2016-12-19.17-16-06.Jonathan-Mays-MacBook-Pro-2.local python3
+2016-12-20.10-22-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.10-23-29.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.norm
+2016-12-20.10-24-05.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.adj.expl.tok.codes.ni
+2016-12-20.10-24-45.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.10-25-05.Jonathan-Mays-MacBook-Pro-2.local less README
+2016-12-20.11-57-41.Jonathan-Mays-MacBook-Pro-2.local ls

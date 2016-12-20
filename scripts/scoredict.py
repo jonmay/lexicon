@@ -14,6 +14,7 @@ if sys.version_info[0] == 2:
   from itertools import izip
 else:
   izip = zip
+
 from collections import defaultdict as dd, Counter
 import re
 import os.path
@@ -21,6 +22,7 @@ import gzip
 import tempfile
 import shutil
 import atexit
+import unicodedata as ud
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 
@@ -62,9 +64,11 @@ def oraclematch(choices, golds):
   return argmax
 
 
-def stats(hyps, golds):
+def stats(hyps, golds, matches=None):
   """ p, r, f from hypothesis and correct counters """
-  m = float(sum((golds & hyps).values()))
+  if matches is None:
+    matches = golds & hyps
+  m = float(sum(matches.values()))
   h = float(sum(hyps.values()))
   g = float(sum(golds.values()))
   p = 0.0 if h==0 else m/h
@@ -82,6 +86,22 @@ def matchcount(words, length, dictionary):
       tot+=1
   return tot
 
+
+def isnotallpunc(word, debug=False):
+  ''' return true if any characters are not exclusively symbol/punc '''
+  unis = map(ud.category, word)
+  if(debug):
+    print([x for x in unis])
+  for uni in unis:
+    if not uni.startswith('P') and not uni.startswith('S'):
+      return True
+  return False
+
+
+def isTrue(word):
+  ''' always true '''
+  return True
+
 def main():
   parser = argparse.ArgumentParser(description="given a dictionary, a partially scored parallel corpus, and a set of entries to modify, return future scoring information and a score",
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -92,7 +112,7 @@ def main():
   parser.add_argument("--entries", "-e", nargs='+', default=None,  help="input entries")
   parser.add_argument("--outfile", "-o", nargs='?', type=argparse.FileType('w'), default=sys.stdout, help="output score file")
   addonoffarg(parser, 'persent', default=False, help="print per-sentence statistics and debug info")
-
+  addonoffarg(parser, 'puncfilt', default=True, help="don't consider all-punctuation tokens in this scoring")
 
 
   try:
@@ -114,7 +134,7 @@ def main():
   corpfile = prepfile(args.corpfile, 'r')
   scorefile = prepfile(args.scorefile, 'r') if args.scorefile is not None else None
   outfile = prepfile(args.outfile, 'w')
-
+  thefilt = isnotallpunc if args.puncfilt else isTrue
 
   dictionary = dd(lambda: dd(list))
   # TODO: incremental scoring only based on existing scorefile and entries!!!
@@ -124,17 +144,20 @@ def main():
       sys.stderr.write("Malformed entry: %s" % line)
       continue
     srctoks = toks[0].split()
-    dictionary[len(srctoks)][toks[0]].append(Counter(toks[1].split()))
+    trgtoks = filter(thefilt, toks[1].split())
+    dictionary[len(srctoks)][toks[0]].append(Counter(trgtoks))
   # for k in dictionary.keys():
   #   print(k, len(dictionary[k].values()))
   goldstats = Counter()
   hypstats = Counter()
+  matchstats = Counter()
   # is dp worth it? how many >1s are available?
   # 2s are ~ 3% of 1s and 3s are barely there; not worth it
   #matches = dd(int)
   for line in corpfile:
     fsent, esent = line.strip().split('\t')
-    ecounter = Counter(esent.split())
+    esenttok = filter(thefilt, esent.split())
+    ecounter = Counter(esenttok)
     goldstats +=ecounter
     fwords = fsent.split()
     #for k in dictionary.keys():
@@ -147,7 +170,8 @@ def main():
       (lp, lr, lf) = stats(sentmatch, ecounter)
       outfile.write("p %f r %f f %f\t[[[%s]]]\t[[[%s]]]\n" % (lp, lr, lf, '///'.join(sentmatch.keys()), esent))
     hypstats += sentmatch
-  (p, r, f) = stats(hypstats, goldstats)
+    matchstats += sentmatch&ecounter
+  (p, r, f) = stats(hypstats, goldstats, matches=matchstats)
   outfile.write("Precision: %f\nRecall: %f\nF1: %f\n" % (p,r,f))
   #for k, v in matches.items():
   #  print("%d matches of length %d" %(v, k))

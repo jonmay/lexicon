@@ -128,3 +128,121 @@
 2016-12-07.11-07-10.Jonathan-Mays-MacBook-Pro-2.local ls
 2016-12-07.11-07-12.Jonathan-Mays-MacBook-Pro-2.local git add .hist
 2016-12-07.11-07-14.Jonathan-Mays-MacBook-Pro-2.local git add .history 
+2016-12-07.11-07-24.Jonathan-Mays-MacBook-Pro-2.local '
+2016-12-07.11-07-28.Jonathan-Mays-MacBook-Pro-2.local git push
+2016-12-07.11-07-30.Jonathan-Mays-MacBook-Pro-2.local git status
+2016-12-07.11-07-46.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-07.15-06-53.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-08-18.Jonathan-Mays-MacBook-Pro-2.local less dev.labels
+2016-12-07.15-08-36.Jonathan-Mays-MacBook-Pro-2.local wc dev.dict.orig
+2016-12-07.15-08-38.Jonathan-Mays-MacBook-Pro-2.local wc dev.labels
+2016-12-07.15-09-20.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-09-28.Jonathan-Mays-MacBook-Pro-2.local less train.text
+2016-12-07.15-10-17.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-10-25.Jonathan-Mays-MacBook-Pro-2.local cat most_freq/.history 
+2016-12-07.15-10-57.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-11-01.Jonathan-Mays-MacBook-Pro-2.local head -3 dev.labels
+2016-12-07.15-11-34.Jonathan-Mays-MacBook-Pro-2.local man tr
+2016-12-07.15-11-46.Jonathan-Mays-MacBook-Pro-2.local head -3 dev.labels | tr 'KSD' 'K' 
+2016-12-07.15-12-21.Jonathan-Mays-MacBook-Pro-2.local tr 'KSD' 'K' < ../../../scripts/scoretagger.py -r dev.labels 
+2016-12-07.15-12-32.Jonathan-Mays-MacBook-Pro-2.local tr 'KSD' 'K' < dev.labels | ../../../scripts/scoretagger.py -r dev.labels 
+2016-12-07.15-12-52.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/scoretagger.py -i dev.labels -r dev.labels
+2016-12-07.15-13-21.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-07.15-15-16.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-15-27.Jonathan-Mays-MacBook-Pro-2.local less train
+2016-12-07.15-17-56.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-24-19.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/applyvocab.py -v vocab -i <(cut -f1 all) -o all.text
+2016-12-07.15-24-24.Jonathan-Mays-MacBook-Pro-2.local less all.text
+2016-12-07.15-24-30.Jonathan-Mays-MacBook-Pro-2.local less train
+2016-12-07.15-24-38.Jonathan-Mays-MacBook-Pro-2.local ../../../scripts/applyvocab.py -v vocab -i <(cut -f2 all) -o all.text
+2016-12-07.15-24-47.Jonathan-Mays-MacBook-Pro-2.local less all.text
+2016-12-07.15-25-27.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.15-48-24.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-21-07.Jonathan-Mays-MacBook-Pro-2.local wc *ni
+2016-12-07.16-21-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-21-23.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.16-21-25.Jonathan-Mays-MacBook-Pro-2.local wc all
+2016-12-07.16-21-52.Jonathan-Mays-MacBook-Pro-2.local diff all ../uig.lex.seb.adj.expl.tok.codes.ni | less
+2016-12-07.16-21-57.Jonathan-Mays-MacBook-Pro-2.local head -4 all
+2016-12-07.17-05-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-07.17-47-51.Jonathan-Mays-MacBook-Pro-2.local mkdir n3.w5.k1.e20.b50.E5000
+2016-12-08.09-23-35.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-23-49.Jonathan-Mays-MacBook-Pro-2.local less all.dict.orig
+2016-12-08.09-24-06.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -h
+2016-12-08.09-24-09.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -help
+2016-12-08.09-24-14.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl
+2016-12-08.09-24-31.Jonathan-Mays-MacBook-Pro-2.local less ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl
+2016-12-08.09-24-42.Jonathan-Mays-MacBook-Pro-2.local cut -f1 all.dict.orig | head -3
+2016-12-08.09-24-55.Jonathan-Mays-MacBook-Pro-2.local cut -f1 all.dict.orig | head -3 | ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -l uig
+2016-12-08.09-25-19.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 all.dict.orig ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -l uig) <(cut -f2 all.dict.orig) > all.dict.orig.ur
+2016-12-08.09-34-11.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 all.dict.orig | ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -l uig) <(cut -f2 all.dict.orig) > all.dict.orig.ur
+2016-12-08.09-35-03.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-35-09.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig.ur
+2016-12-08.09-35-13.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig
+2016-12-08.09-35-21.Jonathan-Mays-MacBook-Pro-2.local less all.dict.orig.ur
+2016-12-08.09-35-35.Jonathan-Mays-MacBook-Pro-2.local #~/projects/lorelei/uroman-v1.1/bin/uroman.pl -
+2016-12-08.09-35-41.Jonathan-Mays-MacBook-Pro-2.local cut -f1 all.dict.orig | head -1
+2016-12-08.09-35-43.Jonathan-Mays-MacBook-Pro-2.local cut -f1 all.dict.orig | head -3
+2016-12-08.09-35-51.Jonathan-Mays-MacBook-Pro-2.local cut -f1 all.dict.orig | head -3 | ~/projects/lorelei/uroman-v1.1/bin/uroman.pl -l uig
+2016-12-08.09-37-14.Jonathan-Mays-MacBook-Pro-2.local time paste <(cut -f1 all.dict.orig | ~/projects/lorelei/uroman-v1.1/bin/uroman.pl -l uig) <(cut -f2 all.dict.orig) > all.dict.orig.ur.v11
+2016-12-08.09-37-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-37-23.Jonathan-Mays-MacBook-Pro-2.local ls n3.w5.k1.e20.b50.E5000/
+2016-12-08.09-37-32.Jonathan-Mays-MacBook-Pro-2.local less dev
+2016-12-08.09-37-38.Jonathan-Mays-MacBook-Pro-2.local ls n3.w5.k1.e20.b50.E5000/
+2016-12-08.09-37-43.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-12-08.09-37-55.Jonathan-Mays-MacBook-Pro-2.local head -8 ../uig.dev.tok.lc | tail -1
+2016-12-08.09-38-18.Jonathan-Mays-MacBook-Pro-2.local head ../uig.dev.tok.lc
+2016-12-08.09-38-43.Jonathan-Mays-MacBook-Pro-2.local head -8 ../uig.dev.tok.lc | tail -1 | ~/projects/lorelei/uroman/uroman-v0.5/bin/uroman.pl -l uig
+2016-12-08.09-39-09.Jonathan-Mays-MacBook-Pro-2.local diff all.dict.orig.ur all.dict.orig.ur.v11 | head
+2016-12-08.09-39-36.Jonathan-Mays-MacBook-Pro-2.local head -8 ../uig.dev.tok.lc | tail -1 | ~/projects/lorelei/uroman-v1.1/bin/uroman.pl -l uig
+2016-12-08.09-40-27.Jonathan-Mays-MacBook-Pro-2.local head -8 ../uig.dev.tok.lc | tail -1 | cut -f1
+2016-12-08.09-41-34.Jonathan-Mays-MacBook-Pro-2.local grep "^noewettiki" all.dict.orig.ur.v11 | head
+2016-12-08.09-42-14.Jonathan-Mays-MacBook-Pro-2.local grep "^oechueruelidu" all.dict.orig.ur.v11 | head
+2016-12-08.09-44-40.Jonathan-Mays-MacBook-Pro-2.local time paste <(cut -f1 all.dict.final | ~/projects/lorelei/uroman-v1.1/bin/uroman.pl -l uig) <(cut -f2 all.dict.final) > all.dict.final.ur.v11
+2016-12-08.09-47-31.Jonathan-Mays-MacBook-Pro-2.local grep "^oechueruelidu" all.dict.final.ur.v11 
+2016-12-08.09-47-37.Jonathan-Mays-MacBook-Pro-2.local grep "^noewettiki" all.dict.final.ur.v11 
+2016-12-08.09-53-52.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-53-55.Jonathan-Mays-MacBook-Pro-2.local ls ..
+2016-12-08.09-54-00.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.dev
+2016-12-08.09-54-09.Jonathan-Mays-MacBook-Pro-2.local cut -f2 ../uig.dev | wc
+2016-12-08.09-57-53.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-57-59.Jonathan-Mays-MacBook-Pro-2.local pwd
+2016-12-08.09-58-58.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.09-59-11.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig
+2016-12-08.09-59-15.Jonathan-Mays-MacBook-Pro-2.local wc ../additional/lexicon/lexicon
+2016-12-08.09-59-34.Jonathan-Mays-MacBook-Pro-2.local less all.dict.orig
+2016-12-08.10-52-19.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.10-52-25.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig
+2016-12-08.10-55-07.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.final
+2016-12-08.11-02-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.11-02-18.Jonathan-Mays-MacBook-Pro-2.local wc dev
+2016-12-08.11-02-20.Jonathan-Mays-MacBook-Pro-2.local wc test
+2016-12-08.11-02-23.Jonathan-Mays-MacBook-Pro-2.local wc train
+2016-12-08.11-13-24.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-08.11-13-27.Jonathan-Mays-MacBook-Pro-2.local wc vocab
+2016-12-08.11-13-58.Jonathan-Mays-MacBook-Pro-2.local gsed 's/ /\n/g' train | less
+2016-12-08.11-14-06.Jonathan-Mays-MacBook-Pro-2.local cut -f2 train | less
+2016-12-08.11-14-42.Jonathan-Mays-MacBook-Pro-2.local cut -f2 train | gsed 's/ /\n/g' | less
+2016-12-08.11-14-52.Jonathan-Mays-MacBook-Pro-2.local cut -f2 train | gsed 's/ /\n/g' | sort | uniq | wc
+2016-12-08.17-38-10.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-12-08.18-12-55.Jonathan-Mays-MacBook-Pro-2.local python
+2016-12-13.18-05-51.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2016-12-16.16-21-35.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm4
+2016-12-16.16-22-40.Jonathan-Mays-MacBook-Pro-2.local clear
+2016-12-16.16-28-50.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm4
+2016-12-16.16-31-56.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm4
+2016-12-16.17-06-10.Jonathan-Mays-MacBook-Pro-2.local ssh colo-vm4
+2016-12-20.10-25-09.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.10-25-13.Jonathan-Mays-MacBook-Pro-2.local wc all
+2016-12-20.10-25-20.Jonathan-Mays-MacBook-Pro-2.local wc train
+2016-12-20.10-25-24.Jonathan-Mays-MacBook-Pro-2.local less train
+2016-12-20.10-25-35.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.lc
+2016-12-20.10-25-39.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.lex.lc
+2016-12-20.10-25-51.Jonathan-Mays-MacBook-Pro-2.local wc all.dict.orig
+2016-12-20.10-26-00.Jonathan-Mays-MacBook-Pro-2.local wc train.text
+2016-12-20.10-26-04.Jonathan-Mays-MacBook-Pro-2.local wc train
+2016-12-20.10-26-39.Jonathan-Mays-MacBook-Pro-2.local scp train hpc:projects/tensorflow/tagger
+2016-12-20.10-28-12.Jonathan-Mays-MacBook-Pro-2.local less ../uig.dev
+2016-12-20.10-36-59.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.10-37-28.Jonathan-Mays-MacBook-Pro-2.local scp ../uig.dev.tok.lc hpc:projects/tensorflow/tagger
+2016-12-20.11-57-56.Jonathan-Mays-MacBook-Pro-2.local ls

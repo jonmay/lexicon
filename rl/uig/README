@@ -132,3 +132,151 @@ a) run tokenizer and lowercaser on dev
 b) internal to scoring script eliminate all tokens in reference or lookups that are 100% punctuation
 
 the motivation is that those shouldn't matter in coverage decisions
+
+so now how is orig vs seb (toklc)?
+
+$ for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+Precision: 0.439227
+Recall: 0.415736
+F1: 0.427158
+
+Precision: 0.685294
+Recall: 0.276919
+F1: 0.394447
+
+
+      p   r   f
+orig .44 .42 .43
+seb  .69 .28 .39
+
+big recall hit. is it appropriate?
+hmm:
+$ paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)<$6{print}' | wc
+      40     930    8808
+$ paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)>$6{print}' | wc
+     413    9155   78803
+$ paste <(cut -f1 orig.tok.lc.nopunc.dev.persent) <(cut -f1,3 seb.tok.lc.nopunc.dev.persent) <(cut -f2 orig.tok.lc.nopunc.dev.persent) <(cut -f2 seb.tok.lc.nopunc.dev.persent) | awk '$(12)==$6{print}' | wc
+     236    4794   31471
+
+Turns out the f measure was being calculated corpus wide on matches: reformulated to calculate matches sentence-wide only. Now things make more sense:
+
+lowercased tokenized base
+
+$ for i in additional/lexicon/lexicon uig.lex.seb.norm; do paste <(cut -f1 $i) <(cut -f3 $i | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 2> /dev/null; done
+Precision: 0.235560
+Recall: 0.222962
+F1: 0.229088
+
+Precision: 0.522941
+Recall: 0.211314
+F1: 0.300999
+
+      p   r   f
+orig .24 .22 .23
+seb  .52 .21 .30
+
+now just the explainable part of orig, tok and lc:
+paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+$ paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc 
+Precision: 0.231540
+Recall: 0.164725
+F1: 0.192500
+
+(note: worse, which is the proper direction)
+and the reduced explainable part once more filtering is done:
+paste <(cut -f1 uig.lex.seb.adj.expl) <(cut -f2 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py )  <(cut -f3 uig.lex.seb.adj.expl | ~/projects/lorelei/unitok/scripts/tok.py ) | python3 ../../scripts/unrollexpl.py --no-insert -o uig.lex.seb.adj.expl.tok.codes.ni 2> unroll.ni.stderr
+
+$ paste <(cut -f1 uig.lex.seb.adj.expl.tok.codes.ni) <(cut -f2 uig.lex.seb.adj.expl.tok.codes.ni | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+Precision: 0.239085
+Recall: 0.161398
+F1: 0.192706
+
+$ ../../scripts/simplifydict.py -d <(cut -f1-2 uig.lex.seb.adj.expl.tok.codes.ni) -i <(cut -f4 uig.lex.seb.adj.expl.tok.codes.ni) -o uig.lex.seb.adj.expl.tok.simplified
+$ paste <(cut -f1 uig.lex.seb.adj.expl.tok.simplified) <(cut -f2 uig.lex.seb.adj.expl.tok.simplified | lowercase.py) | ../../scripts/scoredict.py -c uig.dev.tok.lc
+Precision: 0.499602
+Recall: 0.149037
+F1: 0.229586
+
+
+             p   r   f
+orig        .24 .22 .23
+seb         .52 .21 .30
+orig-simple .24 .16 .19
+seb-simple  .50 .15 .23
+
+as expected, the simplification throws away a lot of good stuff but the effect of sebastian's code is consistent: it raises precision without affecting recall much.
+
+now how about intrinsic measures (label accuracy) on the dev dict corpus?
+we treat the transformation from orig to seb as an application of a label to the orig words. 
+
+NOTE: dict corpus split into train/dev/test has been tokenized but NOT lowercased; may need to redo!!
+
+$ pwd
+/Users/jonmay/projects/lorelei/lexicon/rl/uig/uig.lex.seb.adj.expl.tok.codes.ni.exp
+seb = 100, since this is by definition. (identity)
+$ ../../../scripts/scoretagger.py -i dev.labels -r dev.labels
+1.00 5983 5983
+orig = always K
+$ tr 'KSD' 'K' < dev.labels | ../../../scripts/scoretagger.py -r dev.labels 
+0.48 2866 5983
+
+most_freq: first data baseline: take the train side of the corpus and determine most frequent decision per token.
+ ../../../../scripts/most_freq_dict2inst.py --tt ../train.text --tl ../train.labels --st ../dev.text -o dev.hyp
+$ ../../../../scripts/scoretagger.py -i dev.hyp -r ../dev.labels | tee dev.score
+0.88 5266 5983
+
+extrinsic of the most_freq?
+ ../../../../scripts/most_freq_dict2inst.py --tt ../train.text --tl ../train.labels --st ../all.text -o all.hyp
+ ../../../../scripts/simplifydict.py -d <(cut -f1-2 ../../uig.lex.seb.adj.expl.tok.codes.ni) -i all.hyp -o all.dict.most_freq
+ $ paste <(cut -f1 all.dict.most_freq ) <(cut -f2 all.dict.most_freq | lowercase.py) | ../../../../scripts/scoredict.py -c ../../uig.dev.tok.lc 
+Precision: 0.430593
+Recall: 0.151890
+F1: 0.224565
+
+great, so we can show a bit of a relationship between intrinsic and extrinsic measures
+
+             extrinsic f       seb tag accuracy
+orig-simple    .19                .48
+seb-simple     .23               1.00
+mf-simple      .22                .88
+
+Now, can we learn a better seb tag accuracy (e.g. using the feed forward approach) and does it translate to similar extrinsic f?
+If not, back to the drawing board; we likely have a fatal flaw somewhere. If so, then we can abandon seb tag accuracy optimization and try to directly optimize extrinsic f.
+
+back on hpc, make tagger able to generate labels, generate 'em
+$ pwd
+/auto/rcf-40/jonmay/projects/tensorflow/tagger
+$ python tagger.py --tt train.text --tl train.labels --dt dev.text --dl dev.labels --st dev.text -n 3 -w 5 -l 1 -e 20 -b 50 -E 5000 -p 1000 --relu -o dev.n3.w5.k1.e20.b50.E5000.p50.relu.hyp
+Dev accuracy = 0.9514 = 5692/5983
+to do extrinsic need to decode the whole thing though, so:
+$ python tagger.py --tt train.text --tl train.labels --dt dev.text --dl dev.labels --st all.text -n 3 -w 5 -l 1 -e 20 -b 50 -E 5000 -p 1000 --relu -o all.n3.w5.k1.e20.b50.E5000.p50.relu.hyp
+(note it is test on train. also note i don't save model right now so it's slightly different. also sometimes it doesn't converge properly so i restart. that's kind of bad...)
+
+back here:
+$ pwd
+/Users/jonmay/projects/lorelei/lexicon/rl/uig/uig.lex.seb.adj.expl.tok.codes.ni.exp/n3.w5.k1.e20.b50.E5000
+$ scp hpc:projects/tensorflow/tagger/all*.hyp .
+all.n3.w5.k1.e20.b50.E7500.relu.hyp 
+$ ../../../../scripts/simplifydict.py -d <(cut -f1-2 ../../uig.lex.seb.adj.expl.tok.codes.ni) -i all.n3.w5.k1.e20.b50.E7500.relu.hyp -o all.dict
+$ paste <(cut -f1 all.dict ) <(cut -f2 all.dict | lowercase.py) | ../../../../scripts/scoredict.py -c ../../uig.dev.tok.lc 
+Precision: 0.506883
+Recall: 0.148800
+F1: 0.230062
+             extrinsic f       seb dev tag accuracy
+orig-simple    .19                .48
+seb-simple     .23               1.00
+mf-simple      .22                .88
+ff-simple      .23                .95
+
+validated!
+
+next, change ff code to optimize on scoredict score. also, add some wizardry to avoid occasional bad convergence.
+
+12/20/16
+
+working on getting that code to do the right thing. ready for testing. (hpc projects/tensorflow/tagger/rltagger.py)
+current issues:
+
+* get code working
+* looks like it's really slow to generate tag set with proper number of tokens per line (reshape issue)
+* i wonder: will there be oversplitting? should probably try to minimize entries along with everything else...
