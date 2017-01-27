@@ -1332,3 +1332,19 @@
 2016-12-07.11-06-48.Jonathan-Mays-MacBook-Pro-2.local git add .history
 2016-12-08.09-34-35.Jonathan-Mays-MacBook-Pro-2.local ls
 2016-12-20.11-57-36.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.21-10-24.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-09-24.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-09-42.Jonathan-Mays-MacBook-Pro-2.local du -sh 
+2017-01-25.22-09-44.Jonathan-Mays-MacBook-Pro-2.local du -sh .
+2017-01-25.22-15-20.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-15-27.Jonathan-Mays-MacBook-Pro-2.local ls rl
+2017-01-25.22-16-14.Jonathan-Mays-MacBook-Pro-2.local ls uig
+2017-01-27.13-55-38.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-27.13-55-48.Jonathan-Mays-MacBook-Pro-2.local ls -a
+2017-01-27.13-55-51.Jonathan-Mays-MacBook-Pro-2.local ls .git
+2017-01-27.13-56-01.Jonathan-Mays-MacBook-Pro-2.local less .git/config 
+2017-01-27.13-57-18.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-27.13-57-26.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-27.13-57-27.Jonathan-Mays-MacBook-Pro-2.local ls scripts
+2017-01-27.13-57-37.Jonathan-Mays-MacBook-Pro-2.local git clone git@github.com:isi-nlp/tftagger.git
+2017-01-27.13-57-43.Jonathan-Mays-MacBook-Pro-2.local ls scripts

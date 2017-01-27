@@ -246,3 +246,18 @@
 2016-12-20.10-36-59.Jonathan-Mays-MacBook-Pro-2.local ls
 2016-12-20.10-37-28.Jonathan-Mays-MacBook-Pro-2.local scp ../uig.dev.tok.lc hpc:projects/tensorflow/tagger
 2016-12-20.11-57-56.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.12-04-17.Jonathan-Mays-MacBook-Pro-2.local ssh hpc-transfer.usc.edu
+2016-12-20.12-04-26.Jonathan-Mays-MacBook-Pro-2.local ssh holst.isi.edu
+2016-12-20.12-16-30.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-25.22-26-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-27-41.Jonathan-Mays-MacBook-Pro-2.local wc ../uig.lex.seb.adj.expl.tok.codes.ni
+2017-01-25.22-27-45.Jonathan-Mays-MacBook-Pro-2.local lss ../uig.lex.seb.adj.expl.tok.codes.ni
+2017-01-25.22-27-57.Jonathan-Mays-MacBook-Pro-2.local less ../uig.lex.seb.adj.expl.tok.codes.ni
+2017-01-25.22-46-34.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-26.09-26-50.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.10-17-20.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 train.dict.orig) train.dict.orig | ~/projects/lorelei/panxbranchtools/normalize_lexicon.py | wc
+2017-01-26.10-17-25.Jonathan-Mays-MacBook-Pro-2.local wc train.dict.orig 
+2017-01-26.10-17-52.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 train.dict.orig) train.dict.orig | ~/projects/lorelei/panxbranchtools/normalize_lexicon.py | ../../../scripts/scoredict.py -c ../uig.dev.tok.lc 
+2017-01-26.10-18-02.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 train.dict.orig) train.dict.orig | ~/projects/lorelei/panxbranchtools/normalize_lexicon.py | head
+2017-01-26.10-18-12.Jonathan-Mays-MacBook-Pro-2.local paste <(cut -f1 train.dict.orig) train.dict.orig | ~/projects/lorelei/panxbranchtools/normalize_lexicon.py | cut -f1,3 | ../../../scripts/scoredict.py -c ../uig.dev.tok.lc 
+2017-01-26.10-18-57.Jonathan-Mays-MacBook-Pro-2.local less train.dict.orig

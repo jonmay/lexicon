@@ -531,3 +531,50 @@
 2016-12-20.10-24-45.Jonathan-Mays-MacBook-Pro-2.local ls
 2016-12-20.10-25-05.Jonathan-Mays-MacBook-Pro-2.local less README
 2016-12-20.11-57-41.Jonathan-Mays-MacBook-Pro-2.local ls
+2016-12-20.12-11-07.Jonathan-Mays-MacBook-Pro-2.local ssh hpc "/bin/ls"
+2016-12-20.12-25-22.Jonathan-Mays-MacBook-Pro-2.local ssh hpc "/bin/ls /tmp"
+2016-12-20.15-26-43.Jonathan-Mays-MacBook-Pro-2.local man rsync
+2016-12-20.15-27-24.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2016-12-20.15-27-45.Jonathan-Mays-MacBook-Pro-2.local ls -l ~/projects/lorelei/tmp_161219/hun/elisa.hun.package.y2r1.v1.tgz 
+2016-12-20.16-02-33.Jonathan-Mays-MacBook-Pro-2.local ssh elisa
+2017-01-25.22-10-20.Jonathan-Mays-MacBook-Pro-2.local less README
+2017-01-25.22-11-36.Jonathan-Mays-MacBook-Pro-2.local less README
+2017-01-25.22-11-38.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-25.22-11-41.Jonathan-Mays-MacBook-Pro-2.local ls ../../scripts/
+2017-01-25.22-11-45.Jonathan-Mays-MacBook-Pro-2.local git status .
+2017-01-25.22-16-40.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm
+2017-01-25.22-23-56.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-24-20.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-25.22-26-03.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-25.22-42-15.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-42-59.Jonathan-Mays-MacBook-Pro-2.local wc uig.dev.tok.lc
+2017-01-25.22-43-03.Jonathan-Mays-MacBook-Pro-2.local head -3 uig.dev.tok.lc
+2017-01-25.22-45-56.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-25.22-46-05.Jonathan-Mays-MacBook-Pro-2.local ls uig.lex.seb.adj.expl.tok.codes.ni.exp/
+2017-01-25.22-47-40.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.09-26-46.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.09-28-14.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.09-40-45.Jonathan-Mays-MacBook-Pro-2.local less README
+2017-01-26.09-40-46.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.09-40-53.Jonathan-Mays-MacBook-Pro-2.local pwe
+2017-01-26.09-40-54.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-26.09-41-20.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-26.09-41-21.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.09-44-17.Jonathan-Mays-MacBook-Pro-2.local pwd
+2017-01-26.10-14-56.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/normalize_lexicon.py -i additional/lexicon/lexicon | ../../scripts/scoredict.py -c uig.dev.tok.lc
+2017-01-26.10-15-05.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/normalize_lexicon.py -i additional/lexicon/lexicon | head -3
+2017-01-26.10-15-14.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/normalize_lexicon.py -i additional/lexicon/lexicon | cut -f1-2 | head -3
+2017-01-26.10-15-19.Jonathan-Mays-MacBook-Pro-2.local ~/projects/lorelei/panxbranchtools/normalize_lexicon.py -i additional/lexicon/lexicon | cut -f1,3 | head -3
+2017-01-26.10-15-39.Jonathan-Mays-MacBook-Pro-2.local #~/projects/lorelei/panxbranchtools/normalize_lexicon.py -i additional/lexicon/lexicon | cut -f../../scripts/scoredict.py -c uig.dev.tok.lc
+2017-01-26.10-15-39.Jonathan-Mays-MacBook-Pro-2.local ls
+2017-01-26.10-16-16.Jonathan-Mays-MacBook-Pro-2.local less ~/projects/lorelei/panxbranchtools/normalize_lexicon.py
+2017-01-26.10-16-36.Jonathan-Mays-MacBook-Pro-2.local ls uig.lex.seb.adj.expl.tok.codes.ni.exp
+2017-01-26.10-20-10.Jonathan-Mays-MacBook-Pro-2.local ls ../../../uyghur-dictprocessing/tools/
+2017-01-26.10-20-36.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm
+2017-01-26.10-20-46.Jonathan-Mays-MacBook-Pro-2.local wc uig.lex.seb.norm
+2017-01-26.10-20-52.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm
+2017-01-26.10-21-01.Jonathan-Mays-MacBook-Pro-2.local less uig.lex.seb.norm
+2017-01-26.15-09-14.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2017-01-26.15-12-02.Jonathan-Mays-MacBook-Pro-2.local clear
+2017-01-26.18-05-43.Jonathan-Mays-MacBook-Pro-2.local ssh hpc
+2017-01-27.13-55-35.Jonathan-Mays-MacBook-Pro-2.local pwd
